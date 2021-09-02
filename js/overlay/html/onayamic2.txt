@@ -1,0 +1,18 @@
+<style>
+.wrap-overlay > .content.html {
+  padding: 0;
+  min-width: auto;
+  box-sizing: border-box;
+  transition: .2s all ease;
+}
+.onayamilink1{
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  background: rgba(0,0,0,.5);
+  top: 40px;
+  left: 10px;
+}
+</style>
+<img src="js/overlay/img/sp/onayamic2.png" srcset="js/overlay/img/sp/onayamic2.png 1x, js/overlay/img/sp/onayamic2@2x.png 2x">
+<a class="onayamilink1" href="#aaa">test</a>

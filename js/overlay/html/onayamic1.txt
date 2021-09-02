@@ -1,0 +1,2 @@
+<style></style>
+<img src="js/overlay/img/sp/onayamic2.png" srcset="js/overlay/img/sp/onayamic2.png 1x, js/overlay/img/sp/onayamic2@2x.png 2x">
