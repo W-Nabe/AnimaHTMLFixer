@@ -1,4 +1,0 @@
-<section>
-<h1>見出し</h1>
-<p>本文</p>
-</section>
