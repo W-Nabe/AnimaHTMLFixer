@@ -727,56 +727,58 @@ $(window).on('load resize', function(){
 
 // ************************************** //
 // **PC・タブレット・スマホ、デバイス共通のCSS
-var custom_css = (function(param) {return param[0].replace(/\n|\r/g, "");})`
-<style>
-  /* imgの隙間を削除 */
-  .screen {
-    font-size: 0;
-  }
-  /* 一度表示した要素は消さないように修正 */
-  .anim-showed {
-    display: block !important;
-  }
-  /* アニメーション：繰り返し */
-  [class^="infinite"], [class^="lazy infinite"] {
-    animation-iteration-count: infinite;animation-duration: 1s;
-  }
-  /* アニメーション：ワイプテキスト（XD親の要素がレスポンシブデザインになっているとうまく表示されない） */ {
-    .screen div[class^="wraptext"]{
-      overflow: hidden;
+setTimeout(() => {
+  var custom_css = (function(param) {return param[0].replace(/\n|\r/g, "");})`
+  <style>
+    /* imgの隙間を削除 */
+    .screen {
+      font-size: 0;
     }
-  }
-  /* コンテンツ：Anima修正：Width100%表示、screen要素 cursor:pointer;削除 */
-  .container-center-horizontal {
-    overflow: hidden !important;
-  }
-  .container-center-horizontal > div {
-    overflow: visible !important; cursor: auto;
-  }
-  /* コンテンツ：fixed-がついている要素はz-index:5をつける */
-  [class^="fixed-"] {
-    z-index:5;
-  }
-  /* コンテンツ：Totopリンク絶対配置（右下） */
-  [class^="fixed-totoplink"] {
-    position: fixed; left: auto; top: auto; right: 20px; bottom: 20px;
-  }
-  /* コンテンツ：タブレットの場合は要素を縮小 */
-  [class$="-tablet screen"] {
-    height:calc(`+$('[class^="tablet-wrap"]').height()+`px * 0.691) !important;
-    transform: scale(0.691);
-    transform-origin: top center;
-  }
-  /* コンテンツ：relativeコンテンツ */
-  [class*="relative"] {
-    position: relative !important;
-    top: auto !important;
-    bottom: auto !important;
-  }
-  /* コンテンツ：高さ可変コンテンツ */
-  [class*="height-auto"],
-  [class*="auto-height"] {
-    height: auto !important;
-  }
-</style>`;
-$('head').append(custom_css);
+    /* 一度表示した要素は消さないように修正 */
+    .anim-showed {
+      display: block !important;
+    }
+    /* アニメーション：繰り返し */
+    [class^="infinite"], [class^="lazy infinite"] {
+      animation-iteration-count: infinite;animation-duration: 1s;
+    }
+    /* アニメーション：ワイプテキスト（XD親の要素がレスポンシブデザインになっているとうまく表示されない） */ {
+      .screen div[class^="wraptext"]{
+        overflow: hidden;
+      }
+    }
+    /* コンテンツ：Anima修正：Width100%表示、screen要素 cursor:pointer;削除 */
+    .container-center-horizontal {
+      overflow: hidden !important;
+    }
+    .container-center-horizontal > div {
+      overflow: visible !important; cursor: auto;
+    }
+    /* コンテンツ：fixed-がついている要素はz-index:5をつける */
+    [class^="fixed-"] {
+      z-index:5;
+    }
+    /* コンテンツ：Totopリンク絶対配置（右下） */
+    [class^="fixed-totoplink"] {
+      position: fixed; left: auto; top: auto; right: 20px; bottom: 20px;
+    }
+    /* コンテンツ：タブレットの場合は要素を縮小 */
+    [class$="-tablet screen"] {
+      height:calc(`+$('[class^="tablet-wrap"]').height()+`px * 0.691) !important;
+      transform: scale(0.691);
+      transform-origin: top center;
+    }
+    /* コンテンツ：relativeコンテンツ */
+    [class*="relative"] {
+      position: relative !important;
+      top: auto !important;
+      bottom: auto !important;
+    }
+    /* コンテンツ：高さ可変コンテンツ */
+    [class*="height-auto"],
+    [class*="auto-height"] {
+      height: auto !important;
+    }
+  </style>`;
+  $('head').append(custom_css);
+}, 1);
