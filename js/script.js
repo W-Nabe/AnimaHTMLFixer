@@ -43,7 +43,7 @@ var file_name = file_ex_name.split('.')[0]; // 現在表示中のHTMLファイ�
 // ************************************** //
 // **JS読み込み
 if(USE_SLICK == true) $('body').append('<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>');
-$('body').append('<script src="js/jquery.lazyload.min.js"></script>'); //※lazyloadライブラリの$self.hide();と$self[settings.effect](settings.effect_speed);を削除
+$('body').append('<script src="js/lazyload/jquery.lazyload.min.js"></script>'); //※lazyloadライブラリの$self.hide();と$self[settings.effect](settings.effect_speed);を削除
 setTimeout(() => { // すぐに使わないため、遅延読み込み
   $('body').append('<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.5.2/perfect-scrollbar.min.js"></script>');
   $('head').append('<link href="//cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.5.2/css/perfect-scrollbar.min.css" rel="stylesheet">');
