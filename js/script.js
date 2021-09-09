@@ -519,7 +519,7 @@ var ogp= (function(param) {return param[0].replace(/\n|\r/g, "");})`
 $('head').append(ogp);
 
 // SEO文章
-$('body').append('<div id="seo" style="position:absolute;opacity:0;left:0;top:0;pointer-events:none;"></div>');
+$('body').append('<div id="seo" style="position:absolute;left:0;top:0;z-index:0;overflow:scroll;width:80vw;height:80vh;"></div><div style="position:absolute;z-index:1;background:#fff;width:80vw;height:80vh;left:0;top:0;"></div>');
 target = $('#seo');
 read_file = "seo/contents/"+file_name +  ".txt";
 $.ajax({
@@ -750,6 +750,8 @@ setTimeout(() => {
     /* コンテンツ：Anima修正：Width100%表示、screen要素 cursor:pointer;削除 */
     .container-center-horizontal {
       overflow: hidden !important;
+      position: relative;
+      z-index:2;
     }
     .container-center-horizontal > div {
       overflow: visible !important; cursor: auto;
