@@ -12,4 +12,5 @@ Animaを使用すると、WebページをHTML/CSSコーディングをせずに�
 FigmaやXDのレイヤー構造・レイヤー名・グループ名が重要になります。
 
 FigmaやXDのファイルサンプルをご希望の方は、ぜひLEANSYSTEMにお問い合わせください。
+
 https://lean-system.co.jp/
