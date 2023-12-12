@@ -116,7 +116,7 @@ const imgDelayLoad = () => {
 var loading = $('#loading');
 // func.ロード画面
 var loading = function() {
-  $('[class*="firstview"] [class*="animate__"]').css('display', 'none'); // firstviewのアニメーション要素非表示
+  $('[class*="firstview"] [class*="anim-"]').css('display', 'none'); // firstviewのアニメーション要素非表示
   $('#loading .progress').height($('.loading-img.bg').height()).width($('.loading-img.bg').width());
   var speed = LOADINGSPEED;
 
@@ -133,7 +133,7 @@ var loading = function() {
       setTimeout(() => {
         $("#loading").addClass('hide');
         setTimeout(() => {
-          $('[class*="firstview"] [class*="animate__"]').css('display', '').addClass("anim-showed"); // firstviewのアニメーション表示
+          $('[class*="firstview"] [class*="anim-"]').css('display', '').addClass("anim-showed"); // firstviewのアニメーション表示
         }, 0);
         window.scroll({top: 0}); // スクロールを0位置にする
         imgDelayLoad(); // 画像遅延読み込み
@@ -167,9 +167,9 @@ var loading = function() {
             $("#loading .progress div").css({"height": "100%"}); // ローディングバーを100%に
             setTimeout(() => {
               $("#loading").addClass('hide');
-              $('[class*="firstview"] [class*="animate__"]').css('display', 'none'); // firstviewのアニメーション要素非表示
+              $('[class*="firstview"] [class*="anim-"]').css('display', 'none'); // firstviewのアニメーション要素非表示
               setTimeout(() => {
-                $('[class*="firstview"] [class*="animate__"]').css('display', '').addClass("anim-showed"); // firstviewのアニメーション表示
+                $('[class*="firstview"] [class*="anim-"]').css('display', '').addClass("anim-showed"); // firstviewのアニメーション表示
               }, 1000);
               window.scroll({top: 0}); // スクロールを0位置にする
               imgDelayLoad(); // 画像遅延読み込み
@@ -518,7 +518,7 @@ ShowOnScroll.prototype.resetScrolling = function () {
   var itemsToShowOnScroll = Array.prototype.slice.call(document.getElementsByTagName("*"));
   itemsToShowOnScroll = itemsToShowOnScroll.filter(function (e) {
     // return e.getAttribute("show-on-scroll") != undefined; // 2023年1月19日ここを変更
-    return String(e.getAttribute("class")).indexOf('animate__') !== -1 || e.getAttribute("show-on-scroll") != undefined;
+    return String(e.getAttribute("class")).indexOf('anim-') !== -1 || e.getAttribute("show-on-scroll") != undefined;
   });
   var getTop = this.getTop;
   itemsToShowOnScroll.sort(function (a, b) {

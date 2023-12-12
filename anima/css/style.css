@@ -109,6 +109,8 @@ span[class*="span"] {
 /* コンテンツ：SEOテキスト非表示 */
 .hidden-txt {
   visibility: hidden;
+  position: absolute;
+  pointer-events: none;
 }
 /* コンテンツ：z-indexが付いているクラス名の要素を上に配置 */
 [class*="z-index"] {
@@ -250,8 +252,8 @@ span[class*="span"] {
 }
 
 /* ロードが終わるまで、firstviewの中のアニメーション要素はdisplay:none */
-[class*="firstview"].hide [class*="animate__"],
-[class*="firstview"].hide [class*="animate__"] * {
+[class*="firstview"].hide [class*="anim-"],
+[class*="firstview"].hide [class*="anim-"] * {
   display: none;
 }
 

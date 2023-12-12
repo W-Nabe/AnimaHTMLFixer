@@ -1,7 +1,9 @@
 # ***.htmlにアクセスすると、index.php?view=***を参照する
 <IfModule mod_rewrite.c>
 RewriteEngine on
-RewriteCond %{REQUEST_URI} !sample.html$ # 除外するファイル
+#除外
+RewriteCond %{REQUEST_URI} !sample.html$
+#リライトルール
 RewriteRule ([^/]*).html$ index.php?view=$1
 </IfModule>
 

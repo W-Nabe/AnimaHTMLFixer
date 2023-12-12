@@ -1,5 +1,5 @@
 ﻿タイトル,使用/不使用,値,備考
-sitetitle,TRUE,shuri's saron - あなたの人生、私と出会うことで始まる,サイト名
+sitetitle,TRUE,LEANCORDING,サイト名
 designcheck,FALSE,,"デザインチェック用タグの追加(<div class=""design-check""></div>が追加される)"
 maxpcbreakpoint,TRUE,1920,PC最大横幅サイズ
 tabletbreakpoint,TRUE,1140,タブレットブレイクポイント（PCからタブレットサイズに切り替わるときなどに使用）

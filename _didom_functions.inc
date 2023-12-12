@@ -5,18 +5,18 @@
  * @return config.csvの連想配列
  */
 
-require_once("./vendor/autoload.php");
+require_once("vendor/autoload.php");
 use DiDom\Document;
 
 if(!isset($view)) $view = getCurrentView(); // view名決定。デフォルトはindex
 $config = loadConfigCsv(); // config.csvを読み込む。
-$seotext = loadSeoTextCsv(); // seotext.csvを読み込む。
+$seo = loadSeoCsv(); // seo.csvを読み込む。
 $link = loadLinkCsv(); // link.csvを読み込む。
 $meta = loadMetaCsv(); // meta.csvを読み込む。
 
 function loadConfigCsv() {
   $csv = array();
-  $handle = fopen("./anima/config/config.csv", "r");
+  $handle = fopen(__DIR__ ."/anima/config/config.csv", "r");
   if (!$handle) exit;
 
   fgetcsv($handle); // タイトル行をスキップ
@@ -43,19 +43,19 @@ function loadViewIncfile($dom) {
  */
 function getViewFileName() {
   global $view;
-  if (file_exists("./anima/view/".$view.".html")) {
+  if (file_exists(__DIR__ ."/anima/view/".$view.".html")) {
     $viewfile = $view;
     return $viewfile;
 
-  } elseif(file_exists("./anima/view/".$view."-sp.html")) {
+  } elseif(file_exists(__DIR__ ."/anima/view/".$view."-sp.html")) {
     $viewfile = $view."-sp";
     return $viewfile;
 
-  } elseif(file_exists("./anima/view/".$view."-all-breakpoints.html")) {
+  } elseif(file_exists(__DIR__ ."/anima/view/".$view."-all-breakpoints.html")) {
     $viewfile = $view."-all-breakpoints";
     return $viewfile;
 
-  } elseif(file_exists("./anima/view/".$view."-sp-all-breakpoints.html")) {
+  } elseif(file_exists(__DIR__ ."/anima/view/".$view."-sp-all-breakpoints.html")) {
     $viewfile = $view."-sp-all-breakpoints";
     return $viewfile;
 
@@ -67,9 +67,9 @@ function getViewFileName() {
  *
  * @return seotext.csvの連想配列
  */
-function loadSeoTextCsv() {
+function loadSeoCsv() {
   $csv = array();
-  $handle = fopen("./anima/config/seotext.csv", "r");
+  $handle = fopen(__DIR__ ."/anima/config/seo.csv", "r");
   if (!$handle) exit;
 
   fgetcsv($handle); // タイトル行をスキップ
@@ -88,7 +88,7 @@ function loadSeoTextCsv() {
  */
 function loadLinkCsv() {
   $csv = array();
-  $handle = fopen("./anima/config/link.csv", "r");
+  $handle = fopen(__DIR__ ."/anima/config/link.csv", "r");
   if (!$handle) exit;
 
   fgetcsv($handle); // タイトル行をスキップ
@@ -107,7 +107,7 @@ function loadLinkCsv() {
 function loadMetaCsv() {
   global $view;
   $csv = array();
-  $handle = fopen("./anima/config/meta.csv", "r");
+  $handle = fopen(__DIR__ ."/anima/config/meta.csv", "r");
   if (!$handle) exit;
 
   $target = $view;
@@ -131,14 +131,15 @@ function loadMetaCsv() {
  * @param $dom ドキュメントのDOM
  */
 function appendLoading($dom) {
+  global $theme_uri;
   $dom->first("body")->style()->setProperty('opacity', '0');
   $loading = $dom->createElement("div", null, ["id" => "loading"]);
   $innerHtml = '
-  <div class="loading-img-wrap"><img class="loading-img bg" src="anima/images/loading.png"
-  srcset="anima/images/loading.png 1x, anima/images/loading@2x.png 2x">
+  <div class="loading-img-wrap"><img class="loading-img bg" src="'.$theme_uri.'/anima/images/loading.png"
+  srcset="'.$theme_uri.'/anima/images/loading.png 1x, '.$theme_uri.'/anima/images/loading@2x.png 2x">
     <div class="progress">
-      <div><img class="loading-img" src="anima/images/loading.png"
-          srcset="anima/images/loading.png 1x, anima/images/loading@2x.png 2x"></div>
+      <div><img class="loading-img" src="'.$theme_uri.'/anima/images/loading.png"
+          srcset="'.$theme_uri.'/anima/images/loading.png 1x, '.$theme_uri.'/anima/images/loading@2x.png 2x"></div>
     </div>
   </div>
   ';
@@ -153,12 +154,13 @@ function appendLoading($dom) {
  * @param $dom ドキュメントのDOM
  */
 function appendDesignCheck($dom) {
+  global $theme_uri;
   global $view;
   global $config;
   $spbreakpoint = $config["spbreakpoint"];
   $sp = htmlspecialchars($_COOKIE['windowWidth']) < $spbreakpoint["value"] ? '-sp' : '';
   $designcheck = $dom->createElement("div", null, ["id" => "designcheck"]);
-  $designcheck->style()->setProperty('background-image', "url('./anima/images/designcheck/{$view}{$sp}.png')");
+  $designcheck->style()->setProperty('background-image', "url('{$theme_uri}/anima/images/designcheck/{$view}{$sp}.png')");
   $designcheckBtn = $dom->createElement("div", null, ["id" => "designcheck-btn"]);
   $ref = $dom->first(".screen")->child(0);
   $dom->first(".screen")->insertBefore($designcheck, $ref);
@@ -172,7 +174,8 @@ function appendDesignCheck($dom) {
  */
 function appendViewPrefixToSrc($elemsWithSrc)
 {
-  foreach ($elemsWithSrc as $elem) $elem->attr('src', "anima/view/{$elem->attr('src')}");
+  global $theme_uri;
+  foreach ($elemsWithSrc as $elem) $elem->attr('src', "{$theme_uri}/anima/view/{$elem->attr('src')}");
 }
 
 /*
@@ -183,11 +186,12 @@ function appendViewPrefixToSrc($elemsWithSrc)
  */
 function appendViewPrefixToHref($elemsWithHref)
 {
-  foreach ($elemsWithHref as $elem) $elem->attr("href", "anima/view/{$elem->attr('href')}");
+  global $theme_uri;
+  foreach ($elemsWithHref as $elem) $elem->attr("href", "{$theme_uri}/anima/view/{$elem->attr('href')}");
 }
 
 /*
- * 使用しない「.screen」を削除する。
+ * 使用しない「.screen」を削除し、content-pc・content-spを追加する。
  *
  * @param $dom ドキュメントのDOM
  */
@@ -196,6 +200,19 @@ function removeUnusedScreen($dom)
   global $config;
   $spbreakpoint = $config["spbreakpoint"];
   if (!$spbreakpoint["isuse"]) return;
+
+  $pcWraps = $dom->find('[class*="pc-wrap"]');
+  if(count($pcWraps) > 0) {
+    $currentClasses = $pcWraps[0]->parent()->getAttribute("class");
+    $pcWraps[0]->parent()->setAttribute("class", "$currentClasses content-pc");
+  }
+
+  $spWraps = $dom->find('[class*="sp-wrap"]');
+  if(count($spWraps) > 0) {
+    $currentClasses = $spWraps[0]->parent()->getAttribute("class");
+    $spWraps[0]->parent()->setAttribute("class", "$currentClasses content-sp");
+  }
+
   $target = htmlspecialchars($_COOKIE['windowWidth']) < $spbreakpoint["value"] ? '[class*="pc-wrap"]' : '[class*="sp-wrap"]';
   $dom->first($target)->parent()->parent()->remove();
 }
@@ -206,17 +223,28 @@ function removeUnusedScreen($dom)
  * @param $dom ドキュメントのDOM
  * @return string 無用なタグを削除したHTML
  */
-function removeUselessHeadOfView($dom) {
-  $res = $dom->format()->html();
-  $res = substr($res, strlen("<!DOCTYPE html>\n<html>\n  <head>\n"));
+function output($dom) {
+  global $config;
+  $output = $dom->format()->html();
 
-  $res = str_replace([
+  // bodyタグの直後、body終了タグの直前に挿入
+  $bodyTop = file_get_contents("./anima/config/{$config["insert_body_top"]["value"]}", true);
+  $bodyBottom = file_get_contents("./anima/config/{$config["insert_body_bottom"]["value"]}", true);
+  $output = str_replace("</body>",$bodyBottom."</body>", $output);
+  preg_match('/<body[^>]*>/', $output, $bodytag);
+  $output = str_replace($bodytag[0],$bodytag[0].$bodyTop, $output); 
+
+  // 整形
+  $output = substr($output, strlen("<!DOCTYPE html>\n<html>\n  <head>\n"));
+
+  // 不要な要素を削除
+  $output = str_replace([
     '<!--<meta name=description content="This site was generated with Anima. www.animaapp.com"/>-->',
     '<!-- <link rel="shortcut icon" type=image/png href="https://animaproject.s3.amazonaws.com/home/favicon.png" /> -->',
     '<link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png">'
-  ], "", $res);
+  ], "", $output);
 
-  return $res;
+  return $output;
 }
 
 /*
@@ -293,19 +321,20 @@ function getStrDivOfChildToSpan($div) {
  * IDは要素のクラス文字列「-id_foobar_-」で指定されているものとする。
  * 「foobar」がIDとなる。
  *
- * 例: <div class="button original-button-id_foobar_-99999">
+ * 例:
+ *   <div class="button original-button-id_foobar_-99999">
+ *   <div class="button id_foobar_">
  *
  * @param $elems 対象要素の配列
  */
 function assignId($elems) {
   foreach ($elems as $elem) {
-    // 要素のクラスから「-id_foobar_-」を持つクラス文字列を得る。複数ある場合は最初のものとする。
-    $class = preg_grep("/-id_[^_]+_-/", $elem->classes()->getAll())[0];
+    // 「-id_foobar_」から「foobar」を得る。
+    $classes = $elem->classes()->getAll();
+    $class = (($c = preg_grep("/-id_[^_]+_/", $classes)) ? $c : preg_grep("/^id_[^_]+_/", $classes))[0];
 
-    // 「-id_foobar_-」から「foobar」を得る。
-    preg_match("/-id_([^_]+)_-/", $class, $a);
-
-    $elem->attr("id", $a[1]); // 要素のIDを設定する。「-id_foobar_-」が複数ある場合は最初のものとする。
+    preg_match("/id_([^_]+)_/", $class, $a);
+    $elem->attr("id", $a[1]); // 要素のIDを設定する。「-id_foobar_」が複数ある場合は最初のものとする。
   }
 }
 
@@ -331,10 +360,19 @@ function wrapImgWithHOrPSpecifiedByClass($imgs) {
  */
 function getHOrPFromClass($elem) {
   // 要素のクラスから/^(h[1-6]|p)-txt-/を持つクラス文字列を得る。複数ある場合は最初のものとする。
-  $class = preg_grep("/^(h[1-6]|p)-txt-/", $elem->classes()->getAll())[0];
+  $class = preg_grep("/^(h[1-6]|p)-/", $elem->classes()->getAll())[0];
 
-  preg_match("/^(h[1-6]|p)-txt-/", $class, $a);
+  preg_match("/^(h[1-6]|p)-/", $class, $a);
   return $a[1];
+}
+
+/*
+ * <img>のalt属性を空にする
+ */
+function removeAltToImg($imgs) {
+  foreach ($imgs as $img) {
+    $img->attr("alt", '');
+  }
 }
 
 /*
@@ -343,16 +381,46 @@ function getHOrPFromClass($elem) {
  * @param $imgs 対象imgの配列
  */
 function appendAltToImgFromClass($imgs) {
-  global $seotext;
+  global $seo;
 
   foreach ($imgs as $img) {
-    // <img>のクラスから/txt-\d\d\d\d/を持つクラス文字列を得る。複数ある場合は最初のものとする。
-    $class = preg_grep("/(\b|-)txt-\d\d\d\d-/", $img->classes()->getAll())[0];
+    // <img>のクラスから/txt-.+/を持つクラス文字列を得る。複数ある場合は最初のものとする。
+    $classes = $img->classes()->getAll();
+    $matched_classes = preg_grep("/(\b|-)seo-.+/", $classes);
+    
+    if (!empty($matched_classes)) {
+      $class = reset($matched_classes);
+      preg_match("/(\\b|-)seo-[^\-]+/", $class, $a);
+      $key = trim($a[0], "-");
 
-    preg_match("/(\b|-)(txt-\d\d\d\d)-/", $class, $a);
-    $img->attr("alt", $seotext[$a[2]]);
+      $img->attr("alt", $seo[$key]);
+    }
   }
 }
+
+/*
+ * 指定されたタグ配下に、テキストを含む隠しspan要素を挿入する。
+ * @param $tags 対象tagの配列
+ */
+function appendSeotxtToTagFromClass($tags, $dom) {
+  global $seo;
+
+  foreach ($tags as $tag) {
+    $classes = $tag->classes()->getAll();
+    $matched_classes = preg_grep("/(\b|-)seo-.+/", $classes);
+    
+    if (!empty($matched_classes)) {
+      $class = reset($matched_classes);
+      preg_match("/(\\b|-)seo-[^\-]+/", $class, $a);
+      $key = trim($a[0], "-");
+
+      $span = $dom->createElement('span', $seo[$key]);
+      $span->setAttribute('class', 'hidden-txt');
+      $tag->appendChild($span);
+    }
+  }
+}
+
 
 /*
  * 指定された要素を<a>で囲む。
@@ -364,9 +432,9 @@ function wrapA($elms) {
 
   foreach ($elms as $elm) {
     // 要素のクラスから/link-\d\d\d\d/を持つクラス文字列を得る。複数ある場合は最初のものとする。
-    $class = preg_grep("/(\b|-)link-\w+-/", $elm->classes()->getAll())[0];
+    $class = preg_grep("/(\b|-)link-\w+/", $elm->classes()->getAll())[0];
 
-    preg_match("/(\b|-)(link-\w+)-/", $class, $a);
+    preg_match("/(\b|-)(link-\w+)/", $class, $a);
     if (!$l = $link[$a[2]]) continue;
 
     $a = new Didom\Element("a", null, ["href" => $l["link"]]);
@@ -382,9 +450,10 @@ function wrapA($elms) {
  * @param $img 処理する<img>の配列
  */
 function changeImgSrcToDataOriginal($imgs) {
+  global $theme_uri;
   foreach ($imgs as $img) {
     $img->attr("data-original", $img->attr("src"));
-    $img->attr("src", "./anima/images/dummy.png");
+    $img->attr("src", $theme_uri."/anima/images/dummy.png");
   }
 }
 
@@ -411,41 +480,6 @@ function getCurrentUrlWithoutHash() {
   preg_match("/^([^#]+)#?/", $_SERVER["REQUEST_URI"], $a);
   $path = $a[1];
   return (empty($_SERVER['HTTPS']) ? 'http://' : 'https://') . $_SERVER['HTTP_HOST'] . $path;
-}
-
-/*
- * その他HTMLコードを<body>の直後に追加する。
- *
- * @param $dom ドキュメントのDOM
- */
-function insertBodyTop($dom) {
-  global $config;
-  $html = new Document("./anima/config/{$config["insert_body_top"]["value"]}", true);
-  $dom->first("body")->insertBefore($html->first("body")->child(0), $dom->first("body")->child(0));
-}
-
-/*
- * その他HTMLコードを<body>の直前に追加する。
- *
- * @param $dom ドキュメントのDOM
- */
-function insertBodyBottom($dom) {
-  global $config;
-  $html = new Document("./anima/config/{$config["insert_body_bottom"]["value"]}", true);
-  $dom->first("body")->insertBefore($html->first("body")->child(0), $dom->first("body")->child(0));
-}
-
-/*
- * BOWNOW用埋め込みコードを#bownowembedに追加する。
- *
- * @param $dom ドキュメントのDOM
- */
-function insertBownow($dom) {
-  global $config;
-  if (!($bownowembed = $dom->first("#bownowembed"))) return;
-
-  $bownowembedcode = file_get_contents("./anima/config/{$config["bownow"]["value"]}");
-  $bownowembed->setInnerHtml($bownowembedcode);
 }
 
 /*
@@ -510,11 +544,13 @@ function wrapChildspanForAnimate($elms) {
  * @param $img 処理する<img>の配列
  */
 function replaceImgsSrc($dom) {
-  $path = './anima/images/replace-viewimg/img/';
+  global $theme_uri;
+  $path = __DIR__ .'/anima/images/replace-viewimg/img/';
+  $replacePath = $theme_uri.'/anima/images/replace-viewimg/img/';
   $replaceImgs = glob($path.'*');
   foreach ($replaceImgs as $src) {
-    $src = str_replace($path, '', $src);
-    changeImgSrcToReplaceImg($dom->find('img[src*="'.$src.'"]'), $src, $path);
+    $src = str_replace($path, '/', $src);
+    changeImgSrcToReplaceImg($dom->find('img[src*="'.$src.'"]'), $src, $replacePath);
   }
 }
 
@@ -527,5 +563,165 @@ function replaceImgsSrc($dom) {
 function changeImgSrcToReplaceImg($imgs, $src, $path) {
   foreach ($imgs as $img) {
     $img->attr("src", $path.$src);
+  }
+}
+
+
+/*
+ * replace-viewcss/にCSSが存在する場合、changeCssHrefToReplaceCss()で各linkタグのhref属性を置き換える
+ *
+ * @param $img 処理する<img>の配列
+ */
+function replaceCssHref($dom) {
+  global $theme_uri;
+  $path = __DIR__ .'/anima/css/replace-viewcss/';
+  $replacePath = $theme_uri.'/anima/css/replace-viewcss/';
+  $replaceCss = glob($path.'*');
+  foreach ($replaceCss as $css) {
+    $file = str_replace($path, '', $css);
+    changeCssHrefToReplaceCss($dom->find('link[href*="'.$file.'"]'), $file, $theme_uri);
+  }
+}
+
+/*
+ * 指定された<link>のhrefをreplace-viewcss/のCSSに置き換える
+ *
+ * @param $css 処理する<link>の配列
+ */
+function changeCssHrefToReplaceCss($csses, $file, $path) {
+  foreach ($csses as $css) {
+    $css->attr("href", $path.'/anima/css/replace-viewcss/'.$file);
+  }
+}
+
+
+/*
+ * Barba.js用の属性を追加する
+ * 
+ * @param $dom ドキュメントのDOM
+ */
+function addBarba($dom) {
+
+  // bodyにdata-barba="wrapper"を追加
+  $dom->first("body")->attr("data-barba", "wrapper");
+
+  // .screenの子要素にdata-barba="container"とdata-barba-namespaceを追加
+  global $view; 
+  $containers = $dom->find(".container-center-horizontal");
+  foreach ($containers as $container) {
+    $container->attr("data-barba", "container");
+    $container->attr("data-barba-namespace", $view); 
+  }
+
+  appendBarbaInitScript($dom);
+  moveLinkToTopOfContainer($dom);
+
+}
+
+/*
+ * Barba.jsの初期化スクリプトをbody終了タグの直前に追加する
+ *
+ * @param $dom ドキュメントのDOM
+ */  
+function appendBarbaInitScript($dom) {
+
+  $script = $dom->createElement("script");
+  $script->attr("src", "https://unpkg.com/@barba/core");
+
+  $script2 = $dom->createElement("script");
+
+  $innerScript = <<<EOD
+barba.init({
+  transitions: [{
+    name: 'default-transition',
+    leave() {
+      document.getElementById('loading').style.opacity = '1';
+      document.getElementById('loading').style.transition = 'all 0s ease';
+      window.scrollTo(0, 0);
+    },
+    enter() {
+      setTimeout(function () {
+        var appendScript = document.getElementById('appendScript');
+        if (appendScript) {
+          var scriptSrc = appendScript.getAttribute('src');
+          
+          var scriptElement = document.createElement('script');
+          scriptElement.src = scriptSrc;
+          
+          var container = document.querySelector('.container-center-horizontal');
+          container.appendChild(scriptElement);
+        }
+      }, 10);
+
+      $('[class*="firstview"] [class*="anim-"]').css('display', 'none');
+
+      setTimeout(function () {
+        var instShowOnScroll = new ShowOnScroll();
+        instShowOnScroll.init();
+        $('[class*="firstview"] [class*="anim-"]').css('display', '').addClass("anim-showed");
+        document.getElementById('loading').style.removeProperty('opacity');
+        document.getElementById('loading').style.transition = 'all .2s ease';
+
+        let checkExistDummyImgInterval = null; 
+        function checkExistDummyImg() {
+          const dummyImgs = document.querySelectorAll('img[src*="dummy.png"]');
+          if (dummyImgs.length > 0) {
+            clearInterval(checkExistDummyImgInterval); 
+            imgDelayLoad();
+            checkExistDummyImgInterval = setInterval(checkExistDummyImg, 100);
+          } // else {
+            //console.log('No dummy image found. Continuing search...'); 
+          //}
+        }
+        function startCheckExistDummyImg() {
+          checkExistDummyImgInterval = setInterval(checkExistDummyImg, 100);
+          setTimeout(() => {
+            clearInterval(checkExistDummyImgInterval);
+          }, 10000); 
+        }
+        startCheckExistDummyImg();
+
+      }, 250);
+    }
+  }]
+});  
+EOD;
+
+  $script2->setInnerHtml($innerScript);
+
+  $body = $dom->find("body")[0];
+  $body->appendChild($script);
+  $body->appendChild($script2);
+
+}
+
+/*
+ * link要素を.container-center-horizontalの先頭に移動する
+ */  
+function moveLinkToTopOfContainer($dom) {
+  $container = $dom->find('.container-center-horizontal')[0];
+  $link = $dom->find('link[rel="stylesheet"]')[0];
+  
+  $container->prependChild($link);
+  $link->remove(); 
+
+  global $view, $theme_uri;
+
+  // viewのCSSがあれば追加
+  if (file_exists(__DIR__ ."/anima/css/{$view}.css")) {
+    $css = $dom->createElement("link");
+    $css->attr("rel", "stylesheet");
+    $css->attr("type", "text/css");
+    $css->attr("href", $theme_uri."/anima/css/{$view}.css");
+    $container->prependChild($css);
+  }
+
+  // viewのJSがあれば追加
+  if (file_exists(__DIR__ ."/anima/js/{$view}.js")) {  
+    $js = $dom->createElement("script");
+    $js->attr("src", $theme_uri."/anima/js/{$view}.js");
+    $js->attr("id", "appendScript");
+    $js->attr("defer", "defer");
+    $container->appendChild($js);
   }
 }
