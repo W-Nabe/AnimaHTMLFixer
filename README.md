@@ -1,4 +1,4 @@
-# Animaのエクスポートファイルを
+# Animaエクスポートファイルの公開作業を単純化するプログラム
 
 FigmaやXDのデザインをHTMLコードとしてエクスポートしてくれるプラグイン「Anima」。
 Animaを使用すると、WebページをHTML/CSSコーディングをせずに作成できますが、一般公開するまでには、CSSの微調整・SEO対策・リンク設定などを手動で行う必要があります。
@@ -21,7 +21,7 @@ https://lean-system.co.jp/
 + Animaプラグインを使用して、HTMLとしてプロジェクトにSyncさせ、Animaのプレビューページに行く
 + Animaのプレビューページで「Export Code」ボタンを押し、「HTML」「Styling：Absolute Position」「Length unit：PX」の設定でソースをダウンロードする
 + ダウンロードしたファイルを解凍し、中身を「./anima/view」ディレクトリに全て入れる
-+ 全ファイルをサーバーに置き、「https://****.jp/」にアクセスする。その他ページは「https://****.jp/page1.html」でアクセス可能です。
++ 全ファイルをサーバーに置き、「https://＊＊＊＊.jp/」にアクセスする。その他ページは「https://＊＊＊＊.jp/page1.html」でアクセス可能です。
 
 ## その他設定
 + 「./anima/config」ディレクトリにあるconfig.csvでサイトの名前、ブレイクポイントなどの設定ができます。
