@@ -1,0 +1,592 @@
+/*---------------------------------------*/
+/* 共通スタイル */
+/*---------------------------------------*/
+
+/* data-original用 */
+div[class^='pc-wrap'] img :not(.firstview img), div[class^='sp-wrap'] img :not(.firstview img) {
+  transition: opacity 5s ease;
+  opacity: 0;
+}
+
+div[class^='pc-wrap'] img.show, div[class^='sp-wrap'] img.show {
+  opacity: 1;
+}
+
+/* デザインチェック用 */
+#designcheck {
+  background-repeat: no-repeat;
+  background-position: center top;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: .6;
+}
+#designcheck-btn {
+  width: 100px;
+  height: 20px;
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 1001;
+  text-align: center;
+  color: #000;
+  line-height: 20px;
+  cursor: pointer;
+}
+#designcheck-btn::after {
+  content: "DESIGN CHECK";
+  color: #000;
+  font-size: 10px;
+  font-weight: bold;
+}
+/* .screen を必ず表示するために block にする*/
+.screen {
+  display: block !important;
+}
+/* コンテンツ：relativeコンテンツ */
+[class*="relative"] {
+  position: relative !important;
+  top: auto !important;
+  bottom: auto !important;
+}
+/* コンテンツ：高さ可変コンテンツ */
+[class*="height-auto"],
+[class*="auto-height"],
+.screen,
+[class^="pc-wrap"],
+[class^="sp-wrap"] {
+  height: auto !important;
+  position: relative !important;
+}
+/* デバイス切り替え時のアニメーション */
+.content-pc, .content-pc [class^="pc-wrap"],
+.content-sp, .content-sp [class^="sp-wrap"] {
+  transition: all .5s ease;
+  transform-origin: top center;
+}
+/* コンテンツ：Anima修正：Width100%表示、screen要素 cursor:pointer;削除 */
+.container-center-horizontal {
+  overflow: hidden !important;
+  position: relative;
+  z-index:2;
+}
+.container-center-horizontal > div {
+  overflow: visible !important; cursor: auto;
+}
+
+/* [class^="pc-wrap"] {
+transform: scale(0.1);
+transform-origin: top;
+position: fixed !important;
+top: 0 !important;
+} */
+
+/* コンテンツ：Anima画像・要素をSEOマークアップした際に、divタグ→spanタグに変更するので、ブロック要素にしておく */
+h1 span,
+h2 span,
+h3 span,
+h4 span,
+h5 span,
+h6 span,
+p span {
+  display: block;
+}
+/* 文字列のスパンタグはインライン要素に */
+span[class*="span"] {
+  display: inline !important;
+}
+/* 一度表示した要素は消さないように修正 */
+.anim-showed {
+  display: block !important;
+}
+/* imgの隙間を削除 */
+.screen {
+  font-size: 0;
+}
+/* コンテンツ：SEOテキスト非表示 */
+.hidden-txt {
+  visibility: hidden;
+}
+/* コンテンツ：z-indexが付いているクラス名の要素を上に配置 */
+[class*="z-index"] {
+  z-index: 1;
+}
+[class*="z-index1"] {
+  z-index: 1;
+}
+[class*="z-index2"] {
+  z-index: 2;
+}
+[class*="z-index3"] {
+  z-index: 3;
+}
+[class*="z-index4"] {
+  z-index: 4;
+}
+[class*="z-index5"] {
+  z-index: 5;
+}
+[class*="z-index6"] {
+  z-index: 6;
+}
+[class*="z-index7"] {
+  z-index: 7;
+}
+[class*="z-index8"] {
+  z-index: 8;
+}
+[class*="z-index9"] {
+  z-index: 9;
+}
+[class*="z-index"] {
+  z-index: 1;
+}
+[class*="z-index-1"] {
+  z-index: 1;
+}
+[class*="z-index-2"] {
+  z-index: 2;
+}
+[class*="z-index-3"] {
+  z-index: 3;
+}
+[class*="z-index-4"] {
+  z-index: 4;
+}
+[class*="z-index-5"] {
+  z-index: 5;
+}
+[class*="z-index-6"] {
+  z-index: 6;
+}
+[class*="z-index-7"] {
+  z-index: 7;
+}
+[class*="z-index-8"] {
+  z-index: 8;
+}
+[class*="z-index-9"] {
+  z-index: 9;
+}
+/* コンテンツ：fixed-がついている要素はz-index:5をつける */
+[class^="fixed-"] {
+  z-index:20;
+}
+
+/* コンテンツ：Totopリンク絶対配置（右下） */
+[class^="fixed-totop"] {
+  position: fixed !important;
+  left: auto !important;
+  top: auto !important;
+  right: 20px !important;
+  bottom: 20px !important;
+  transition: all 1s ease; opacity: 0;
+  cursor: pointer;
+}
+
+
+/*---------------------------------------*/
+/* Loading画面用スタイル */
+/*---------------------------------------*/
+
+#loading {
+  opacity: 1;
+  background: var(--loading_background);
+  position:fixed;
+  width:100%;
+  height:100%;
+  left:0;
+  top:0;
+  z-index:1000;
+}
+#loading.hide {
+  opacity: 0 !important;
+  pointer-events:none;
+  transition:all var(--loading_speed) ease;
+  transition-delay: var(--loading_speed);
+}
+#loading .loading-img-wrap {
+  transition:all var(--loading_speed) ease;
+  opacity: 1;
+  /* animation: loading-img-show 1s ease 0.00s 1 normal forwards; */
+}
+/* @keyframes loading-img-show {
+  from{opacity: 0;}
+  to{opacity: 1;}
+} */
+#loading .loading-img {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  opacity: .2;
+}
+#loading .progress {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+#loading .progress .loading-img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: auto;
+  transform: none;
+  opacity: 1;
+}
+#loading .progress div {
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+  height: 0%;
+  width: 100%;
+  transition: var(--loading_speed) all ease;
+}
+
+/* ロードが終わるまで、firstviewの中のアニメーション要素はdisplay:none */
+[class*="firstview"].hide [class*="animate__"],
+[class*="firstview"].hide [class*="animate__"] * {
+  display: none;
+}
+
+/*---------------------------------------*/
+/* SLICK */
+/*---------------------------------------*/
+[class*="slick-show"].slick-dotted.slick-slider {
+  margin-bottom: 0 !important;
+}
+[class*="slick"] img {
+  position: relative !important;
+}
+.slick-arrows {
+  display: block;
+  position: absolute;
+  top: 47%;
+  transform: translate(0, -50%);
+  cursor: pointer;
+  height: 40px;
+  width: 80px;
+  background: url('../images/slick-arrow.svg') no-repeat center center/100% 100%;
+  z-index: 1;
+}
+[class^="sp-wrap"] .slick-arrows {
+  height: 20px;
+  width: 50px;
+}
+.slick-arrows.prev {
+  left: -78px;
+  transform: rotate(-90deg);
+}
+.slick-arrows.next {
+  right: -78px;
+  transform: rotate(90deg);
+}
+[class^="sp-wrap"] .slick-arrows.prev {
+  left: -42px;
+}
+[class^="sp-wrap"] .slick-arrows.next {
+  right: -42px;
+}
+.slick-dots {
+  bottom: -46px !important;
+}
+.slick-dots li {
+  margin: 0 6px;
+}
+.slick-dots li button:before {
+  font-size: 16px;
+}
+.slick-list {
+  margin:0 -15px;
+}
+.slick-list .slick-slide {
+  margin:0 15px;
+}
+.slick-list .slick-slide:focus {
+  outline: none;
+}
+.slick-track {
+}
+[class*="slick"] [class*="parts"] {
+  display: none !important;
+}
+
+.slick-dots li button:before {
+  color: #FFFFFF;
+  opacity: 1;
+}
+.slick-dots li.slick-active button:before {
+  color: #B45A6E;
+  opacity: 1;
+}
+
+
+/*---------------------------------------*/
+/* パソコンデバイス*/
+/*---------------------------------------*/
+/*コンテンツ：マウスオーバー*/
+.content-pc [class*="mousehover"] [class*="base"],
+.content-pc [class*="link"] [class*="base"] {
+  opacity: 1;
+  transition: .3s all ease;
+}
+.content-pc [class*="mousehover"] [class*="hover"],
+.content-pc [class*="link"] [class*="hover"] {
+  opacity: 0;
+  transition: .3s all ease;
+}
+.content-pc [class*="mousehover"]:hover [class*="base"],
+.content-pc [class*="link"]:hover [class*="base"] {
+  opacity: 0;
+}
+.content-pc [class*="mousehover"]:hover [class*="hover"],
+.content-pc [class*="link"]:hover [class*="hover"] {
+  opacity: 1;
+}
+.content-pc [class*="header-logo-txt-0001-link-0003"]:hover [class*="base"] {
+  opacity: 1;
+}
+
+/* コンテンツ：ヘッダーナビゲーション PC */
+.content-pc [class^="fixed-header"] {
+  left: 0 !important;
+  right: auto;
+  top: 0px !important;
+  z-index: 15;
+  transform: translate(0, 0) !important;
+  position: fixed !important;
+  background: rgba(255,255,255,0) !important;
+  width: 100% !important;
+  transition: .6s all ease;
+}
+.content-pc [class^="fixed-header"].scroll {
+  background: rgba(255,255,255,1) !important;
+}
+.content-pc [class^="fixed-header"] * {
+  transition: .6s all ease;
+}
+.content-pc [class^="fixed-header"] [class^="header-wrap"]{
+  position:absolute;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  max-width: 1440px;
+  width: 100%;
+  height: 100%;
+  transition: .6s all ease;
+}
+.content-pc [class^="fixed-header"] [class^="area"]{
+  pointer-events: none;
+}
+.content-pc [class^="fixed-header"] [class*="logo"],
+.content-pc [class^="fixed-header"] [class*="tel"],
+.content-pc [class^="fixed-header"] [class*="links"],
+.content-pc [class^="fixed-header"] [class*="header-right-object"]   {
+  transform-origin: top left;
+  top: 50% !important;
+  transform: translate(0, -50%) !important;
+}
+.content-pc [class^="fixed-header"] [class*="tel"]  {
+  transform-origin: top right;
+}
+.content-pc [class^="fixed-header"] [class*="header-logo"] [class*="scroll"] {
+  transition: .3s all ease;
+  opacity: 0;
+}
+.content-pc [class^="fixed-header"] [class*="area"] {
+  display: none !important;
+}
+/* ヘッダー右配置オブジェクトの位置調整 */
+.content-pc [class*="header-links"] {
+  transform-origin: top right !important;
+  left: auto !important;
+  right: 207px;
+}
+.content-pc [class*="header-right-object"] {
+  transform-origin: top right !important;
+  left: auto !important;
+  right: 30px;
+}
+/* リンク：マウスオーバー時のデザイン */
+.content-pc [class^="fixed-header"] [class^="header-links"] [class^="link-"]:after,
+.content-pc #footer [class^="links"] [class^="link-"]:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 1px;
+  background: #000;
+  -webkit-transform: scale(0, 1);
+  transform: scale(0, 1);
+  -webkit-transform-origin: right top;
+  transform-origin: right top;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+.content-pc [class^="fixed-header"] [class^="header-links"] [class^="link-"]:hover::after,
+.content-pc #footer [class^="links"] [class^="link-"]:hover::after  {
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
+.content-pc #footer [class^="links"] [class^="link-"]:after {
+  background: #fff;
+}
+
+/*---------------------------------------*/
+/* スマホデバイス*/
+/*---------------------------------------*/
+.content-sp [class*="fixed-header"] {
+  width: 100vw !important;
+  left: 0 !important;
+  position: fixed !important;
+  z-index: 6;
+  background-color: #fff !important;
+}
+
+.content-sp [class*="sp-btn-header-menu"] {
+  right: 18px !important;
+  left: auto !important;
+}
+
+.content-sp [class^="sp-wrap"] [class^="fixed-header"] {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.content-sp [class^="sp-wrap"] [class^="fixed-header"] [class^="logo"] {
+  left: 15px;
+}
+
+/* スマホメニュー */
+.content-sp [class*="sp-header-menu"] {
+  max-height: calc(100vh - 41px);
+  position:fixed !important;
+  left: auto !important;
+  right: 0 !important;
+  height: calc(100vh - 50px) !important;
+  top: 50px !important;
+  pointer-events: none;
+}
+.content-sp [class*="sp-header-menu"] [class^="scroll-wrap"] {
+  height: 100% !important;
+  padding-bottom: 140px;
+  box-sizing: content-box;
+  position: relative;
+}
+.content-sp [class*="sp-header-menu"] [class^="scroll-wrap"] [class*="bg"] {
+  height: 100% !important;
+}
+.content-sp [class*="sp-header-menu"] [class^="menu-content"] {
+  right: -100% !important;
+  left: auto !important;
+  transition: .3s all ease;
+  height: 100% !important;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.content-sp [class*="sp-header-menu"].show {
+  pointer-events: auto;
+}
+.content-sp [class*="sp-header-menu"].show [class^="menu-content"] {
+  right: 0px !important;
+  background-color: #fff;
+}
+.content-sp [class*="sp-btn-header-menu"] {
+  cursor: pointer;
+}
+.content-sp [class*="sp-btn-header-menu"] [class*="open"] {
+  transition: .2s all ease;
+}
+.content-sp [class*="sp-btn-header-menu"] [class*="close"] {
+  transition: .2s all ease;
+  opacity: 0;
+}
+.content-sp [class*="sp-btn-header-menu"].show [class*="open"] {
+  opacity: 0;
+}
+.content-sp [class*="sp-btn-header-menu"].show [class*="close"] {
+  opacity: 1;
+}
+/* スマホメニュー 出現時アニメーション */
+.content-sp [class*="sp-header-menu"] [class*="scroll-wrap"] > [class*="anim"] > * {
+  transform: translate(150%, 0);
+  transition: 0.5s all ease;
+  display: block;
+}
+.content-sp [class*="sp-header-menu"].show [class*="scroll-wrap"] > [class*="anim"] > * {
+  transform: translate(0, 0);
+}
+.content-sp [class*="sp-header-menu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(1) {
+  transition-delay: 0s;
+}
+.content-sp [class*="sp-header-menu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(2) {
+  transition-delay: 0.05s;
+}
+.content-sp [class*="sp-header-menu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(3) {
+  transition-delay: 0.1s;
+}
+.content-sp [class*="sp-header-menu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(4) {
+  transition-delay: 0.15s;
+}
+.content-sp [class*="sp-header-menu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(5) {
+  transition-delay: 0.2s;
+}
+.content-sp [class*="sp-header-menu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(6) {
+  transition-delay: 0.25s;
+}
+.content-sp [class*="sp-header-menu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(7) {
+  transition-delay: 0.3s;
+}
+.content-sp [class*="sp-header-menu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(8) {
+  transition-delay: 0.35s;
+}
+.content-sp [class*="sp-header-menu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(9) {
+  transition-delay: 0.4s;
+}
+.content-sp [class*="sp-header-menu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(10) {
+  transition-delay: 0.45s;
+}
+.content-sp [class*="sp-header-menu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(11) {
+  transition-delay: 0.5s;
+}
+.content-sp [class*="sp-header-menu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(12) {
+  transition-delay: 0.55s;
+}
+
+/*---------------------------------------*/
+/* その他埋め込みコード用スタイル */
+/*---------------------------------------*/
+.content-pc #bownowembed {
+  background: #F2F2F2;
+  padding: 70px;
+}
+.content-sp #bownowembed {
+  width: 100vw;
+  left: 50% !important;
+  transform: translate(-50%, 0) !important;
+  padding: 10vh 5vw;
+}
+
+/*---------------------------------------*/
+/* アニメーション用スタイル */
+/*---------------------------------------*/
+
+
+/*---------------------------------------*/
+/* デザイン微調整 */
+/*---------------------------------------*/
+.content-sp [class*="tiktok-link-0010"] {
+  left: auto !important;
+  right: 60px;
+}

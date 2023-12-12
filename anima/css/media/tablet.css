@@ -1,0 +1,15 @@
+/* メディアクエリー：PC表示をタブレット用にvar(--ratio-sp-tablet)倍縮小 */
+[class^="pc-wrap"] {
+  transform: scale(var(--ratio-sp-tablet));
+  transform-origin: top center;
+}
+
+/* コンテンツ：ヘッダーナビゲーション（タブレット表示時のヘッダーサイズ・位置調整） */
+.content-pc [class^="fixed-header"] {
+  height:65px !important;
+}
+.content-pc [class^="fixed-header"] [class^="header-wrap"]{
+  transform-origin: top left;
+  transform: scale(var(--ratio-sp-tablet)) translate(-50%, 25%);
+  width: 155%;
+}

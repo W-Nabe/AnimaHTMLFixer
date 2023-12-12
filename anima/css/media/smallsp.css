@@ -1,0 +1,5 @@
+/* メディアクエリー：SP表示を375未満デバイス用にvar(--ratio-minsp-smallsp)倍縮小 */
+[class^="sp-wrap"] {
+  transform: scale( var(--ratio-minsp-smallsp) );
+  transform-origin: top center;
+}
