@@ -17,7 +17,13 @@ FigmaやXDのデザインをHTMLコードとしてエクスポートしてくれ
 FigmaやXDでは、パソコンデザイン・スマホデザインを用意してください。
 
 ## サンプル
-FigmaやXDのファイルサンプルをご希望の方は、ぜひLEANSYSTEMにお問い合わせください。
+### Figma
+https://www.figma.com/file/Zixywb9dXMlZIokve54ljH/ANIMA-SAMPLE?type=design&node-id=0%3A1&mode=design&t=N0CWbasQW2Zuzss0-1
+
+ご不明点がございましたら、お問い合わせください。
+
+### Adobe XD
+XDのファイルサンプルをご希望の方は、ぜひLEANSYSTEMにお問い合わせください。
 
 https://lean-system.co.jp/
 
