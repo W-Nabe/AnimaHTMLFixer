@@ -1,6 +1,9 @@
 ﻿class名,リンク先,target
 link-0001,./,
-link-0002,./#t,
+link-home,./#t,
 link-0003,./#mv,
+link-animlist,https://animate.style/,_blank
 link-official,https://lean-system.co.jp/,_blank
 link-contact,https://lean-system.co.jp/,_blank
+link-page,./animation.html,
+link-git,https://github.com/W-Nabe/Anima-WebPage,

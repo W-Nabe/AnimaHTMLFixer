@@ -1,6 +1,69 @@
 /*---------------------------------------*/
+/* 変数設定 */
+/*---------------------------------------*/
+
+:root {
+  /* 全体の背景 */
+  --body-background: #FFF;
+
+  /* テキストリンク色 */
+  --link-color: #000;
+  --link-hover-color: #000; 
+
+  /* PC追尾ヘッダー */
+  --fixed-header-background: rgba(255,255,255,0) !important; /* 背景色 */
+  --fixed-header-scroll-background: rgba(255,255,255,1) !important; /* 追尾時背景色 */
+
+  /* SP追尾ヘッダー */
+  --fixed-spheader-background: rgba(255,255,255,0) !important; /* 背景色 */
+  --fixed-spheader-scroll-background: rgba(255,255,255,1) !important; /* 追尾時背景色 */
+}
+
+
+
+/*---------------------------------------*/
 /* 共通スタイル */
 /*---------------------------------------*/
+/* js,css読み込み後bodyをopacity:1へ */
+body {
+  opacity: 1 !important;
+  background-color: var(--body-background) !important;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--link-color);
+}
+a:hover {
+  color: var(--link-hover-color);
+}
+a:visited {
+  color: var(--link-color);
+}
+
+body .screen a {
+  display: block;
+  opacity: 1;
+  transition: all .3s ease;
+}
+body .screen a:hover {
+  opacity: 0.8;
+}
+body .screen [class*="anim-"] a:hover {
+  opacity: 1;
+  filter: opacity(0.8) !important;
+}
+html strong {
+  font-weight: bold;
+}
+html em {
+  font-style: italic;
+}
+
+/* 非表示要素 */
+[class*='displaynone'] {
+  display: none !important;
+}
 
 /* data-original用 */
 div[class^='pc-wrap'] img :not(.firstview img), div[class^='sp-wrap'] img :not(.firstview img) {
@@ -42,12 +105,40 @@ div[class^='pc-wrap'] img.show, div[class^='sp-wrap'] img.show {
   font-size: 10px;
   font-weight: bold;
 }
+
+/* コンテンツ：Anima修正：Width100%表示、screen要素 cursor:pointer;削除 */
+.container-center-horizontal {
+  overflow: hidden !important;
+  position: relative;
+  z-index:2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100vw;
+}
+.container-center-horizontal > div {
+  overflow: visible !important;
+  cursor: auto;
+}
+.container-center-horizontal .content-pc {
+  width: var(--maxpcbreakpoint) !important;
+}
+.container-center-horizontal .content-sp {
+  width: var(--spbreakpoint) !important;
+}
+
 /* .screen を必ず表示するために block にする*/
 .screen {
   display: block !important;
 }
-/* コンテンツ：relativeコンテンツ */
+
+/* relative, sectionと付いているクラス名をposition:relativeにする */
 [class*="relative"] {
+  position: relative !important;
+  top: auto !important;
+  bottom: auto !important;
+}
+[class*="section"] {
   position: relative !important;
   top: auto !important;
   bottom: auto !important;
@@ -55,6 +146,7 @@ div[class^='pc-wrap'] img.show, div[class^='sp-wrap'] img.show {
 /* コンテンツ：高さ可変コンテンツ */
 [class*="height-auto"],
 [class*="auto-height"],
+[class*="hauto"],
 .screen,
 [class^="pc-wrap"],
 [class^="sp-wrap"] {
@@ -67,22 +159,6 @@ div[class^='pc-wrap'] img.show, div[class^='sp-wrap'] img.show {
   transition: all .5s ease;
   transform-origin: top center;
 }
-/* コンテンツ：Anima修正：Width100%表示、screen要素 cursor:pointer;削除 */
-.container-center-horizontal {
-  overflow: hidden !important;
-  position: relative;
-  z-index:2;
-}
-.container-center-horizontal > div {
-  overflow: visible !important; cursor: auto;
-}
-
-/* [class^="pc-wrap"] {
-transform: scale(0.1);
-transform-origin: top;
-position: fixed !important;
-top: 0 !important;
-} */
 
 /* コンテンツ：Anima画像・要素をSEOマークアップした際に、divタグ→spanタグに変更するので、ブロック要素にしておく */
 h1 span,
@@ -173,19 +249,25 @@ span[class*="span"] {
 [class*="z-index-9"] {
   z-index: 9;
 }
-/* コンテンツ：fixed-がついている要素はz-index:5をつける */
+/* コンテンツ：fixed-がついている要素はz-index:*をつける */
 [class^="fixed-"] {
-  z-index:20;
+  z-index: 20;
 }
 
 /* コンテンツ：Totopリンク絶対配置（右下） */
-[class^="fixed-totop"] {
+[class^="fixed-totop"],
+[class^="fixed-pagetop"] {
   position: fixed !important;
   left: auto !important;
   top: auto !important;
   right: 20px !important;
   bottom: 20px !important;
   transition: all 1s ease; opacity: 0;
+  cursor: pointer;
+}
+
+/* ページトップリンク */
+[class*="pagetop"] {
   cursor: pointer;
 }
 
@@ -196,7 +278,7 @@ span[class*="span"] {
 
 #loading {
   opacity: 1;
-  background: var(--loading_background);
+  background: var(--loading-background);
   position:fixed;
   width:100%;
   height:100%;
@@ -207,11 +289,11 @@ span[class*="span"] {
 #loading.hide {
   opacity: 0 !important;
   pointer-events:none;
-  transition:all var(--loading_speed) ease;
-  transition-delay: var(--loading_speed);
+  transition:all var(--loading-speed) ease;
+  transition-delay: var(--loading-speed);
 }
 #loading .loading-img-wrap {
-  transition:all var(--loading_speed) ease;
+  transition:all var(--loading-speed) ease;
   opacity: 1;
   /* animation: loading-img-show 1s ease 0.00s 1 normal forwards; */
 }
@@ -255,6 +337,247 @@ span[class*="span"] {
 [class*="firstview"].hide [class*="anim-"],
 [class*="firstview"].hide [class*="anim-"] * {
   display: none;
+}
+
+
+/*---------------------------------------*/
+/* パソコンデバイス*/
+/*---------------------------------------*/
+/*コンテンツ：マウスオーバー*/
+.content-pc [class*="mousehover"] [class*="base"],
+.content-pc [class*="link"] [class*="base"] {
+  opacity: 1;
+  transition: .3s all ease;
+}
+.content-pc [class*="mousehover"] [class*="hover"],
+.content-pc [class*="link"] [class*="hover"] {
+  opacity: 0;
+  transition: .3s all ease;
+}
+.content-pc [class*="mousehover"]:hover [class*="base"],
+.content-pc [class*="link"]:hover [class*="base"] {
+  opacity: 0;
+}
+.content-pc [class*="mousehover"]:hover [class*="hover"],
+.content-pc [class*="link"]:hover [class*="hover"] {
+  opacity: 1;
+}
+.content-pc [class*="link-"] [class*="base-wipe"],
+.content-pc [class*="link-"] [class*="hover-wipe"],
+.content-pc [class*="link-"]:hover [class*="base-wipe"],
+.content-pc [class*="link-"]:hover [class*="hover-wipe"] {
+  opacity: 1;
+
+}
+.content-pc [class*="link-"] [class*="base-wipe"] > .wrap,
+.content-pc [class*="link-"] [class*="hover-wipe"] > .wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: block;
+  position: absolute;
+  left: 0;
+  transition: .3s all ease;
+}
+.content-pc [class*="link-"] [class*="hover-wipe"] > .wrap {
+  width: 0%;
+}
+.content-pc [class*="link-"]:hover [class*="hover-wipe"] > .wrap {
+  width: 100%;
+}
+
+/* コンテンツ：ヘッダーナビゲーション PC */
+.content-pc [class^="fixed-header"] {
+  left: 0 !important;
+  right: auto;
+  top: 0px !important;
+  z-index: 15;
+  transform: translate(0, 0) !important;
+  position: fixed !important;
+  width: 100% !important;
+  transition: .6s all ease;
+  background: var(--fixed-header-background);
+}
+.content-pc [class^="fixed-header"].scroll {
+  background: var(--fixed-header-scroll-background);
+}
+.content-pc [class^="fixed-header"] * {
+  transition: .6s all ease;
+}
+.content-pc [class^="fixed-header"] [class^="header-wrap"]{
+  position:absolute;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  max-width: 1440px;
+  width: 100%;
+  height: 100%;
+  transition: .6s all ease;
+}
+.content-pc [class^="fixed-header"] [class*="area"] {
+  pointer-events: none;
+  display: none !important;
+}
+.content-pc [class^="fixed-header"] [class*="align-left"] {
+  right: auto;
+  left: 30px;
+}
+.content-pc [class^="fixed-header"] [class*="align-center"] {
+  left: 50%;
+  transform: translate(-50%, 0px);
+  right: auto;
+}
+.content-pc [class^="fixed-header"] [class*="align-right"] {
+  left: auto;
+  right: 30px;
+}
+
+/*---------------------------------------*/
+/* スマホデバイス*/
+/*---------------------------------------*/
+.content-sp [class*="fixed-header"] {
+  width: 100vw !important;
+  left: 0 !important;
+  position: fixed !important;
+  z-index: 10;
+  background-color: var(--fixed-spheader-background);
+  transition: .3s all ease;
+  top: 0px !important;
+}
+.content-sp [class*="fixed-header"].scroll {
+  background-color: var(--fixed-spheader-scroll-background);
+  top: 0px !important;
+  box-shadow: 0px 3px 6px #00000029;
+}
+.content-sp [class^="fixed-header"] [class*="align-left"] {
+  right: auto;
+  left: 18px;
+}
+.content-sp [class^="fixed-header"] [class*="align-center"] {
+  left: 50%;
+  transform: translate(-50%, 0px);
+  right: auto;
+}
+.content-sp [class^="fixed-header"] [class*="align-right"] {
+  left: auto;
+  right: 18px;
+}
+
+
+/* スマホメニュー */
+.content-sp [class*="fixed-spmenu"] {
+  position:fixed !important;
+  left: auto !important;
+  right: -100% !important;
+  height: 100vh !important;
+  top: 0px !important;
+  pointer-events: none;
+  z-index: 11;
+}
+.content-sp [class*="fixed-spmenu"] [class^="menuwrap"] {
+  height: 100% !important;
+  padding-bottom: 140px;
+  box-sizing: content-box;
+  position: relative;
+}
+.content-sp [class*="fixed-spmenu"] [class^="menuwrap"] [class*="bg"] {
+  height: 100% !important;
+}
+.content-sp [class*="fixed-spmenu"] [class^="menu-content"] {
+  right: -100% !important;
+  left: auto !important;
+  transition: .3s all ease;
+  height: 100% !important;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.content-sp [class*="fixed-spmenu"].show {
+  right: 0px !important;
+  pointer-events: auto;
+}
+
+/* スマホメニュー 出現時アニメーション */
+.content-sp [class*="fixed-spmenu"] [class*="scroll-wrap"] > [class*="anim"] > * {
+  transform: translate(150%, 0);
+  transition: 0.5s all ease;
+  display: block;
+}
+.content-sp [class*="fixed-spmenu"].show [class*="scroll-wrap"] > [class*="anim"] > * {
+  transform: translate(0, 0);
+}
+.content-sp [class*="fixed-spmenu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(1) {
+  transition-delay: 0s;
+}
+.content-sp [class*="fixed-spmenu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(2) {
+  transition-delay: 0.05s;
+}
+.content-sp [class*="fixed-spmenu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(3) {
+  transition-delay: 0.1s;
+}
+.content-sp [class*="fixed-spmenu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(4) {
+  transition-delay: 0.15s;
+}
+.content-sp [class*="fixed-spmenu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(5) {
+  transition-delay: 0.2s;
+}
+.content-sp [class*="fixed-spmenu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(6) {
+  transition-delay: 0.25s;
+}
+.content-sp [class*="fixed-spmenu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(7) {
+  transition-delay: 0.3s;
+}
+.content-sp [class*="fixed-spmenu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(8) {
+  transition-delay: 0.35s;
+}
+.content-sp [class*="fixed-spmenu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(9) {
+  transition-delay: 0.4s;
+}
+.content-sp [class*="fixed-spmenu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(10) {
+  transition-delay: 0.45s;
+}
+.content-sp [class*="fixed-spmenu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(11) {
+  transition-delay: 0.5s;
+}
+.content-sp [class*="fixed-spmenu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(12) {
+  transition-delay: 0.55s;
+}
+
+/*---------------------------------------*/
+/* その他埋め込みコード用スタイル */
+/*---------------------------------------*/
+
+/* リンク：マウスオーバー時のデザイン */
+.content-pc [class^="fixed-header"] [class^="link-"]::after,
+.content-pc #footer [class^="footer-nav"] [class^="link-"]::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 1px;
+  background: var(--link-color);
+  -webkit-transform: scale(0, 1);
+  transform: scale(0, 1);
+  -webkit-transform-origin: right top;
+  transform-origin: right top;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+.content-pc [class^="fixed-header"] [class^="link-"]::after {
+  background: var(--link-color);
+}
+.content-pc #footer [class^="footer-nav"] [class^="link-"]::after {
+  background: var(--link-color);
+}
+.content-pc [class^="fixed-header"] [class^="link-"]:hover::after,
+.content-pc [class^="fixed-header"] [class^="link-"].active::after,
+.content-pc #footer [class^="link-"]:hover::after,
+.content-pc #footer [class^="link-"].active::after  {
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
 }
 
 /*---------------------------------------*/
@@ -318,7 +641,6 @@ span[class*="span"] {
 [class*="slick"] [class*="parts"] {
   display: none !important;
 }
-
 .slick-dots li button:before {
   color: #FFFFFF;
   opacity: 1;
@@ -326,269 +648,4 @@ span[class*="span"] {
 .slick-dots li.slick-active button:before {
   color: #B45A6E;
   opacity: 1;
-}
-
-
-/*---------------------------------------*/
-/* パソコンデバイス*/
-/*---------------------------------------*/
-/*コンテンツ：マウスオーバー*/
-.content-pc [class*="mousehover"] [class*="base"],
-.content-pc [class*="link"] [class*="base"] {
-  opacity: 1;
-  transition: .3s all ease;
-}
-.content-pc [class*="mousehover"] [class*="hover"],
-.content-pc [class*="link"] [class*="hover"] {
-  opacity: 0;
-  transition: .3s all ease;
-}
-.content-pc [class*="mousehover"]:hover [class*="base"],
-.content-pc [class*="link"]:hover [class*="base"] {
-  opacity: 0;
-}
-.content-pc [class*="mousehover"]:hover [class*="hover"],
-.content-pc [class*="link"]:hover [class*="hover"] {
-  opacity: 1;
-}
-.content-pc [class*="header-logo-txt-0001-link-0003"]:hover [class*="base"] {
-  opacity: 1;
-}
-
-/* コンテンツ：ヘッダーナビゲーション PC */
-.content-pc [class^="fixed-header"] {
-  left: 0 !important;
-  right: auto;
-  top: 0px !important;
-  z-index: 15;
-  transform: translate(0, 0) !important;
-  position: fixed !important;
-  background: rgba(255,255,255,0) !important;
-  width: 100% !important;
-  transition: .6s all ease;
-}
-.content-pc [class^="fixed-header"].scroll {
-  background: rgba(255,255,255,1) !important;
-}
-.content-pc [class^="fixed-header"] * {
-  transition: .6s all ease;
-}
-.content-pc [class^="fixed-header"] [class^="header-wrap"]{
-  position:absolute;
-  left: 50%;
-  transform: translate(-50%, 0px);
-  max-width: 1440px;
-  width: 100%;
-  height: 100%;
-  transition: .6s all ease;
-}
-.content-pc [class^="fixed-header"] [class^="area"]{
-  pointer-events: none;
-}
-.content-pc [class^="fixed-header"] [class*="logo"],
-.content-pc [class^="fixed-header"] [class*="tel"],
-.content-pc [class^="fixed-header"] [class*="links"],
-.content-pc [class^="fixed-header"] [class*="header-right-object"]   {
-  transform-origin: top left;
-  top: 50% !important;
-  transform: translate(0, -50%) !important;
-}
-.content-pc [class^="fixed-header"] [class*="tel"]  {
-  transform-origin: top right;
-}
-.content-pc [class^="fixed-header"] [class*="header-logo"] [class*="scroll"] {
-  transition: .3s all ease;
-  opacity: 0;
-}
-.content-pc [class^="fixed-header"] [class*="area"] {
-  display: none !important;
-}
-/* ヘッダー右配置オブジェクトの位置調整 */
-.content-pc [class*="header-links"] {
-  transform-origin: top right !important;
-  left: auto !important;
-  right: 207px;
-}
-.content-pc [class*="header-right-object"] {
-  transform-origin: top right !important;
-  left: auto !important;
-  right: 30px;
-}
-/* リンク：マウスオーバー時のデザイン */
-.content-pc [class^="fixed-header"] [class^="header-links"] [class^="link-"]:after,
-.content-pc #footer [class^="links"] [class^="link-"]:after {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  content: '';
-  width: 100%;
-  height: 1px;
-  background: #000;
-  -webkit-transform: scale(0, 1);
-  transform: scale(0, 1);
-  -webkit-transform-origin: right top;
-  transform-origin: right top;
-  -webkit-transition: -webkit-transform .3s;
-  transition: -webkit-transform .3s;
-  transition: transform .3s;
-  transition: transform .3s, -webkit-transform .3s;
-}
-.content-pc [class^="fixed-header"] [class^="header-links"] [class^="link-"]:hover::after,
-.content-pc #footer [class^="links"] [class^="link-"]:hover::after  {
-  -webkit-transform-origin: left top;
-  transform-origin: left top;
-  -webkit-transform: scale(1, 1);
-  transform: scale(1, 1);
-}
-.content-pc #footer [class^="links"] [class^="link-"]:after {
-  background: #fff;
-}
-
-/*---------------------------------------*/
-/* スマホデバイス*/
-/*---------------------------------------*/
-.content-sp [class*="fixed-header"] {
-  width: 100vw !important;
-  left: 0 !important;
-  position: fixed !important;
-  z-index: 6;
-  background-color: #fff !important;
-}
-
-.content-sp [class*="sp-btn-header-menu"] {
-  right: 18px !important;
-  left: auto !important;
-}
-
-.content-sp [class^="sp-wrap"] [class^="fixed-header"] {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-}
-.content-sp [class^="sp-wrap"] [class^="fixed-header"] [class^="logo"] {
-  left: 15px;
-}
-
-/* スマホメニュー */
-.content-sp [class*="sp-header-menu"] {
-  max-height: calc(100vh - 41px);
-  position:fixed !important;
-  left: auto !important;
-  right: 0 !important;
-  height: calc(100vh - 50px) !important;
-  top: 50px !important;
-  pointer-events: none;
-}
-.content-sp [class*="sp-header-menu"] [class^="scroll-wrap"] {
-  height: 100% !important;
-  padding-bottom: 140px;
-  box-sizing: content-box;
-  position: relative;
-}
-.content-sp [class*="sp-header-menu"] [class^="scroll-wrap"] [class*="bg"] {
-  height: 100% !important;
-}
-.content-sp [class*="sp-header-menu"] [class^="menu-content"] {
-  right: -100% !important;
-  left: auto !important;
-  transition: .3s all ease;
-  height: 100% !important;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-.content-sp [class*="sp-header-menu"].show {
-  pointer-events: auto;
-}
-.content-sp [class*="sp-header-menu"].show [class^="menu-content"] {
-  right: 0px !important;
-  background-color: #fff;
-}
-.content-sp [class*="sp-btn-header-menu"] {
-  cursor: pointer;
-}
-.content-sp [class*="sp-btn-header-menu"] [class*="open"] {
-  transition: .2s all ease;
-}
-.content-sp [class*="sp-btn-header-menu"] [class*="close"] {
-  transition: .2s all ease;
-  opacity: 0;
-}
-.content-sp [class*="sp-btn-header-menu"].show [class*="open"] {
-  opacity: 0;
-}
-.content-sp [class*="sp-btn-header-menu"].show [class*="close"] {
-  opacity: 1;
-}
-/* スマホメニュー 出現時アニメーション */
-.content-sp [class*="sp-header-menu"] [class*="scroll-wrap"] > [class*="anim"] > * {
-  transform: translate(150%, 0);
-  transition: 0.5s all ease;
-  display: block;
-}
-.content-sp [class*="sp-header-menu"].show [class*="scroll-wrap"] > [class*="anim"] > * {
-  transform: translate(0, 0);
-}
-.content-sp [class*="sp-header-menu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(1) {
-  transition-delay: 0s;
-}
-.content-sp [class*="sp-header-menu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(2) {
-  transition-delay: 0.05s;
-}
-.content-sp [class*="sp-header-menu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(3) {
-  transition-delay: 0.1s;
-}
-.content-sp [class*="sp-header-menu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(4) {
-  transition-delay: 0.15s;
-}
-.content-sp [class*="sp-header-menu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(5) {
-  transition-delay: 0.2s;
-}
-.content-sp [class*="sp-header-menu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(6) {
-  transition-delay: 0.25s;
-}
-.content-sp [class*="sp-header-menu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(7) {
-  transition-delay: 0.3s;
-}
-.content-sp [class*="sp-header-menu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(8) {
-  transition-delay: 0.35s;
-}
-.content-sp [class*="sp-header-menu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(9) {
-  transition-delay: 0.4s;
-}
-.content-sp [class*="sp-header-menu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(10) {
-  transition-delay: 0.45s;
-}
-.content-sp [class*="sp-header-menu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(11) {
-  transition-delay: 0.5s;
-}
-.content-sp [class*="sp-header-menu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(12) {
-  transition-delay: 0.55s;
-}
-
-/*---------------------------------------*/
-/* その他埋め込みコード用スタイル */
-/*---------------------------------------*/
-.content-pc #bownowembed {
-  background: #F2F2F2;
-  padding: 70px;
-}
-.content-sp #bownowembed {
-  width: 100vw;
-  left: 50% !important;
-  transform: translate(-50%, 0) !important;
-  padding: 10vh 5vw;
-}
-
-/*---------------------------------------*/
-/* アニメーション用スタイル */
-/*---------------------------------------*/
-
-
-/*---------------------------------------*/
-/* デザイン微調整 */
-/*---------------------------------------*/
-.content-sp [class*="tiktok-link-0010"] {
-  left: auto !important;
-  right: 60px;
 }

@@ -18,8 +18,8 @@ header('Content-Type: text/css; charset=utf-8');
   --minspbreakpoint: <?= ($config["minspbreakpoint"]["value"]); ?>px;
   --ratio-sp-tablet: <?= (($config["spbreakpoint"]["value"]) / ($config["tabletbreakpoint"]["value"])); ?>;
   --ratio-minsp-smallsp: <?= (($config["minspbreakpoint"]["value"]) / ($config["smallspbreakpoint"]["value"])); ?>;
-  --loading_speed: <?= ($config["loading_speed"]["value"])/1000; ?>s;
-  --loading_background: <?= ($config["loading_background"]["value"]); ?>;
+  --loading-speed: <?= ($config["loading_speed"]["value"])/1000; ?>s;
+  --loading-background: <?= ($config["loading_background"]["value"]); ?>;
 }
 
 

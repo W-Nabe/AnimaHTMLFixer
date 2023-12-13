@@ -61,4 +61,5 @@ https://lean-system.co.jp/_watanabe/leancoding/
 - メニューは、sp-wrapと同じ階層に、fixed-sp-header-menuというグループを作成し、その配下はサンプルに則って作成してください。
 
 ### アニメーション
-Animaのプラグインでもアニメーションを追加することは可能ですが、「./anima/css/animate.css」のクラス名に基づいてレイヤー名に「anim-fadeIn」などを追加すると、手軽にアニメーションさせることができます。
+Animaのプラグインでもアニメーションを追加することは可能ですが、「./anima/css/animate.css」のクラス名に基づいてレイヤー名に「anim-fadeIn」などを追加すると、手軽にアニメーションさせることができます。  
+アニメーションの種類：https://animate.style/

@@ -13,3 +13,16 @@
   transform: scale(var(--ratio-sp-tablet)) translate(-50%, 25%);
   width: 155%;
 }
+
+.content-pc [class^="fixed-header"] [class*="align-left"] {
+  transform: scale(0.8);
+  transform-origin: center left;
+}
+.content-pc [class^="fixed-header"] [class*="align-center"] {
+  transform: scale(0.8);
+  transform-origin: center center;
+}
+.content-pc [class^="fixed-header"] [class*="align-right"] {
+  transform: scale(0.8);
+  transform-origin: center right;
+}

@@ -214,7 +214,7 @@ function removeUnusedScreen($dom)
   }
 
   $target = htmlspecialchars($_COOKIE['windowWidth']) < $spbreakpoint["value"] ? '[class*="pc-wrap"]' : '[class*="sp-wrap"]';
-  $dom->first($target)->parent()->parent()->remove();
+  $dom->first($target)->parent()->remove();
 }
 
 /*
@@ -226,6 +226,15 @@ function removeUnusedScreen($dom)
 function output($dom) {
   global $config;
   $output = $dom->format()->html();
+
+  // container-center-horizontalが無い場合、挿入
+  if(strpos($output, 'container-center-horizontal') === false) {
+    $pattern = '/<input type="hidden" id="anPageName" name="page" value="([^"]+)">/';
+    preg_match($pattern, $output, $matches);
+    $inputHidden = $matches[0];
+    $output = str_replace($inputHidden, $inputHidden.'<div class="container-center-horizontal">', $output);
+    $output = str_replace("</body>","</div></body>", $output);
+  }
 
   // bodyタグの直後、body終了タグの直前に挿入
   $bodyTop = file_get_contents("./anima/config/{$config["insert_body_top"]["value"]}", true);

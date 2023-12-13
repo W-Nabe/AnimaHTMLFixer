@@ -11,7 +11,7 @@ jquery_perfect-scrollbar,FALSE,//cdnjs.cloudflare.com/ajax/libs/jquery.perfect-s
 jquery_easing,TRUE,//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js,エフェクトの動きを加速/減速させるための関数用jQueryライブラリ
 jquery_inview,TRUE,./anima/js/lib/jquery.inview.min.js,エフェクトの動きを加速/減速させるための関数用jQueryライブラリ
 loading,TRUE,,ローディング画面の使用
-loading_speed,TRUE,500,ローディング画面の表示スピード
+loading_speed,TRUE,500,ローディング画面の表示スピード(ミリ秒で記述・単位無し)
 loading_image,TRUE,loading.png,ローディング時の画像
 loading_image_2x,TRUE,loading@2x.png,ローディング時のretina用画像
 loading_background,TRUE,#fff,ローディング時の背景画像

@@ -125,6 +125,3 @@ changeImgDataOriginalToSrc($dom->find("div[class^='pc-wrap'] div[class*='slick']
 changeImgDataOriginalToSrc($dom->find("div[class^='sp-wrap'] div[class*='slick'] img"));
 
 loadViewIncfile($dom);
-
-// DOMをhtmlとして表示
-echo output($dom);
