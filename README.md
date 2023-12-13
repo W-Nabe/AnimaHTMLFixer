@@ -74,7 +74,9 @@ Animaのプラグインでもアニメーションを追加することは可能
 ### h1~h6、p要素
 グループ名・レイヤー名の先頭に「h1-」「h2-」「h3-」「h4-」「h5-」「h6-」「p-」と付けることで、対応した要素が作成されます。
 
-
+## Figma上の注意点
+すべてのレイヤーの制約を以下に設定してください。  
+![image](https://github.com/W-Nabe/Anima-WebPage/assets/9455153/6b7378c4-63ca-43ed-ad0e-fbb469b4e6c0)
 
 
 ## LEANSYSTEMへのご依頼
