@@ -188,6 +188,12 @@ span[class*="span"] {
   position: absolute;
   pointer-events: none;
 }
+/* 上下左右中央寄せ */
+[class*="content-center"] {
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
 /* コンテンツ：z-indexが付いているクラス名の要素を上に配置 */
 [class*="z-index"] {
   z-index: 1;
@@ -467,77 +473,90 @@ span[class*="span"] {
 .content-sp [class*="fixed-spmenu"] {
   position:fixed !important;
   left: auto !important;
-  right: -100% !important;
+  right: 0 !important;
   height: 100vh !important;
   top: 0px !important;
-  pointer-events: none;
   z-index: 11;
+  width: 100vw !important;
+  pointer-events: none;
 }
-.content-sp [class*="fixed-spmenu"] [class^="menuwrap"] {
-  height: 100% !important;
-  padding-bottom: 140px;
-  box-sizing: content-box;
-  position: relative;
-}
-.content-sp [class*="fixed-spmenu"] [class^="menuwrap"] [class*="bg"] {
-  height: 100% !important;
-}
-.content-sp [class*="fixed-spmenu"] [class^="menu-content"] {
+.content-sp [class*="fixed-spmenu"] > [class^="wrap"] {
+  transition: .3s all ease;
   right: -100% !important;
   left: auto !important;
-  transition: .3s all ease;
   height: 100% !important;
+  width: 100% !important;
   overflow-y: scroll;
   overflow-x: hidden;
 }
+.content-sp [class*="fixed-spmenu"] > [class^="wrap"] [class*="spmenu-close-btn"]  {
+  left: auto !important;
+  right: 30px !important;
+  top: 30px !important;
+  z-index: 1;
+}
+.content-sp [class*="fixed-spmenu"] > [class^="wrap"] > [class^="menu"] {
+  height: 100% !important;
+  box-sizing: content-box;
+  position: relative;
+}
+.content-sp [class*="fixed-spmenu"] > [class^="wrap"] > [class^="menu"] [class*="bg"] {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
 .content-sp [class*="fixed-spmenu"].show {
-  right: 0px !important;
   pointer-events: auto;
+}
+.content-sp [class*="fixed-spmenu"].show > [class^="wrap"] {
+  right: 0 !important;
 }
 
 /* スマホメニュー 出現時アニメーション */
-.content-sp [class*="fixed-spmenu"] [class*="scroll-wrap"] > [class*="anim"] > * {
+.content-sp [class*="fixed-spmenu"] [class*="menu"] [class*="animlinks"] > * {
   transform: translate(150%, 0);
   transition: 0.5s all ease;
   display: block;
 }
-.content-sp [class*="fixed-spmenu"].show [class*="scroll-wrap"] > [class*="anim"] > * {
+.content-sp [class*="fixed-spmenu"].show [class*="menu"] [class*="animlinks"] > * {
   transform: translate(0, 0);
 }
-.content-sp [class*="fixed-spmenu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(1) {
+.content-sp [class*="fixed-spmenu"].show [class*="menu"] [class*="animlinks"] > *:nth-child(1) {
   transition-delay: 0s;
 }
-.content-sp [class*="fixed-spmenu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(2) {
+.content-sp [class*="fixed-spmenu"].show [class*="menu"] [class*="animlinks"] > *:nth-child(2) {
   transition-delay: 0.05s;
 }
-.content-sp [class*="fixed-spmenu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(3) {
+.content-sp [class*="fixed-spmenu"].show [class*="menu"] [class*="animlinks"] > *:nth-child(3) {
   transition-delay: 0.1s;
 }
-.content-sp [class*="fixed-spmenu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(4) {
+.content-sp [class*="fixed-spmenu"].show [class*="menu"] [class*="animlinks"] > *:nth-child(4) {
   transition-delay: 0.15s;
 }
-.content-sp [class*="fixed-spmenu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(5) {
+.content-sp [class*="fixed-spmenu"].show [class*="menu"] [class*="animlinks"] > *:nth-child(5) {
   transition-delay: 0.2s;
 }
-.content-sp [class*="fixed-spmenu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(6) {
+.content-sp [class*="fixed-spmenu"].show [class*="menu"] [class*="animlinks"] > *:nth-child(6) {
   transition-delay: 0.25s;
 }
-.content-sp [class*="fixed-spmenu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(7) {
+.content-sp [class*="fixed-spmenu"].show [class*="menu"] [class*="animlinks"] > *:nth-child(7) {
   transition-delay: 0.3s;
 }
-.content-sp [class*="fixed-spmenu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(8) {
+.content-sp [class*="fixed-spmenu"].show [class*="menu"] [class*="animlinks"] > *:nth-child(8) {
   transition-delay: 0.35s;
 }
-.content-sp [class*="fixed-spmenu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(9) {
+.content-sp [class*="fixed-spmenu"].show [class*="menu"] [class*="animlinks"] > *:nth-child(9) {
   transition-delay: 0.4s;
 }
-.content-sp [class*="fixed-spmenu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(10) {
+.content-sp [class*="fixed-spmenu"].show [class*="menu"] [class*="animlinks"] > *:nth-child(10) {
   transition-delay: 0.45s;
 }
-.content-sp [class*="fixed-spmenu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(11) {
+.content-sp [class*="fixed-spmenu"].show [class*="menu"] [class*="animlinks"] > *:nth-child(11) {
   transition-delay: 0.5s;
 }
-.content-sp [class*="fixed-spmenu"].show [class*="scroll-wrap"] > [class*="anim"] > *:nth-child(12) {
+.content-sp [class*="fixed-spmenu"].show [class*="menu"] [class*="animlinks"] > *:nth-child(12) {
   transition-delay: 0.55s;
 }
 

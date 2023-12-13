@@ -435,22 +435,24 @@ $(window).on('scroll', function(){
 
 // ************************************** //
 // ** クリック時のアクション
-$('#designcheck-btn').on('click', function() {
+$('body').on('click', '#designcheck-btn', function() {
   $('#designcheck').fadeToggle();
 });
 
-$('body').on('click', '[class^="fixed-totop"]',function(){
+$('body').on('click', '[class^="fixed-pagetop"], [class^="fixed-totop"], [class^="pagetop"]',function(){
   $('body,html').stop().animate({scrollTop:0}, 1000, 'easeOutExpo');
 });
 
-$('[class*="sp-btn-header-menu"]').on('click',function(){
-  if($(this).hasClass('show')) {
-    $(this).removeClass('show');
-    $('[class^="sp-wrap"]').parent().find('[class*="sp-header-menu"]').removeClass('show');
-  } else {
-    $(this).addClass('show');
-    $('[class^="sp-wrap"]').parent().find('[class*="sp-header-menu"]').addClass('show');
-  }
+$('body').on('click', '[class*="spmenu-open-btn"]',function(){
+  $('[class^="sp-wrap"]').parent().find('[class*="fixed-spmenu"]').addClass('show');
+});
+
+$('body').on('click', '[class*="spmenu-close-btn"]',function(){
+  $('[class^="sp-wrap"]').parent().find('[class*="fixed-spmenu"]').removeClass('show');
+});
+
+$('body').on('click', '[class*="fixed-spmenu"] [class*="link-"]',function(){
+  $('[class*="fixed-spmenu"]').removeClass('show');
 });
 
 

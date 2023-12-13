@@ -790,22 +790,13 @@
 .index .align-left-q1vLZB {
   background-color: transparent;
   height: 70px;
-  left: 47px;
+  left: calc(50.00% - 673px);
   position: absolute;
   top: 25px;
   width: 112px;
 }
 
-.index .link-home-v2yu9O {
-  background-color: transparent;
-  height: 70px;
-  left: calc(50.00% - 56px);
-  position: relative;
-  top: 0px;
-  width: 112px;
-}
-
-.index .logo-kpifOx {
+.index .link-home-seo-leanlogo-v2yu9O {
   background-color: transparent;
   height: 70px;
   left: calc(50.00% - 56px);
@@ -1519,7 +1510,7 @@
   width: 413px;
 }
 
-.index-sp .link-0004-rIxofl {
+.index-sp .link-animlist-rIxofl {
   background-color: transparent;
   height: auto;
   left: calc(50.00% - 100px);
@@ -1685,7 +1676,6 @@
   background-color: var(--white);
   height: 120px;
   left: calc(50.00% - 374px);
-  width: 744px;
 }
 
 .index-sp .leancoding-by-leansystem-xXZCnG {
@@ -1722,13 +1712,22 @@
 .index-sp .fixed-spmenu-xls0kk {
   background-color: transparent;
   height: 780px;
-  left: 1px;
+  left: 0px;
   position: absolute;
   top: 0px;
   width: 744px;
 }
 
-.index-sp .spmenu-close-btn-mknEkq {
+.index-sp .wrap-mknEkq {
+  background-color: transparent;
+  height: 780px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 744px;
+}
+
+.index-sp .spmenu-close-btn-QznxxT {
   background-color: transparent;
   height: 20px;
   left: calc(50.00% + 321px);
@@ -1737,7 +1736,7 @@
   width: 20px;
 }
 
-.index-sp .menu-wrap-mknEkq {
+.index-sp .menu-QznxxT {
   background-color: transparent;
   height: 780px;
   left: calc(50.00% - 372px);
@@ -1746,14 +1745,13 @@
   width: 744px;
 }
 
-.index-sp .bg-fnouXa {
+.index-sp .bg-Jinx0o {
   background-color: transparent;
   height: 780px;
   left: calc(50.00% - 372px);
-  width: 743px;
 }
 
-.index-sp .links-fnouXa {
+.index-sp .content-center-Jinx0o {
   background-color: transparent;
   height: 175px;
   left: 316px;
@@ -1762,23 +1760,30 @@
   width: 112px;
 }
 
-.index-sp .link-home-UPzhU8 {
+.index-sp .animlinks-U1YZoq {
   background-color: transparent;
+  height: 175px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 112px;
+}
+
+.index-sp .link-home-VIK3xJ {
   height: 16px;
   left: calc(50.00% - 24px);
   position: absolute;
-  top: 0px;
   width: 50px;
 }
 
-.index-sp .text_label-zHqSLn {
+.index-sp .text_label-l8LjUc {
   left: calc(50.00% - 25px);
   line-height: 16px;
   top: 0px;
   white-space: nowrap;
 }
 
-.index-sp .link-page-UPzhU8 {
+.index-sp .link-page-VIK3xJ {
   background-color: transparent;
   height: 16px;
   left: calc(50.00% - 56px);
@@ -1787,14 +1792,14 @@
   width: 114px;
 }
 
-.index-sp .text_label-CjMIxa {
+.index-sp .text_label-xQQbAs {
   left: calc(50.00% - 57px);
   line-height: 16px;
   top: 0px;
   white-space: nowrap;
 }
 
-.index-sp .link-contact-UPzhU8 {
+.index-sp .link-contact-VIK3xJ {
   background-color: transparent;
   height: 16px;
   left: calc(50.00% - 48px);
@@ -1803,14 +1808,14 @@
   width: 98px;
 }
 
-.index-sp .text_label-ucmUkp {
+.index-sp .text_label-xx58YX {
   left: calc(50.00% - 49px);
   line-height: 16px;
   top: 0px;
   white-space: nowrap;
 }
 
-.index-sp .link-git-UPzhU8 {
+.index-sp .link-git-VIK3xJ {
   background-color: transparent;
   height: 32px;
   left: calc(50.00% - 16px);
@@ -1828,6 +1833,59 @@
   width: 744px;
 }
 
+.index-sp .area-W8MzAH {
+  background-color: #ffffff03;
+  height: 60px;
+  left: calc(50.00% - 372px);
+  opacity: 0.01;
+  position: absolute;
+  top: 0px;
+  width: 744px;
+}
+
+.index-sp .align-center-W8MzAH {
+  background-color: transparent;
+  height: 45px;
+  left: 330px;
+  position: absolute;
+  top: 10px;
+  width: 83px;
+}
+
+.index-sp .link-home-P7u5wI {
+  height: 45px;
+  left: calc(50.00% - 42px);
+  position: relative;
+  width: 83px;
+}
+
+.index-sp .logo-V6w756 {
+  background-color: transparent;
+  height: 45px;
+  left: calc(50.00% - 42px);
+  position: absolute;
+  top: 0px;
+  width: 83px;
+}
+
+.index-sp .align-right-W8MzAH {
+  background-color: transparent;
+  height: 13px;
+  left: calc(50.00% + 328px);
+  position: absolute;
+  top: 24px;
+  width: 20px;
+}
+
+.index-sp .spmenu-open-btn-KJfq5f {
+  background-color: transparent;
+  height: 13px;
+  left: calc(50.00% - 10px);
+  position: absolute;
+  top: 0px;
+  width: 20px;
+}
+
 .index-sp .anim-fade-in-up {
   background-color: transparent;
   position: absolute;
@@ -1835,6 +1893,12 @@
 
 .index-sp .bg {
   position: absolute;
+  top: 0px;
+  width: 744px;
+}
+
+.index-sp .link-home {
+  background-color: transparent;
   top: 0px;
 }
 @media screen and (max-width: 1919px) {
