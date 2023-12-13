@@ -122,9 +122,11 @@ div[class^='pc-wrap'] img.show, div[class^='sp-wrap'] img.show {
 }
 .container-center-horizontal .content-pc {
   width: var(--maxpcbreakpoint) !important;
+  min-height: auto !important;
 }
 .container-center-horizontal .content-sp {
   width: var(--spbreakpoint) !important;
+  min-height: auto !important;
 }
 
 /* .screen を必ず表示するために block にする*/
