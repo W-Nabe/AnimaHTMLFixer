@@ -1,7 +1,11 @@
 /*
-ABOUT : script.jsで読み込まれる、LEANSYSTEM制作のAnimaJSのコアファイル
-※このファイルは、htmlドキュメントを最後まで読んだ直後のタイミングで実行されます。
-*/
+ *
+ * © LEANSYSTEM
+ * Contact: nabe@lean-system.co.jp
+ *
+ * Figma・XDでのAnimaの使用方法やプログラムについてのご質問、ご相談などありましたらお気軽にお問い合わせください。
+ * 
+ */
 
 
 // func.Js読み込み用関数

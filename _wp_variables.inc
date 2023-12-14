@@ -1,7 +1,13 @@
 <?php
 /*
-* WordPress用の変数
-*/
+ * WordPress用の変数
+ *
+ * © LEANSYSTEM
+ * Contact: nabe@lean-system.co.jp
+ *
+ * Figma・XDでのAnimaの使用方法やプログラムについてのご質問、ご相談などありましたらお気軽にお問い合わせください。
+ *
+ */
 
 // ホームURL
 if(function_exists('home_url')) {

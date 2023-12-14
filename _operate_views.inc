@@ -1,11 +1,17 @@
 <?php
 /*
+ * © LEANSYSTEM
+ * Contact: nabe@lean-system.co.jp
+ *
+ * Figma・XDでのAnimaの使用方法やプログラムについてのご質問、ご相談などありましたらお気軽にお問い合わせください。
+ *
+ * ------------
+ *
  * GETパラメータ「view」によってレンダーするファイルを切り替え、DIDOMでHTMLを書き換え出力する
  * _didom_functionsの関数を使用し、HTMLコードを最終的に生成するファイル
  *
  * Animaでエクスポートしたファイルを、anima/view配下に置く
  *
- * @author 永田実 nagata@lean-system.co.jp
  */
 
 require_once("./_didom_functions.inc");
