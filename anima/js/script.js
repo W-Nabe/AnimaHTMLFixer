@@ -20,22 +20,6 @@ var loadScript = function(src, callback = "") {
   }
 }
 
-// jquery　perfect-scrollbar
-setTimeout(() => { // すぐに使わないため、遅延読み込み
-  loadScript('//cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.5.2/perfect-scrollbar.min.js');
-  $('head').append('<link href="//cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.5.2/css/perfect-scrollbar.min.css" rel="stylesheet">');
-
-  // Overlayコンテンツ用にperfect scrollbarを適用
-  if( $('.wrap-overlay > .content > .inner').length != 0 ) {
-    setTimeout(() => {
-      var ps = new PerfectScrollbar('.wrap-overlay > .content > .inner');
-    },500);
-  }
-},3000);
-
-// jquery　easing
-loadScript('//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js');
-
 
 
 // ************************************** //

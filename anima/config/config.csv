@@ -6,10 +6,6 @@ tabletbreakpoint,TRUE,1140,タブレットブレイクポイント（PCからタ
 spbreakpoint,TRUE,744,スマホブレイクポイント（PCorタブレットからスマホに切り替わるときなどに使用）
 smallspbreakpoint,TRUE,375,iPhone5等の横幅の小さいスマホのブレイクポイント
 minspbreakpoint,TRUE,320,スマホ最小横幅サイズ
-jquery_slick,TRUE,//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js,カルーセルコンテンツ用のjQueryライブラリ
-jquery_perfect-scrollbar,FALSE,//cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.5.2/perfect-scrollbar.min.js,スクロールバー付きコンテンツ作成用jQueryライブラリ
-jquery_easing,TRUE,//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js,エフェクトの動きを加速/減速させるための関数用jQueryライブラリ
-jquery_inview,TRUE,./anima/js/lib/jquery.inview.min.js,エフェクトの動きを加速/減速させるための関数用jQueryライブラリ
 loading,TRUE,,ローディング画面の使用
 loading_speed,TRUE,500,ローディング画面の表示スピード(ミリ秒で記述・単位無し)
 loading_image,TRUE,loading.png,ローディング時の画像
@@ -18,5 +14,3 @@ loading_background,TRUE,#fff,ローディング時の背景画像
 favicon,TRUE,favicon.svg,ファビコンの使用
 touchicon,TRUE,touchicon.png,iPhoneやAndroidのタッチアイコン画像
 ogp_image_common,TRUE,ogp.png,サイト全体の共通ogp画像
-insert_body_top,TRUE,insert_body_top.txt,<body>の直後に挿入
-insert_body_bottom,TRUE,insert_body_bottom.txt,</body>の直前に挿入

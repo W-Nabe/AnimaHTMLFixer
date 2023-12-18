@@ -245,8 +245,8 @@ function output($dom) {
   }
 
   // bodyタグの直後、body終了タグの直前に挿入
-  $bodyTop = file_get_contents("./anima/config/{$config["insert_body_top"]["value"]}", true);
-  $bodyBottom = file_get_contents("./anima/config/{$config["insert_body_bottom"]["value"]}", true);
+  $bodyTop = file_get_contents("./anima/config/insert_body_top.txt", true);
+  $bodyBottom = file_get_contents("./anima/config/insert_body_bottom.txt", true);
   $output = str_replace("</body>",$bodyBottom."</body>", $output);
   preg_match('/<body[^>]*>/', $output, $bodytag);
   $output = str_replace($bodytag[0],$bodytag[0].$bodyTop, $output); 
