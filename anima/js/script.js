@@ -177,57 +177,6 @@ loading();
 
 
 // ************************************** //
-// ** SLICK スライド要素
-// funk.Slick
-var slick = function() {
-  $('[class*="slick"] [class*="show"]').each(function() {
-    $(this).find('[class*="slide"]').removeClass(function(index, className) {
-      return (className.match(/\bslide-\S+/g) || []).join(' ');
-  });
-
-    v = $(this).attr('class');
-    switch (true) {
-      case /show1/.test(v):
-        show = 1;
-        break;
-      case /show2/.test(v):
-        show = 2;
-        break;
-      case /show3/.test(v):
-        show = 3;
-        break;
-      case /show4/.test(v):
-        show = 4;
-        break;
-      default:
-        show = 1;
-        break;
-    }
-
-    if($(this).hasClass('slick-initialized')) {
-      $(this).slick('unslick');
-    }
-
-    $(this).slick({
-      prevArrow: '<span class="slick-arrows prev"></span>',
-      nextArrow: '<span class="slick-arrows next"></span>',
-      dots: true,
-      infinite: true,
-      cssEase: 'ease',
-      speed: 1000,
-      slidesToShow: show,
-      adaptiveHeight: true,
-      autoplay: true,
-      autoplaySpeed: 5000,
-      fade: true
-    });
-  });
-};
-
-if(ISUSE_SLICK) slick();
-
-
-// ************************************** //
 // ** 各デバイスの処理（ウィンドウサイズ切り替え時のイベント）変数は予めvariable.phpで設定
 
 var window_width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;

@@ -22,13 +22,13 @@ global $view;
 
 <?php // 共通JSの読み込み ?>
 <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
 <script src="./anima/js/variable.php" defer></script>
 <script src="./anima/js/script.js" defer></script>
 
 <?php // VIEWに応じたJSの読み込み ?>
-<?php if (file_exists("./anima/js/{$view}.js")): ?>
-  <script src="./anima/js/<?= $view ?>.js" defer></script>
+<?php if (file_exists("./anima/js/page/{$view}.js")): ?>
+  <script src="./anima/js/page/<?= $view ?>.js" defer></script>
 <?php endif; ?>
 
 <?php // 共通CSS ?>
@@ -37,12 +37,12 @@ global $view;
 <link rel="stylesheet" type="text/css" href="./anima/css/style.css">
 
 <?php // VIEWに応じたCSSの読み込み ?>
-<?php if (file_exists("./anima/css/{$view}.css")): ?>
-  <link rel="stylesheet" type="text/css" href="./anima/css/<?= $view ?>.css">
+<?php if (file_exists("./anima/css/page/{$view}.css")): ?>
+  <link rel="stylesheet" type="text/css" href="./anima/css/page/<?= $view ?>.css">
 <?php endif; ?>
 
-<link rel="stylesheet" type="text/css" href="./anima/css/media/tablet.css" media="screen and (max-width: <?= ($config["tabletbreakpoint"]["value"] - 1); ?>px)">
-<link rel="stylesheet" type="text/css" href="./anima/css/media/smallsp.css" media="screen and (max-width: <?= ($config["smallspbreakpoint"]["value"] - 1); ?>px)">
+<link rel="stylesheet" type="text/css" href="./anima/css/_tablet.css" media="screen and (max-width: <?= ($config["tabletbreakpoint"]["value"] - 1); ?>px)">
+<link rel="stylesheet" type="text/css" href="./anima/css/_smallsp.css" media="screen and (max-width: <?= ($config["smallspbreakpoint"]["value"] - 1); ?>px)">
 
 <?php // アイコン ?>
 <link rel="icon" type="image/x-icon" href="./anima/images/<?= $config["favicon"]["value"] ?>">

@@ -17,7 +17,6 @@ const MINSP_BREAKPOINT = <?= ($config["minspbreakpoint"]["value"]); ?>; // 最�
 const RATIO_SP_TABLET = <?= (($config["spbreakpoint"]["value"]) / ($config["tabletbreakpoint"]["value"])); ?>;
 const RATIO_MINSP_SMALLSP = <?= (($config["minspbreakpoint"]["value"]) / ($config["smallspbreakpoint"]["value"])); ?>;
 const LOADINGSPEED = <?= ($config["loading_speed"]["value"])/1000; ?>; // ロード画面の速さ（ミリ秒）
-const ISUSE_SLICK = <?= ($config["jquery_slick"]["isuse"]) ?>; // SLICK使用・不使用
 const urlHash = location.hash;  //URLのハッシュ値を取得
 
 
