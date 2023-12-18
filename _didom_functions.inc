@@ -208,21 +208,29 @@ function removeUnusedScreen($dom)
   global $config;
   $spbreakpoint = $config["spbreakpoint"];
   if (!$spbreakpoint["isuse"]) return;
-
-  $pcWraps = $dom->find('[class*="pc-wrap"]');
-  if(count($pcWraps) > 0) {
-    $currentClasses = $pcWraps[0]->parent()->getAttribute("class");
-    $pcWraps[0]->parent()->setAttribute("class", "$currentClasses content-pc");
-  }
-
+  
   $spWraps = $dom->find('[class*="sp-wrap"]');
-  if(count($spWraps) > 0) {
-    $currentClasses = $spWraps[0]->parent()->getAttribute("class");
-    $spWraps[0]->parent()->setAttribute("class", "$currentClasses content-sp");
-  }
+  $pcWraps = $dom->find('[class*="pc-wrap"]');
 
-  $target = htmlspecialchars($_COOKIE['windowWidth']) < $spbreakpoint["value"] ? '[class*="pc-wrap"]' : '[class*="sp-wrap"]';
-  $dom->first($target)->parent()->remove();
+  if($_COOKIE['windowWidth'] < $spbreakpoint["value"]) {
+    // スマホ表示
+    if(count($spWraps) > 0) {
+      $currentClasses = $spWraps[0]->parent()->getAttribute("class");
+      $spWraps[0]->parent()->setAttribute("class", "$currentClasses content-sp");
+    }
+    if(count($pcWraps) > 0) {
+      $pcWraps->parent()->remove();
+    }
+  } else {
+    // パソコン表示
+    if(count($pcWraps) > 0) {
+      $currentClasses = $pcWraps[0]->parent()->getAttribute("class");
+      $pcWraps[0]->parent()->setAttribute("class", "$currentClasses content-pc");
+    }
+    if(count($spWraps) > 0) {
+      $spWraps->parent()->remove();
+    }
+  }
 }
 
 /*
@@ -609,6 +617,125 @@ function changeCssHrefToReplaceCss($csses, $file, $path) {
   foreach ($csses as $css) {
     $css->attr("href", $path.'/anima/css/replace-viewcss/'.$file);
   }
+}
+
+
+/*
+ * replace-svg/にSVGが存在する場合、changeSvgSrcToReplaceSvg()で各imgタグを置き換える
+ * 
+ * @param $dom ドキュメントのDOM
+*/
+function replaceSvg($dom) {
+  global $theme_uri;
+  $path = __DIR__ .'/anima/images/replace-svg/';
+  $replacePath = $theme_uri.'/anima/images/replace-svg/';
+  $replaceSvgs = glob($path.'*');
+  foreach ($replaceSvgs as $src) {
+    $src = str_replace($path, '/', $src);
+    $svg = file_get_contents($path.$src);
+    $filename = pathinfo($src, PATHINFO_FILENAME);
+    changeSvgSrcToReplaceSvg($dom->find('img[src*="'.$filename.'"]'), $svg);
+  }
+}
+
+/*
+ * 指定された<img>をSVGデータに置き換える
+ * 
+ * @param $imgs 処理する<img>の配列
+ * @param $svg SVGデータ
+*/  
+function changeSvgSrcToReplaceSvg($imgs, $svg) {
+  foreach ($imgs as $img) {
+    $svgElm = new Didom\Element('svg');
+    $svgElm->setInnerHtml($svg);
+
+    // imgタグの属性をコピー 
+    foreach ($img->attributes() as $name => $value) {
+      if ($name !== 'src') {
+        $svgElm->setAttribute($name, $value);
+      }
+    }
+
+    // 元のクラス名を取得
+    $originalClasses = $img->getAttribute('class');
+
+    // 元のクラス名があればスペースで区切って追加
+    if ($originalClasses) {
+      $svgElm->setAttribute('class', $originalClasses . ' anim-svg');
+    } else {
+      $svgElm->setAttribute('class', 'anim-svg');  
+    }
+    
+    $img->replace($svgElm);
+  }
+}
+
+/**
+ * anim-text-enterクラスの要素内のテキストを1文字ずつbで囲む
+ * 
+ * @param $elems 対象の要素配列 
+ */
+function wrapEachTextWithB($elems) {
+  $prevParentClass = '';
+  $index = 1;
+
+  foreach ($elems as $elem) {
+
+    // 最深部のすべてのspan要素を取得
+    $deepestSpans = findDeepestSpans($elem);
+
+    foreach ($deepestSpans as $deepestSpan) {
+
+      $text = trim($deepestSpan->text());
+      if (!$text) continue;
+
+      $html = '';
+      for($i = 0; $i < mb_strlen($text); $i++) {
+
+        // 親要素を再帰的にたどる
+        $parentClass = getParentClass($elem);
+        // 前の要素の親クラスと比較
+        $index = ($parentClass === $prevParentClass) ? $index + 1 : 1;
+        // 現在の親クラスを保存
+        $prevParentClass = $parentClass;
+
+        $html .= '<b class="entertxt-'.$index.'">'.mb_substr($text, $i, 1).'</b>';
+      }
+
+      $newSpan = new Didom\Element('span', null, $deepestSpan->attributes());
+      $newSpan->setInnerHtml($html);
+
+      $elem->replace($newSpan);
+    }
+  }
+}
+
+// wrapEachTextWithBで使用
+function getParentClass($elem) {
+
+  $parentAttrs = $elem->parent()->attributes();
+  // anim-text-enterが含まれる親要素がみつかるまで再帰
+  if (isset($parentAttrs['class']) && strpos($parentAttrs['class'], 'anim-text-enter') !== false) {
+    return $parentAttrs['class'];
+  }
+  return getParentClass($elem->parent()); 
+}
+
+// wrapEachTextWithBで使用
+function findDeepestSpans($elem) {
+  $spans = $elem->find('span');
+  
+  $deepestSpans = [];
+
+  foreach ($spans as $span) {
+    $childSpans = $elem->find('span');
+    if(count($childSpans) == 1) {
+      // 子にspanがなければ、そのspan自体を追加
+      $deepestSpans[] = $span;
+    }
+  }
+
+  return $deepestSpans;
 }
 
 

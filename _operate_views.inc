@@ -50,13 +50,13 @@ global $view;
 <link rel="icon" type="image/png" href="./anima/images/<?= $config["touchicon"]["value"] ?>" sizes="192x192">
 
 <?php // タイトル ?>
-<title><?= $meta["title"] ?></title>
+<title><?= $meta["title"] ?? "" ?></title>
 
 <?php // OGP情報 ?>
 <meta property="og:site_name" content="<?= $config["sitetitle"]["value"] ?>">
-<meta name="description" content="<?= $meta["description"] ?>">
-<meta name="og:description" content="<?= $meta["description"] ?>">
-<meta name="keywords" content="<?= $meta["keywords"] ?>">
+<meta name="description" content="<?= $meta["description"] ?? "" ?>">
+<meta name="og:description" content="<?= $meta["description"] ?? "" ?>">
+<meta name="keywords" content="<?= $meta["keywords"] ?? "" ?>">
 <meta property="og:url" content="<?= getCurrentUrlWithoutHash() ?>">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:locale" content="ja_JP">
