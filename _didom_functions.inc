@@ -219,7 +219,7 @@ function removeUnusedScreen($dom)
       $spWraps[0]->parent()->setAttribute("class", "$currentClasses content-sp");
     }
     if(count($pcWraps) > 0) {
-      $pcWraps->parent()->remove();
+      $dom->first('[class*="pc-wrap"]')->parent()->remove();
     }
   } else {
     // パソコン表示
@@ -228,7 +228,7 @@ function removeUnusedScreen($dom)
       $pcWraps[0]->parent()->setAttribute("class", "$currentClasses content-pc");
     }
     if(count($spWraps) > 0) {
-      $spWraps->parent()->remove();
+      $dom->first('[class*="sp-wrap"]')->parent()->remove();
     }
   }
 }
