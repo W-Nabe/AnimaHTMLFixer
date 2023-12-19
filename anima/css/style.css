@@ -73,6 +73,13 @@ html em {
   display: none !important;
 }
 
+/* float clear */
+[class*="clearfix"]:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
 /* data-original用 */
 div[class^='pc-wrap'] img :not(.firstview img), div[class^='sp-wrap'] img :not(.firstview img) {
   transition: opacity 5s ease;
@@ -507,6 +514,7 @@ span[class*="span"] {
 }
 .content-sp [class*="fixed-spmenu"] > [class^="wrap"] > [class^="menu"] {
   height: 100% !important;
+  width: 100% !important;
   box-sizing: content-box;
   position: relative;
 }
