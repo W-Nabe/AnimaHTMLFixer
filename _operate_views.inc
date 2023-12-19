@@ -131,4 +131,3 @@ changeImgSrcToDataOriginal($dom->find("div[class^='sp-wrap'] img"));
 changeImgDataOriginalToSrc($dom->find("div[class^='pc-wrap'] div[class*='slick'] img"));
 changeImgDataOriginalToSrc($dom->find("div[class^='sp-wrap'] div[class*='slick'] img"));
 
-loadViewIncfile($dom);

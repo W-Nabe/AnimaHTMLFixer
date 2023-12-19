@@ -34,16 +34,6 @@ function loadConfigCsv() {
   return $csv;
 }
 
-function loadViewIncfile($dom) {
-  global $view;
-  global $config;
-
-  $filename = 'anima/include/'.$view.'.inc';
-  if (file_exists($filename))  require_once($filename);
-
-  return;
-}
-
 /*
  * {$view}.htmlの存在をチェックし、ファイル名を返す
  *
