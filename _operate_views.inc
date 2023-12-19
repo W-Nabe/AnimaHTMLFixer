@@ -132,6 +132,9 @@ wrapChildSpanForAnimate($dom->find("[class*='anim-wipe']")); // 子要素を<spa
 // figma命名規則：anim-text-enter
 wrapEachTextWithB($dom->find('[class*="anim-text-enter"] span')); // anim-text-enterクラスの要素内のテキストを1文字ずつbで囲む
 
+// figma命名規則：inc-***
+replaceIncContent($dom->find("*[class*='inc-']")); // /anima/include/***.incファイルを読み込みinc-クラスがついている要素の配下のコンテンツと置き換える
+
 
 /* 後処理 */
 /* ---------------- */

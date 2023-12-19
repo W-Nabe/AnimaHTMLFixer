@@ -861,3 +861,31 @@ function moveLinkToTopOfContainer($dom) {
     $container->appendChild($js);
   }
 }
+
+
+
+/*
+ * inc-で命名されたclass名配下のコンテンツとincファイルの内容とを置き換える
+ * @param $incs 対象inc-クラスの配列
+ */
+function replaceIncContent($incs) {
+  foreach ($incs as $inc) {
+    // 対象要素のクラスから/inc-.+/を持つクラス文字列を得る。複数ある場合は最初のものとする。
+    $classes = $inc->classes()->getAll();
+    $matched_classes = preg_grep("/(\b|-)inc-.+/", $classes);
+    
+    if (!empty($matched_classes)) {
+      $class = reset($matched_classes);
+      preg_match("/(\\b|-)inc-[^\-]+/", $class, $a);
+      $key = str_replace('inc-', '', trim($a[0], "-"));
+
+      $file = __DIR__ .'/anima/include/'.$key.'.inc';
+      if (file_exists($file)) {
+        ob_start();
+        include($file);
+        $append_dom = ob_get_clean();
+        $inc->setInnerHtml($append_dom);
+      }
+    }
+  }
+}
