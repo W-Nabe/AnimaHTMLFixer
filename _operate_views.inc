@@ -73,24 +73,29 @@ use DiDom\Element;
 // viewをDOMとして読み込む
 $dom = new Document("./anima/view/".getViewFileName().".html", true);
 
-appendLoading($dom); // <div id="loading"></div>を追加する。
-appendViewPrefixToSrc($dom->find("img")); // imgのsrcに「view」を追加する。
-appendViewPrefixToHref($dom->find("link[rel='stylesheet']")); // cssのhrefに「view」を追加する。
-removeUnusedScreen($dom); // 使用しない「.screen」を削除する。
-if($config["designcheck"]["isuse"]) appendDesignCheck($dom); // <div class="design-check"></div>を追加する。
 
-// pc-wrap, sp-wrap直下にあるdiv要素をsection要素に変更する。
-toSection($dom->find("div[class^='pc-wrap-'] > div"));
-toSection($dom->find("div[class^='sp-wrap-'] > div"));
 
-assignId($dom->find("*[class*='-id_']")); // IDを付ける。
+/* 前処理 */
+/* ------------------------------- */
+appendLoading($dom); // <div id="loading"></div>を追加する
+appendViewPrefixToSrc($dom->find("img")); // imgのsrcに「view」を追加する
+appendViewPrefixToHref($dom->find("link[rel='stylesheet']")); // cssのhrefに「view」を追加する
+removeUnusedScreen($dom); // 使用しない「.screen」を削除する
+if($config["designcheck"]["isuse"]) appendDesignCheck($dom); // <div class="design-check"></div>を追加する
+toSection($dom->find("div[class^='pc-wrap-'] > div")); // pc-wrap直下にあるdiv要素をsection要素に変更する
+toSection($dom->find("div[class^='sp-wrap-'] > div")); // sp-wrap直下にあるdiv要素をsection要素に変更する
+changePToDiv($dom->find("p")); // <p>タグがあったら、「<div>」に変換する
+changeH1ToDiv($dom->find("h1")); // <h1>タグがあったら、「<div>」に変換する
+removeAltToImg($dom->find("img")); // <img>のalt属性を空にする
 
-// <p>タグがあったら、「<div>」に変換する。
-changePToDiv($dom->find("p"));
-// <h1>タグがあったら、「<div>」に変換する。
-changeH1ToDiv($dom->find("h1"));
 
-// <div>のクラスに「(h[1-6]|p)」があったら、「<h[1-6]|p>」に変換する。
+
+/* 命名規則処理 */
+/* ---------------- */
+// figma命名規則：-id_***_
+assignId($dom->find("*[class*='-id_']")); // 要素にIDを付ける。
+
+// figma命名規則：h1-（<div>のクラスに「(h[1-6]|p)」があったら、「<h[1-6]|p>」に変換する）
 changeDivToHOrPSpecifiedByClass($dom->find("div[class^='h1-']"));
 changeDivToHOrPSpecifiedByClass($dom->find("div[class^='h2-']"));
 changeDivToHOrPSpecifiedByClass($dom->find("div[class^='h3-']"));
@@ -99,7 +104,7 @@ changeDivToHOrPSpecifiedByClass($dom->find("div[class^='h5-']"));
 changeDivToHOrPSpecifiedByClass($dom->find("div[class^='h6-']"));
 changeDivToHOrPSpecifiedByClass($dom->find("div[class^='p-']"));
 
-// <img>のクラスに「(h[1-6]|p)」があったら、「<h[1-6]|p>」で囲う。
+// figma命名規則：h1-（<img>のクラスに「(h[1-6]|p)」があったら、「<h[1-6]|p>」で囲う）
 wrapImgWithHOrPSpecifiedByClass($dom->find("img[class^='h1-']"));
 wrapImgWithHOrPSpecifiedByClass($dom->find("img[class^='h2-']"));
 wrapImgWithHOrPSpecifiedByClass($dom->find("img[class^='h3-']"));
@@ -108,26 +113,29 @@ wrapImgWithHOrPSpecifiedByClass($dom->find("img[class^='h5-']"));
 wrapImgWithHOrPSpecifiedByClass($dom->find("img[class^='h6-']"));
 wrapImgWithHOrPSpecifiedByClass($dom->find("img[class^='p-']"));
 
-removeAltToImg($dom->find("img")); // <img>のalt属性を空にする
-appendAltToImgFromClass($dom->find("img[class*='seo-']")); // クラスで指定されたalt属性を持たせる。
-appendSeotxtToTagFromClass($dom->find("[class*='seo-']:not(img)"), $dom); // SEOテキスト挿入
-wrapA($dom->find("*[class*='link-']")); // <a>で囲む。
+// figma命名規則：seo-***
+appendAltToImgFromClass($dom->find("img[class*='seo-']")); // クラスで指定されたalt属性を持たせる（alt属性の値は/anima/config/seo.csvに記述）
+appendSeotxtToTagFromClass($dom->find("[class*='seo-']:not(img)"), $dom); // SEOテキスト挿入（テキストは/anima/config/seo.csvに記述）
+
+// figma命名規則：link-***
+wrapA($dom->find("*[class*='link-']")); // リンクにする（リンク先は/anima/config/link.csvに記述）
+
+// figma命名規則：svg-***
+replaceSvg($dom); // SVGを埋め込みに置き換える（埋め込み用SVGファイルは/anima/images/replace-svg/にAnimaでエクスポートされたimgファイルと同じファイル名で、拡張子はsvgにして配置）
+
+// figma命名規則：anim-***
+// アニメーションを追加する（***は、https://animate.style/の画面右側のリストの各アニメーション名を使用 例：anim-bounceIn）
+
+// figma命名規則：anim-wrap
 wrapChildSpanForAnimate($dom->find("[class*='anim-wipe']")); // 子要素を<span class="wrap">で囲む。
 
-// XD・Figmaで2倍サイズで出力されない画像の対処：replace-viewimg/imgに画像があったら各imgタグのsrcを置き換える
-replaceImgsSrc($dom);
-// XD・Figmaで出力されたCSSの対処：replace-viewcss/にCSSがあったら各styleタグのcssを置き換える
-replaceCssHref($dom);
+// figma命名規則：anim-text-enter
+wrapEachTextWithB($dom->find('[class*="anim-text-enter"] span')); // anim-text-enterクラスの要素内のテキストを1文字ずつbで囲む
 
-// 指定された<img>のsrcをdata-originalにする。
-// 但し「div[class^='pc-wrap'] div[class*='slick']」及び「div[class^='sp-wrap'] div[class*='slick']」配下を除く。
-/* not 疑似セレクタが動作しない？
-changeImgSrcToDataOriginal($dom->find(
-  "img:not(div[class^='pc-wrap'] div[class*='slick'] img, div[class^='sp-wrap'] div[class*='slick'] img)")
-);
-*/
-changeImgSrcToDataOriginal($dom->find("div[class^='pc-wrap'] img"));
-changeImgSrcToDataOriginal($dom->find("div[class^='sp-wrap'] img"));
-changeImgDataOriginalToSrc($dom->find("div[class^='pc-wrap'] div[class*='slick'] img"));
-changeImgDataOriginalToSrc($dom->find("div[class^='sp-wrap'] div[class*='slick'] img"));
 
+/* 後処理 */
+/* ---------------- */
+replaceImgsSrc($dom); // replace-viewimg/imgに同じファイル名の画像があったら各imgタグのsrcを置き換える（XD・Figmaで2倍サイズで出力されない画像に使用）
+replaceCssHref($dom); // replace-viewcss/globals.css、replace-viewcss/styleguide.cssがあったら置き換える（フォントの修正などに使用）
+changeImgSrcToDataOriginal($dom->find("div[class^='pc-wrap'] img")); // .pc-wrap配下の<img>のsrcを遅延読み込みのためdata-originalにする
+changeImgSrcToDataOriginal($dom->find("div[class^='sp-wrap'] img")); // .sp-wrap配下の<img>のsrcを遅延読み込みのためdata-originalにする
