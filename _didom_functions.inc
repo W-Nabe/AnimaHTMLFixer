@@ -622,9 +622,11 @@ function replaceSvg($dom) {
   $replaceSvgs = glob($path.'*');
   foreach ($replaceSvgs as $src) {
     $src = str_replace($path, '/', $src);
-    $svg = file_get_contents($path.$src);
-    $filename = pathinfo($src, PATHINFO_FILENAME);
-    changeSvgSrcToReplaceSvg($dom->find('img[src*="'.$filename.'"]'), $svg);
+    if (file_exists($path.$src)) {
+      $svg = file_get_contents($path.$src);
+      $filename = pathinfo($src, PATHINFO_FILENAME);
+      changeSvgSrcToReplaceSvg($dom->find('img[src*="'.$filename.'"]'), $svg);
+    }
   }
 }
 
