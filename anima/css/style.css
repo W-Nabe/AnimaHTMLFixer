@@ -20,7 +20,7 @@
 
   /* PC追尾ヘッダー */
   --fixed-header-background: rgba(255,255,255,0) !important; /* 背景色 */
-  --fixed-header-scroll-background: rgba(255,255,255,1) !important; /* 追尾時背景色 */
+  --fixed-header-scroll-background: rgba(255,255,255,0.5) !important; /* 追尾時背景色 */
 
   /* SP追尾ヘッダー */
   --fixed-spheader-background: rgba(255,255,255,0) !important; /* 背景色 */
@@ -203,7 +203,7 @@ h4 span,
 h5 span,
 h6 span,
 p span {
-  display: block;
+  display: inline-block;
 }
 /* 文字列のスパンタグはインライン要素に */
 span[class*="span"] {
@@ -313,6 +313,7 @@ span[class*="span"] {
   cursor: pointer;
 }
 
+/* 固定背景用CSS */
 .screen > [class*="fixed-coverbg"] {
   min-width: 100vw;
   min-height: 100vh;

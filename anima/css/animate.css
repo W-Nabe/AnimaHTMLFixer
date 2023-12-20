@@ -2144,76 +2144,76 @@ body [class*="anim-wipe-out-right"] .wrap *{
 }
 
 
-[class*="anim-text-enter-left"] b {
+[class*="anim-text-enter-left"] span[class*="txt-"] {
   animation-duration: var(--animate-duration);
   animation-delay: var(--animate-delay);
   animation-fill-mode: both;
 }
 
-[class*="anim-text-enter-left"].anim-showed b {
+[class*="anim-text-enter-left"].anim-showed span[class*="txt-"] {
   animation-name: fade-in-right;
   display: inline-block;
 }
-[class*="anim-text-enter"].anim-showed b.entertxt-1 {
+[class*="anim-text-enter"].anim-showed .txt-1 {
   animation-delay: calc(var(--animate-delay) + 0.05s * 0);
 }
-[class*="anim-text-enter"].anim-showed b.entertxt-2 {
+[class*="anim-text-enter"].anim-showed .txt-2 {
   animation-delay: calc(var(--animate-delay) + 0.05s * 1);
 }
-[class*="anim-text-enter"].anim-showed b.entertxt-3 {
+[class*="anim-text-enter"].anim-showed .txt-3 {
   animation-delay: calc(var(--animate-delay) + 0.05s * 2);
 }
-[class*="anim-text-enter"].anim-showed b.entertxt-4 {
+[class*="anim-text-enter"].anim-showed .txt-4 {
   animation-delay: calc(var(--animate-delay) + 0.05s * 3);
 }
-[class*="anim-text-enter"].anim-showed b.entertxt-5 {
+[class*="anim-text-enter"].anim-showed .txt-5 {
   animation-delay: calc(var(--animate-delay) + 0.05s * 4);
 }
-[class*="anim-text-enter"].anim-showed b.entertxt-6 {
+[class*="anim-text-enter"].anim-showed .txt-6 {
   animation-delay: calc(var(--animate-delay) + 0.05s * 5);
 }
-[class*="anim-text-enter"].anim-showed b.entertxt-7 {
+[class*="anim-text-enter"].anim-showed .txt-7 {
   animation-delay: calc(var(--animate-delay) + 0.05s * 6);
 }
-[class*="anim-text-enter"].anim-showed b.entertxt-8 {
+[class*="anim-text-enter"].anim-showed .txt-8 {
   animation-delay: calc(var(--animate-delay) + 0.05s * 7);
 }
-[class*="anim-text-enter"].anim-showed b.entertxt-9 {
+[class*="anim-text-enter"].anim-showed .txt-9 {
   animation-delay: calc(var(--animate-delay) + 0.05s * 8);
 }
-[class*="anim-text-enter"].anim-showed b.entertxt-10 {
+[class*="anim-text-enter"].anim-showed .txt-10 {
   animation-delay: calc(var(--animate-delay) + 0.05s * 9);
 }
-[class*="anim-text-enter"].anim-showed b.entertxt-11 {
+[class*="anim-text-enter"].anim-showed .txt-11 {
   animation-delay: calc(var(--animate-delay) + 0.05s * 10);
 }
-[class*="anim-text-enter"].anim-showed b.entertxt-12 {
+[class*="anim-text-enter"].anim-showed .txt-12 {
   animation-delay: calc(var(--animate-delay) + 0.05s * 11);
 }
-[class*="anim-text-enter"].anim-showed b.entertxt-13 {
+[class*="anim-text-enter"].anim-showed .txt-13 {
   animation-delay: calc(var(--animate-delay) + 0.05s * 12);
 }
-[class*="anim-text-enter"].anim-showed b.entertxt-14 {
+[class*="anim-text-enter"].anim-showed .txt-14 {
   animation-delay: calc(var(--animate-delay) + 0.05s * 13);
 }
-[class*="anim-text-enter"].anim-showed b.entertxt-15 {
+[class*="anim-text-enter"].anim-showed .txt-15 {
   animation-delay: calc(var(--animate-delay) + 0.05s * 14);
 }
-[class*="anim-text-enter"].anim-showed b.entertxt-16 {
+[class*="anim-text-enter"].anim-showed .txt-16 {
   animation-delay: calc(var(--animate-delay) + 0.05s * 15);
 }
-[class*="anim-text-enter"].anim-showed b.entertxt-17 {
+[class*="anim-text-enter"].anim-showed .txt-17 {
   animation-delay: calc(var(--animate-delay) + 0.05s * 16);
 }
-[class*="anim-text-enter"].anim-showed b.entertxt-18 {
+[class*="anim-text-enter"].anim-showed .txt-18 {
   animation-delay: calc(var(--animate-delay) + 0.05s * 17);
 }
-[class*="anim-text-enter"].anim-showed b.entertxt-19 {
+[class*="anim-text-enter"].anim-showed .txt-19 {
   animation-delay: calc(var(--animate-delay) + 0.05s * 18);
 }
-[class*="anim-text-enter"].anim-showed b.entertxt-20 {
+[class*="anim-text-enter"].anim-showed .txt-20 {
   animation-delay: calc(var(--animate-delay) + 0.05s * 19);
 }
-[class*="anim-text-enter"].anim-showed b.entertxt-21 {
+[class*="anim-text-enter"].anim-showed .txt-21 {
   animation-delay: calc(var(--animate-delay) + 0.05s * 20);
 }
