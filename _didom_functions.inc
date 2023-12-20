@@ -209,7 +209,12 @@ function removeUnusedScreen($dom)
       $spWraps[0]->parent()->setAttribute("class", "$currentClasses content-sp");
     }
     if(count($pcWraps) > 0) {
-      $dom->first('[class*="pc-wrap"]')->parent()->remove();
+      $className = $pcWraps[0]->parent()->parent()->getAttribute("class");
+      if($className == "container-center-horizontal") {
+        $dom->first('[class*="pc-wrap"]')->parent()->parent()->remove();
+      } else {
+        $dom->first('[class*="pc-wrap"]')->parent()->remove();
+      }
     }
   } else {
     // パソコン表示
