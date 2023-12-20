@@ -136,6 +136,8 @@ wrapEachTextWithSpan($dom->find('[class*="anim-text-enter"]')); // anim-text-ent
 // figma命名規則：inc-***
 replaceIncContent($dom->find("*[class*='inc-']")); // /anima/include/***.incファイルを読み込みinc-クラスがついている要素の配下のコンテンツと置き換える
 
+// figma命名規則：stroketxt, stroketxt4px, stroketxt1px
+copyStrokeTxt($dom->find("*[class*='stroketxt']")); // Web上で線付き文字が正常に表現されない問題を解消
 
 /* 後処理 */
 /* ---------------- */

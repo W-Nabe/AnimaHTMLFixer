@@ -748,7 +748,23 @@ function wrapEachTextWithSpan($elems) {
   }
 }
 
+/**
+ * ストローク付きテキストを複製してデザイン修正
+ * 
+ * @param $elems 対象の要素配列 
+ */
+function copyStrokeTxt($elems) {
+  foreach ($elems as $elem) {
+    $class = $elem->getAttribute('class');
+    $pos = strpos($class, "stroketxt");
+    if($pos !== false && strpos($class, "px", $pos + 9) !== false) {
+      $px = (int)substr($class, $pos + 9, 2) * 2;
+      $elem->setAttribute('style', 'z-index: 0; -webkit-text-stroke-width:'.$px.'px;');
+    } else {
+      $elem->setAttribute('style', 'z-index: 0;');
     }
+    $elem->parent()->appendChild($elem);
+    $elem->setAttribute('style', '-webkit-text-stroke: 0px; text-shadow: none; z-index: 1;');
   }
 }
 
