@@ -333,23 +333,41 @@ function getStrDivOfChildToSpan($div) {
 
 /*
  * 指定された要素のIDを設定する。
- * IDは要素のクラス文字列「-id_foobar_-」で指定されているものとする。
- * 「foobar」がIDとなる。
+ * IDは要素のクラス文字列「id-***」「id_***」で指定されているものとする。
+ * 「***」の部分は、次のアンダースコアまたは、ハイフン、（無ければ末尾まで）を取得し「***」がIDとなる。
+ * 「id_***」が複数ある場合は最初のものとする。
  *
- * 例:
+ * 対象要素例:
  *   <div class="button original-button-id_foobar_-99999">
- *   <div class="button id_foobar_">
+ *   <div class="button id_foobarA">
+ *   <div class="id-foobarB">
+ *   <div class="id-foobarC-09123">
+ *   <div class="id-foobar09123">
+ * 実行後例:
+ *   <div class="button original-button-id_foobar_-99999" id="foobar">
+ *   <div class="button id_foobarA" id="foobarA">
+ *   <div class="id-foobarB" id="foobarB">
+ *   <div class="id-foobarC-09123" id="foobarC">
+ *   <div class="id-foobar09123" id="foobar09123">
  *
  * @param $elems 対象要素の配列
  */
 function assignId($elems) {
   foreach ($elems as $elem) {
-    // 「-id_foobar_」から「foobar」を得る。
     $classes = $elem->classes()->getAll();
-    $class = (($c = preg_grep("/-id_[^_]+_/", $classes)) ? $c : preg_grep("/^id_[^_]+_/", $classes))[0];
+    $class = preg_grep("/(id|id_)?[0-9a-zA-Z_-]+(-|_)?$/", $classes)[0];
 
-    preg_match("/id_([^_]+)_/", $class, $a);
-    $elem->attr("id", $a[1]); // 要素のIDを設定する。「-id_foobar_」が複数ある場合は最初のものとする。
+    if ($class) {
+      preg_match('/id[-_](.*?)(?:[-_]|$)/', $class, $a);
+      $idname = $a[1];
+      $elem->attr("id", $idname);
+    } else {
+        $targetClass = "<br>チェック対象：";
+      foreach ($classes as $class) {
+        $targetClass = $targetClass.$class."<br>"; 
+      }
+      echo '<div style="width:calc(100vw - 40px);margin: 10px auto 20px;letter-spacing:1px;font-weight:bold;line-height:140%;font-size:12px;color:red;border:3px red solid;padding:20px;border-radius:10px;">命名規則エラー：「id-****」「id_****」のようにidの後にハイフン、またはアンダースコアをつけてください。Animaでエクスポートするデザインのグループ名・レイヤー名を確認してください。'.$targetClass.'</div>';
+    }
   }
 }
 

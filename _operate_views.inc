@@ -93,7 +93,8 @@ removeAltToImg($dom->find("img")); // <img>のalt属性を空にする
 /* 命名規則処理 */
 /* ---------------- */
 // figma命名規則：-id_***_
-assignId($dom->find("*[class*='-id_']")); // 要素にIDを付ける。
+assignId($dom->find("[class*='id_']")); // 要素にIDを付ける。
+assignId($dom->find("[class*='id-']")); // 要素にIDを付ける。
 
 // figma命名規則：h1-（<div>のクラスに「(h[1-6]|p)」があったら、「<h[1-6]|p>」に変換する）
 changeDivToHOrPSpecifiedByClass($dom->find("div[class^='h1-']"));
