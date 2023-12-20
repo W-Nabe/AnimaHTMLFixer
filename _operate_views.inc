@@ -131,7 +131,7 @@ replaceSvg($dom); // SVGを埋め込みに置き換える（埋め込み用SVG�
 wrapChildSpanForAnimate($dom->find("[class*='anim-wipe']")); // 子要素を<span class="wrap">で囲む。
 
 // figma命名規則：anim-text-enter
-wrapEachTextWithB($dom->find('[class*="anim-text-enter"] span')); // anim-text-enterクラスの要素内のテキストを1文字ずつbで囲む
+wrapEachTextWithSpan($dom->find('[class*="anim-text-enter"]')); // anim-text-enterクラスの要素内のテキストを1文字ずつbで囲む
 
 // figma命名規則：inc-***
 replaceIncContent($dom->find("*[class*='inc-']")); // /anima/include/***.incファイルを読み込みinc-クラスがついている要素の配下のコンテンツと置き換える

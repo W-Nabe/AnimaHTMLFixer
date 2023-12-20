@@ -690,72 +690,66 @@ function changeSvgSrcToReplaceSvg($imgs, $svg) {
   }
 }
 
+
 /**
- * anim-text-enterクラスの要素内のテキストを1文字ずつbで囲む
+ * 要素内のテキストを1文字ずつSpanで囲む
  * 
  * @param $elems 対象の要素配列 
  */
-function wrapEachTextWithB($elems) {
+function wrapEachTextWithSpan($elems) {
+  
   $prevParentClass = '';
   $index = 1;
 
   foreach ($elems as $elem) {
-
-    // 最深部のすべてのspan要素を取得
-    $deepestSpans = findDeepestSpans($elem);
-
-    foreach ($deepestSpans as $deepestSpan) {
-
-      $text = trim($deepestSpan->text());
-      if (!$text) continue;
-
-      $html = '';
-      for($i = 0; $i < mb_strlen($text); $i++) {
-
-        // 親要素を再帰的にたどる
-        $parentClass = getParentClass($elem);
-        // 前の要素の親クラスと比較
-        $index = ($parentClass === $prevParentClass) ? $index + 1 : 1;
-        // 現在の親クラスを保存
-        $prevParentClass = $parentClass;
-
-        $html .= '<b class="entertxt-'.$index.'">'.mb_substr($text, $i, 1).'</b>';
-      }
-
-      $newSpan = new Didom\Element('span', null, $deepestSpan->attributes());
-      $newSpan->setInnerHtml($html);
-
-      $elem->replace($newSpan);
-    }
-  }
-}
-
-// wrapEachTextWithBで使用
-function getParentClass($elem) {
-
-  $parentAttrs = $elem->parent()->attributes();
-  // anim-text-enterが含まれる親要素がみつかるまで再帰
-  if (isset($parentAttrs['class']) && strpos($parentAttrs['class'], 'anim-text-enter') !== false) {
-    return $parentAttrs['class'];
-  }
-  return getParentClass($elem->parent()); 
-}
-
-// wrapEachTextWithBで使用
-function findDeepestSpans($elem) {
-  $spans = $elem->find('span');
   
-  $deepestSpans = [];
+    ob_start();
+    echo($elem->html());
+    $html = ob_get_clean();
+    
+    $dom = new DOMDocument;
+    @$dom->loadHTML(mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8'));
+    $xpath = new DOMXPath($dom);
 
-  foreach ($spans as $span) {
-    $childSpans = $elem->find('span');
-    if(count($childSpans) == 1) {
-      // 子にspanがなければ、そのspan自体を追加
-      $deepestSpans[] = $span;
+    foreach ($xpath->query('//text()') as $textNode) {
+        $frag = $dom->createDocumentFragment();
+        $text = $textNode->nodeValue;
+        $length = mb_strlen($text);
+        for ($i = 0; $i < $length; $i++) {
+            $char = mb_substr($text, $i, 1);
+            if (trim($char) !== '') {
+                $span = $dom->createElement('span', htmlspecialchars($char));
+                $span->setAttribute('class', 'txt');
+                $frag->appendChild($span);
+            } else {
+                $frag->appendChild($dom->createTextNode($char));
+            }
+        }
+        $textNode->parentNode->replaceChild($frag, $textNode);
+    }
+
+    $elements = $dom->getElementsByTagName('span');
+
+    foreach ($elements as $element) {
+        if ($element->getAttribute('class') == 'txt') {
+            $element->setAttribute('class', 'txt-' . $index);
+            $index++;
+        }
+    }
+
+    $html = $dom->saveHTML();
+    
+    $html = preg_replace('/<!DOCTYPE html PUBLIC "-\/\/W3C\/\/DTD HTML 4.0 Transitional\/\/EN" "http:\/\/www.w3.org\/TR\/REC-html40\/loose.dtd">/', '', $html);
+    $html = preg_replace('/<html><body>/', '', $html);
+    $html = preg_replace('/<\/body><\/html>/', '', $html);
+
+    $html = new Document($html);
+    $elem->replace($html->first("[class=".$elem->getAttribute('class')."]"));
+  }
+}
+
     }
   }
-
-  return $deepestSpans;
 }
 
 
