@@ -275,6 +275,7 @@ span[class*="span"] {
 /* コンテンツ：fixed-がついている要素はz-index:*をつける */
 [class^="fixed-"] {
   z-index: 20;
+  position: fixed !important;
 }
 
 /* コンテンツ：Totopリンク絶対配置（右下） */
@@ -292,6 +293,15 @@ span[class*="span"] {
 /* ページトップリンク */
 [class*="pagetop"] {
   cursor: pointer;
+}
+
+.screen > [class*="fixed-coverbg"] {
+  min-width: 100vw;
+  min-height: 100vh;
+  z-index: 0 !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%);
 }
 
 
