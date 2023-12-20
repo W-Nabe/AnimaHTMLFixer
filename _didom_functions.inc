@@ -116,6 +116,9 @@ function loadMetaCsv() {
       $csv["description"] = $data[2];
       $csv["keywords"] = $data[3];
       break;
+    } else {
+      $checkTarget = "<br>チェック対象：".$target;
+      echo '<div class="anima-alert">meta情報エラー：titleタグ、metaタグ情報が記載されていません。「anima/config/meta.csv」ファイルにチェック対象の行があるか確認してください。'.$checkTarget.'</div>';
     }
   }
 
@@ -372,11 +375,11 @@ function assignId($elems) {
       $idname = $a[1];
       $elem->attr("id", $idname);
     } else {
-        $targetClass = "<br>チェック対象：";
+        $checkTarget = "<br>チェック対象：";
       foreach ($classes as $class) {
-        $targetClass = $targetClass.$class."<br>"; 
+        $checkTarget = $checkTarget.$class."<br>"; 
       }
-      echo '<div style="width:calc(100vw - 40px);margin: 10px auto 20px;letter-spacing:1px;font-weight:bold;line-height:140%;font-size:12px;color:red;border:3px red solid;padding:20px;border-radius:10px;">命名規則エラー：「id-****」「id_****」のようにidの後にハイフン、またはアンダースコアをつけてください。Animaでエクスポートするデザインのグループ名・レイヤー名を確認してください。'.$targetClass.'</div>';
+      echo '<div class="anima-alert">命名規則エラー：「id-****」「id_****」のようにidの後にハイフン、またはアンダースコアをつけてください。Animaでエクスポートするデザインのグループ名・レイヤー名を確認してください。'.$checkTarget.'</div>';
     }
   }
 }
