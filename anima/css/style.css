@@ -68,6 +68,24 @@ html em {
   font-style: italic;
 }
 
+/* AnimaHTMLFixerエラー */
+.anima-alert {
+  position:relative;
+  z-index: 9999;
+  width:calc(100vw - 40px);
+  max-width: 400px;
+  margin: 10px auto 20px;
+  letter-spacing:1px;
+  font-weight:bold;
+  line-height:140%;
+  font-size:12px;
+  color:red;
+  border:3px red solid;
+  padding:20px;
+  border-radius:10px;
+  background-color: #ffffff55;
+}
+
 /* 非表示要素 */
 [class*='displaynone'] {
   display: none !important;
