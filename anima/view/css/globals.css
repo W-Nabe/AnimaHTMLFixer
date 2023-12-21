@@ -1,5 +1,5 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-@import url("https://fonts.googleapis.com/css?family=Kiwi+Maru:500,400|Noto+Sans+JP:400,900");
+@import url("https://fonts.googleapis.com/css?family=Kiwi+Maru:500,400|Train+One:400|Noto+Sans+JP:400,900,700");
 /* The following line is used to measure usage of this code. You can remove it if you want. */
 @import url("https://px.animaapp.com/60ef998b2f4e9e568dc1408e.60ef998d7aed24baabe1b1d1.V83qMyS.hcp.png");
 
@@ -34,22 +34,36 @@
   box-sizing: border-box;
 }
 
-.anim-bounce-in {
-  background-color: transparent;
-  position: absolute;
-}
-
-.anim-bounce-in-down {
-  background-color: transparent;
-  position: absolute;
-}
-
 .anim-fade-in {
   background-color: transparent;
   position: absolute;
 }
 
-.anim-fade-in-down {
+.anim-fade-in-up {
   background-color: transparent;
   position: absolute;
+}
+
+.anim-bounce-in-up {
+  background-color: transparent;
+  position: absolute;
+}
+
+.anim-text-enter-down {
+  background-color: transparent;
+  position: absolute;
+}
+
+.area {
+  background-color: var(--white-2);
+  opacity: 0.01;
+  position: absolute;
+}
+
+.txt {
+  background-color: transparent;
+  height: auto;
+  letter-spacing: 0.00px;
+  position: absolute;
+  white-space: nowrap;
 }

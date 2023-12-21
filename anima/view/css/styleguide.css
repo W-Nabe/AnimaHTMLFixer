@@ -1,42 +1,45 @@
 :root { 
   --black: #000000;
   --blue-ribbon: #006aea;
+  --humming-bird: #ccedf5;
+  --sizzling-sunrise: #ffda00;
   --white: #ffffff;
   --white-2: #ffffff03;
  
   --font-size-l: 16px;
   --font-size-m: 14px;
-  --font-size-s: 12px;
-  --font-size-xl: 24px;
-  --font-size-xxl: 32px;
-  --font-size-xxxl: 34px;
-  --font-size-xxxxl: 44px;
+  --font-size-s: 10px;
+  --font-size-xl: 20.3px;
+  --font-size-xs: 4.6px;
+  --font-size-xxl: 24px;
+  --font-size-xxxl: 44px;
  
   --font-family-kiwi_maru: "Kiwi Maru", Helvetica;
   --font-family-noto_sans_jp: "Noto Sans JP", Helvetica;
+  --font-family-train_one: "Train One", Helvetica;
 }
-.kiwimaru-normal-black-24px {
-  color: var(--black);
-  font-family: var(--font-family-kiwi_maru);
-  font-size: var(--font-size-xl);
-  font-style: normal;
-  font-weight: 400;
-}
-
 .kiwimaru-normal-black-44px {
   color: var(--black);
   font-family: var(--font-family-kiwi_maru);
-  font-size: var(--font-size-xxxxl);
+  font-size: var(--font-size-xxxl);
   font-style: normal;
   font-weight: 400;
 }
 
-.kiwimaru-medium-black-24px {
+.kiwimaru-normal-black-20-3px {
   color: var(--black);
   font-family: var(--font-family-kiwi_maru);
   font-size: var(--font-size-xl);
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
+}
+
+.kiwimaru-normal-black-24px {
+  color: var(--black);
+  font-family: var(--font-family-kiwi_maru);
+  font-size: var(--font-size-xxl);
+  font-style: normal;
+  font-weight: 400;
 }
 
 .notosansjp-normal-black-14px {
@@ -45,6 +48,30 @@
   font-size: var(--font-size-m);
   font-style: normal;
   font-weight: 400;
+}
+
+.kiwimaru-normal-black-10px {
+  color: var(--black);
+  font-family: var(--font-family-kiwi_maru);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.kiwimaru-normal-black-4-6px {
+  color: var(--black);
+  font-family: var(--font-family-kiwi_maru);
+  font-size: var(--font-size-xs);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.kiwimaru-medium-black-24px {
+  color: var(--black);
+  font-family: var(--font-family-kiwi_maru);
+  font-size: var(--font-size-xxl);
+  font-style: normal;
+  font-weight: 500;
 }
 
 .kiwimaru-normal-black-16px {
@@ -63,18 +90,10 @@
   font-weight: 400;
 }
 
-.kiwimaru-normal-blue-ribbon-32px {
+.kiwimaru-normal-blue-ribbon-34px {
   color: var(--blue-ribbon);
   font-family: var(--font-family-kiwi_maru);
-  font-size: var(--font-size-xxl);
-  font-style: normal;
-  font-weight: 400;
-}
-
-.notosansjp-normal-black-12px {
-  color: var(--black);
-  font-family: var(--font-family-noto_sans_jp);
-  font-size: var(--font-size-s);
+  font-size: 34px;
   font-style: normal;
   font-weight: 400;
 }
@@ -82,7 +101,7 @@
 .notosansjp-black-blue-ribbon-24px {
   color: var(--blue-ribbon);
   font-family: var(--font-family-noto_sans_jp);
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-xxl);
   font-style: normal;
   font-weight: 900;
 }
@@ -95,10 +114,18 @@
   font-weight: 400;
 }
 
-.kiwimaru-normal-blue-ribbon-34px {
+.kiwimaru-normal-blue-ribbon-32px {
   color: var(--blue-ribbon);
   font-family: var(--font-family-kiwi_maru);
-  font-size: var(--font-size-xxxl);
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.notosansjp-normal-black-12px {
+  color: var(--black);
+  font-family: var(--font-family-noto_sans_jp);
+  font-size: 12px;
   font-style: normal;
   font-weight: 400;
 }
