@@ -21,6 +21,7 @@ $config = loadConfigCsv(); // config.csvを読み込む。
 $seo = loadSeoCsv(); // seo.csvを読み込む。
 $link = loadLinkCsv(); // link.csvを読み込む。
 $meta = loadMetaCsv(); // meta.csvを読み込む。
+checkMetaExist($meta);
 
 function loadConfigCsv() {
   $csv = array();
@@ -112,18 +113,28 @@ function loadMetaCsv() {
   fgetcsv($handle); // タイトル行をスキップ
   while ($data = fgetcsv($handle)) {
     if ($data[0] == $target) {
+      $csv["key"] = $data[0];
       $csv["title"] = $data[1];
       $csv["description"] = $data[2];
       $csv["keywords"] = $data[3];
       break;
-    } else {
-      $checkTarget = "<br>チェック対象：".$target;
-      echo '<div class="anima-alert">meta情報エラー：titleタグ、metaタグ情報が記載されていません。「anima/config/meta.csv」ファイルにチェック対象の行があるか確認してください。'.$checkTarget.'</div>';
     }
   }
 
   fclose($handle);
   return $csv;
+}
+
+/*
+ * 現在表示中のMeta情報が存在するか確認
+ */
+function checkMetaExist($meta) {
+  global $view;
+  if(!isset($meta["key"])) {
+    $target = $view;
+    $checkTarget = "<br>チェック対象：".$target;
+    echo '<div class="anima-alert">meta情報エラー：titleタグ、metaタグ情報が記載されていません。「anima/config/meta.csv」ファイルにチェック対象の行があるか確認してください。'.$checkTarget.'</div>';
+  }
 }
 
 /*
@@ -438,8 +449,15 @@ function appendAltToImgFromClass($imgs) {
       $class = reset($matched_classes);
       preg_match("/(\\b|-)seo-[^\-]+/", $class, $a);
       $key = trim($a[0], "-");
-
-      $img->attr("alt", $seo[$key]);
+      
+      if (isset($seo[$key])) {
+        $img->attr("alt", $seo[$key]);
+      } else {
+        $target = $key;
+        $checkTarget = "<br>チェック対象：".$target;
+        echo '<div class="anima-alert">SEOテキストエラー：SEOテキスト情報が記載されていません。「anima/config/seo.csv」ファイルにチェック対象の行があるか確認してください。'.$checkTarget.'</div>';
+        return;
+      }
     }
   }
 }
@@ -459,10 +477,17 @@ function appendSeotxtToTagFromClass($tags, $dom) {
       $class = reset($matched_classes);
       preg_match("/(\\b|-)seo-[^\-]+/", $class, $a);
       $key = trim($a[0], "-");
-
-      $span = $dom->createElement('span', $seo[$key]);
-      $span->setAttribute('class', 'hidden-txt');
-      $tag->appendChild($span);
+      
+      if (isset($seo[$key])) {
+        $span = $dom->createElement('span', $seo[$key]);
+        $span->setAttribute('class', 'hidden-txt');
+        $tag->appendChild($span);
+      } else {
+        $target = $key;
+        $checkTarget = "<br>チェック対象：".$target;
+        echo '<div class="anima-alert">SEOテキストエラー：SEOテキスト情報が記載されていません。「anima/config/seo.csv」ファイルにチェック対象の行があるか確認してください。'.$checkTarget.'</div>';
+        return;
+      }
     }
   }
 }
@@ -481,12 +506,19 @@ function wrapA($elms) {
     $class = preg_grep("/(\b|-)link-\w+/", $elm->classes()->getAll())[0];
 
     preg_match("/(\b|-)(link-\w+)/", $class, $a);
-    if (!$l = $link[$a[2]]) continue;
+    if (isset($link[$a[2]])) {
+      if (!$l = $link[$a[2]]) continue;
 
-    $a = new Didom\Element("a", null, ["href" => $l["link"]]);
-    $a->appendChild($elm);
-    if ($l["target"]) $a->attr("target", $l["target"]);
-    $elm->replace($a);
+      $a = new Didom\Element("a", null, ["href" => $l["link"]]);
+      $a->appendChild($elm);
+      if ($l["target"]) $a->attr("target", $l["target"]);
+      $elm->replace($a);
+    } else {
+      $target = $a[2];
+      $checkTarget = "<br>チェック対象：".$target;
+      echo '<div class="anima-alert">LINKエラー：ハイパーリンク情報が記載されていません。「anima/config/link.csv」ファイルにチェック対象の行があるか確認してください。'.$checkTarget.'</div>';
+      return;
+    }
   }
 }
 
