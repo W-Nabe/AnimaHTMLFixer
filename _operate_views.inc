@@ -25,6 +25,9 @@ global $view;
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
 <script src="./anima/js/variable.php" defer></script>
 <script src="./anima/js/script.js" defer></script>
+<?php if (file_exists("./anima/js/page/_common.js")): ?>
+<script src="./anima/js/page/_common.js" defer></script>
+<?php endif; ?>
 
 <?php // VIEWに応じたJSの読み込み ?>
 <?php if (file_exists("./anima/js/page/{$view}.js")): ?>
@@ -35,6 +38,9 @@ global $view;
 <link rel="stylesheet" type="text/css" href="./anima/css/variable.php">
 <link rel="stylesheet" type="text/css" href="./anima/css/animate.css">
 <link rel="stylesheet" type="text/css" href="./anima/css/style.css">
+<?php if (file_exists("./anima/css/page/_common.css")): ?>
+<link rel="stylesheet" type="text/css" href="./anima/css/page/_common.css">
+<?php endif; ?>
 
 <?php // VIEWに応じたCSSの読み込み ?>
 <?php if (file_exists("./anima/css/page/{$view}.css")): ?>
