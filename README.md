@@ -28,7 +28,7 @@ https://www.figma.com/file/Zixywb9dXMlZIokve54ljH/
 https://lean-system.co.jp/
 
 ### サンプルWebページ
-https://lean-system.co.jp/_watanabe/leancoding/
+https://lean-system.co.jp/_watanabe/animahtmlfixier/
 
 ## 設置方法
 + Figma・XDのアートボード名・レイヤー名・グループ名・構造を整理する
