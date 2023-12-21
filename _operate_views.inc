@@ -15,7 +15,22 @@
  */
 
 require_once("./_didom_functions.inc");
-global $view;
+
+// DOM操作用ライブラリ (https://github.com/Imangazaliev/DiDOM)
+require_once("vendor/autoload.php");
+use DiDom\Document;
+use DiDom\Element;
+
+if(!isset($view)) $view = getCurrentView(); // view名決定。デフォルトはindex
+checkRootHTMLFile(); // ルートディレクトリにhtmlファイルがあるかチェック
+
+// viewをDOMとして読み込む
+$dom = new Document("./anima/view/".getViewFileName().".html", true);
+$config = loadConfigCsv(); // config.csvを読み込む。
+$seo = loadSeoCsv(); // seo.csvを読み込む。
+$link = loadLinkCsv(); // link.csvを読み込む。
+$meta = loadMetaCsv(); // meta.csvを読み込む。
+checkMetaExist($meta); // meta情報があるかチェック
 ?>
 
 <?= file_get_contents("./anima/config/insert_head_top.txt") // その他挿入するHTMLコード?>
@@ -71,15 +86,6 @@ global $view;
 <?= file_get_contents("./anima/config/insert_head_bottom.txt") // その他挿入するHTMLコード ?>
 
 <?php
-// DOM操作用ライブラリ (https://zenn.dev/yu_no/articles/8f180991dcca62)
-require_once("./vendor/autoload.php");
-use DiDom\Document;
-use DiDom\Element;
-
-// viewをDOMとして読み込む
-$dom = new Document("./anima/view/".getViewFileName().".html", true);
-
-
 
 /* 前処理 */
 /* ------------------------------- */

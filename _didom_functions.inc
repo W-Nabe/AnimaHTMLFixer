@@ -15,13 +15,7 @@
 
 require_once("vendor/autoload.php");
 use DiDom\Document;
-
-if(!isset($view)) $view = getCurrentView(); // view名決定。デフォルトはindex
-$config = loadConfigCsv(); // config.csvを読み込む。
-$seo = loadSeoCsv(); // seo.csvを読み込む。
-$link = loadLinkCsv(); // link.csvを読み込む。
-$meta = loadMetaCsv(); // meta.csvを読み込む。
-checkMetaExist($meta);
+use DiDom\Element;
 
 function loadConfigCsv() {
   $csv = array();
@@ -33,6 +27,17 @@ function loadConfigCsv() {
 
   fclose($handle);
   return $csv;
+}
+
+/*
+ * ルートディレクトリの.htmlの存在をチェックし、存在したら処理を終わる
+ */
+function checkRootHTMLFile() {
+  global $view;
+  if (file_exists(__DIR__ ."/".$view.".html")) {
+    echo(file_get_contents(__DIR__ ."/".$view.".html", true));
+    exit;
+  }
 }
 
 /*
@@ -58,6 +63,13 @@ function getViewFileName() {
     $viewfile = $view."-sp-all-breakpoints";
     return $viewfile;
 
+  } else {
+    if (file_exists(__DIR__ ."/404.html")) {
+      echo(file_get_contents(__DIR__ ."/404.html", true));
+    } else {
+      echo "ページが存在しません。";
+    }
+    exit;
   }
 }
 
