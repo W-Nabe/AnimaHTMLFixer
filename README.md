@@ -24,8 +24,7 @@ https://www.figma.com/file/Zixywb9dXMlZIokve54ljH/
 ご不明点がございましたら、お問い合わせください。
 
 ### Adobe XD
-準備中です。XDのファイルサンプルをご希望の方は、ぜひLEANSYSTEMにお問い合わせください。  
-https://lean-system.co.jp/
+準備中です。
 
 ### サンプルWebページ
 https://lean-system.co.jp/_watanabe/animahtmlfixier/
