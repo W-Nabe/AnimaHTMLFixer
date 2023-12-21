@@ -732,11 +732,8 @@ function changeSvgSrcToReplaceSvg($imgs, $svg) {
  * @param $elems 対象の要素配列 
  */
 function wrapEachTextWithSpan($elems) {
-  
-  $prevParentClass = '';
-  $index = 1;
-
   foreach ($elems as $elem) {
+    $index = 1;
   
     ob_start();
     echo($elem->html());
