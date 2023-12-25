@@ -108,14 +108,18 @@ removeAltToImg($dom->find("img")); // <img>のalt属性を空にする
 assignId($dom->find("[class*='id_']")); // 要素にIDを付ける。
 assignId($dom->find("[class*='id-']")); // 要素にIDを付ける。
 
+// figma命名規則：anim-wipe, anim-wipe-in-order
+wrapChildSpanForAnimate($dom->find("[class*='anim-wipe-in']:not([class*='anim-wipe-in-order'])")); // 子要素を<span class="wrap">で囲む。
+wrapChildSpanForAnimate($dom->find("[class*='anim-wipe-in-order'] > *")); // 子要素の子要素を<span class="wrap">で囲む。
+
 // figma命名規則：h1-（<div>のクラスに「(h[1-6]|p)」があったら、「<h[1-6]|p>」に変換する）
-changeDivToHOrPSpecifiedByClass($dom->find("div[class^='h1-']"));
-changeDivToHOrPSpecifiedByClass($dom->find("div[class^='h2-']"));
-changeDivToHOrPSpecifiedByClass($dom->find("div[class^='h3-']"));
-changeDivToHOrPSpecifiedByClass($dom->find("div[class^='h4-']"));
-changeDivToHOrPSpecifiedByClass($dom->find("div[class^='h5-']"));
-changeDivToHOrPSpecifiedByClass($dom->find("div[class^='h6-']"));
-changeDivToHOrPSpecifiedByClass($dom->find("div[class^='p-']"));
+changeDivToHOrPSpecifiedByClass($dom->find("div[class^='h1-'], span[class^='h1-']"));
+changeDivToHOrPSpecifiedByClass($dom->find("div[class^='h2-'], span[class^='h2-']"));
+changeDivToHOrPSpecifiedByClass($dom->find("div[class^='h3-'], span[class^='h3-']"));
+changeDivToHOrPSpecifiedByClass($dom->find("div[class^='h4-'], span[class^='h4-']"));
+changeDivToHOrPSpecifiedByClass($dom->find("div[class^='h5-'], span[class^='h5-']"));
+changeDivToHOrPSpecifiedByClass($dom->find("div[class^='h6-'], span[class^='h6-']"));
+changeDivToHOrPSpecifiedByClass($dom->find("div[class^='p-'], span[class^='p-']"));
 
 // figma命名規則：h1-（<img>のクラスに「(h[1-6]|p)」があったら、「<h[1-6]|p>」で囲う）
 wrapImgWithHOrPSpecifiedByClass($dom->find("img[class^='h1-']"));
@@ -138,9 +142,6 @@ replaceSvg($dom); // SVGを埋め込みに置き換える（埋め込み用SVG�
 
 // figma命名規則：anim-***
 // アニメーションを追加する（***は、https://animate.style/の画面右側のリストの各アニメーション名を使用 例：anim-bounceIn）
-
-// figma命名規則：anim-wrap
-wrapChildSpanForAnimate($dom->find("[class*='anim-wipe']")); // 子要素を<span class="wrap">で囲む。
 
 // figma命名規則：anim-text-enter
 wrapEachTextWithSpan($dom->find('[class*="anim-text-enter"]')); // anim-text-enterクラスの要素内のテキストを1文字ずつbで囲む

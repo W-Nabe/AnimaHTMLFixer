@@ -598,7 +598,11 @@ function wrapChildDivForAnimate($elms) {
   foreach ($elms as $elm) {
     $attributes = ['class' => 'wrap'];
     $divChild = new Didom\Element("div", null, $attributes);
-    $divChild->appendChild($elm->children());
+    if ($elm->tagName() == "img") {
+      $divChild->appendChild($elm);
+    } else {
+      $divChild->appendChild($elm->children());
+    };
 
     $attributes = ['class' => $elm->first('*')->getAttribute('class')];
     $div = new Didom\Element("div", null, $attributes);
@@ -618,7 +622,11 @@ function wrapChildspanForAnimate($elms) {
   foreach ($elms as $elm) {
     $attributes = ['class' => 'wrap'];
     $spanChild = new Didom\Element("span", null, $attributes);
-    $spanChild->appendChild($elm->children());
+    if ($elm->tagName() == "img") {
+      $spanChild->appendChild($elm);
+    } else {
+      $spanChild->appendChild($elm->children());
+    };
 
     $attributes = ['class' => $elm->first('*')->getAttribute('class')];
     $span = new Didom\Element("span", null, $attributes);
