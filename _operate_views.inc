@@ -108,6 +108,10 @@ removeAltToImg($dom->find("img")); // <img>のalt属性を空にする
 assignId($dom->find("[class*='id_']")); // 要素にIDを付ける。
 assignId($dom->find("[class*='id-']")); // 要素にIDを付ける。
 
+// figma命名規則：seo-***
+appendAltToImgFromClass($dom->find("img[class*='seo-']")); // クラスで指定されたalt属性を持たせる（alt属性の値は/anima/config/seo.csvに記述）
+appendSeotxtToTagFromClass($dom->find("[class*='seo-']:not(img)"), $dom); // SEOテキスト挿入（テキストは/anima/config/seo.csvに記述）
+
 // figma命名規則：anim-wipe, anim-wipe-in-order
 wrapChildSpanForAnimate($dom->find("[class*='anim-wipe-in']:not([class*='anim-wipe-in-order'])")); // 子要素を<span class="wrap">で囲む。
 wrapChildSpanForAnimate($dom->find("[class*='anim-wipe-in-order'] > *")); // 子要素の子要素を<span class="wrap">で囲む。
@@ -129,10 +133,6 @@ wrapImgWithHOrPSpecifiedByClass($dom->find("img[class^='h4-']"));
 wrapImgWithHOrPSpecifiedByClass($dom->find("img[class^='h5-']"));
 wrapImgWithHOrPSpecifiedByClass($dom->find("img[class^='h6-']"));
 wrapImgWithHOrPSpecifiedByClass($dom->find("img[class^='p-']"));
-
-// figma命名規則：seo-***
-appendAltToImgFromClass($dom->find("img[class*='seo-']")); // クラスで指定されたalt属性を持たせる（alt属性の値は/anima/config/seo.csvに記述）
-appendSeotxtToTagFromClass($dom->find("[class*='seo-']:not(img)"), $dom); // SEOテキスト挿入（テキストは/anima/config/seo.csvに記述）
 
 // figma命名規則：link-***
 wrapA($dom->find("*[class*='link-']")); // リンクにする（リンク先は/anima/config/link.csvに記述）
