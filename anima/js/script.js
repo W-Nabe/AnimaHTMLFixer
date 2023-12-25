@@ -382,10 +382,14 @@ $('body').on('click', '[class^="fixed-pagetop"], [class^="fixed-totop"], [class^
 
 $('body').on('click', '[class*="spmenu-open-btn"]',function(){
   $('[class^="sp-wrap"]').parent().find('[class*="fixed-spmenu"]').addClass('show');
+  $('[class^="sp-wrap"]').parent().find('[class*="spmenu-close-btn"]').addClass('show');
+  $('[class^="sp-wrap"]').parent().find('[class*="spmenu-open-btn"]').addClass('hide');
 });
 
 $('body').on('click', '[class*="spmenu-close-btn"]',function(){
   $('[class^="sp-wrap"]').parent().find('[class*="fixed-spmenu"]').removeClass('show');
+  $('[class^="sp-wrap"]').parent().find('[class*="spmenu-close-btn"]').removeClass('show');
+  $('[class^="sp-wrap"]').parent().find('[class*="spmenu-open-btn"]').removeClass('hide');
 });
 
 $('body').on('click', '[class*="fixed-spmenu"] [class*="link-"]',function(){

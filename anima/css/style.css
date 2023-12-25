@@ -20,7 +20,7 @@
 
   /* PC追尾ヘッダー */
   --fixed-header-background: rgba(255,255,255,0) !important; /* 背景色 */
-  --fixed-header-scroll-background: rgba(255,255,255,0.5) !important; /* 追尾時背景色 */
+  --fixed-header-scroll-background: rgba(84,130,246,0.9) !important; /* 追尾時背景色 */
 
   /* SP追尾ヘッダー */
   --fixed-spheader-background: rgba(255,255,255,0) !important; /* 背景色 */
@@ -486,6 +486,7 @@ span[class*="span"] {
 /*---------------------------------------*/
 /* スマホデバイス*/
 /*---------------------------------------*/
+/* スマホヘッダー */
 .content-sp [class*="fixed-header"] {
   width: 100vw !important;
   left: 0 !important;
@@ -494,6 +495,9 @@ span[class*="span"] {
   background-color: var(--fixed-spheader-background);
   transition: .3s all ease;
   top: 0px !important;
+}
+.content-sp [class*="fixed-header"] [class*="bg"] {
+  width: 100vw !important;
 }
 .content-sp [class*="fixed-header"].scroll {
   background-color: var(--fixed-spheader-scroll-background);
@@ -512,6 +516,22 @@ span[class*="span"] {
 .content-sp [class^="fixed-header"] [class*="align-right"] {
   left: auto;
   right: 18px;
+}
+.content-sp [class^="fixed-header"] [class*="spmenu-close-btn"]  {
+  pointer-events: none;
+  opacity: 0;
+  transition: all .2s ease;
+}
+.content-sp [class^="fixed-header"] [class*="spmenu-close-btn"].show  {
+  pointer-events: initial;
+  opacity: 1;
+}
+.content-sp [class^="fixed-header"] [class*="spmenu-open-btn"]  {
+  transition: all .2s ease;
+}
+.content-sp [class^="fixed-header"] [class*="spmenu-open-btn"].hide  {
+  pointer-events: none;
+  opacity: 0;
 }
 
 
