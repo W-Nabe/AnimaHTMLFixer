@@ -9,6 +9,7 @@
 :root {
   --animate-duration: 1s;
   --animate-delay: 0.2s;
+  --animate-order-delay: 0.2s;
   --animate-repeat: 1;
 }
 
@@ -31,125 +32,125 @@
   animation-delay: var(--animate-delay);
   animation-fill-mode: both;
 }
-[class*="-order"] > *:nth-of-type(1),
+[class*="-order"] > *:nth-child(1),
 [class*="wipe-in-order"] > *:nth-child(1) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 0);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 0);
 }
-[class*="-order"] > *:nth-of-type(2),
+[class*="-order"] > *:nth-child(2),
 [class*="wipe-in-order"] > *:nth-child(2) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 1);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 1);
 }
-[class*="-order"] > *:nth-of-type(3),
+[class*="-order"] > *:nth-child(3),
 [class*="wipe-in-order"] > *:nth-child(3) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 2);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 2);
 }
-[class*="-order"] > *:nth-of-type(4),
+[class*="-order"] > *:nth-child(4),
 [class*="wipe-in-order"] > *:nth-child(4) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 3);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 3);
 }
-[class*="-order"] > *:nth-of-type(5),
+[class*="-order"] > *:nth-child(5),
 [class*="wipe-in-order"] > *:nth-child(5) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 4);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 4);
 }
-[class*="-order"] > *:nth-of-type(6),
+[class*="-order"] > *:nth-child(6),
 [class*="wipe-in-order"] > *:nth-child(6) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 5);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 5);
 }
-[class*="-order"] > *:nth-of-type(7),
+[class*="-order"] > *:nth-child(7),
 [class*="wipe-in-order"] > *:nth-child(7) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 6);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 6);
 }
-[class*="-order"] > *:nth-of-type(8),
+[class*="-order"] > *:nth-child(8),
 [class*="wipe-in-order"] > *:nth-child(8) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 7);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 7);
 }
-[class*="-order"] > *:nth-of-type(9),
+[class*="-order"] > *:nth-child(9),
 [class*="wipe-in-order"] > *:nth-child(9) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 8);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 8);
 }
-[class*="-order"] > *:nth-of-type(10),
+[class*="-order"] > *:nth-child(10),
 [class*="wipe-in-order"] > *:nth-child(10) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 9);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 9);
 }
-[class*="-order"] > *:nth-of-type(11),
+[class*="-order"] > *:nth-child(11),
 [class*="wipe-in-order"] > *:nth-child(11) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 10);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 10);
 }
-[class*="-order"] > *:nth-of-type(12),
+[class*="-order"] > *:nth-child(12),
 [class*="wipe-in-order"] > *:nth-child(12) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 11);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 11);
 }
-[class*="-order"] > *:nth-of-type(13),
+[class*="-order"] > *:nth-child(13),
 [class*="wipe-in-order"] > *:nth-child(13) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 12);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 12);
 }
-[class*="-order"] > *:nth-of-type(14),
+[class*="-order"] > *:nth-child(14),
 [class*="wipe-in-order"] > *:nth-child(14) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 13);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 13);
 }
-[class*="-order"] > *:nth-of-type(15),
+[class*="-order"] > *:nth-child(15),
 [class*="wipe-in-order"] > *:nth-child(15) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 14);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 14);
 }
-[class*="-order"] > *:nth-of-type(16),
+[class*="-order"] > *:nth-child(16),
 [class*="wipe-in-order"] > *:nth-child(16) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 15);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 15);
 }
-[class*="-order"] > *:nth-of-type(17),
+[class*="-order"] > *:nth-child(17),
 [class*="wipe-in-order"] > *:nth-child(17) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 16);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 16);
 }
-[class*="-order"] > *:nth-of-type(18),
+[class*="-order"] > *:nth-child(18),
 [class*="wipe-in-order"] > *:nth-child(18) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 17);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 17);
 }
-[class*="-order"] > *:nth-of-type(19),
+[class*="-order"] > *:nth-child(19),
 [class*="wipe-in-order"] > *:nth-child(19) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 18);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 18);
 }
-[class*="-order"] > *:nth-of-type(20),
+[class*="-order"] > *:nth-child(20),
 [class*="wipe-in-order"] > *:nth-child(20) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 19);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 19);
 }
-[class*="-order"] > *:nth-of-type(21),
+[class*="-order"] > *:nth-child(21),
 [class*="wipe-in-order"] > *:nth-child(21) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 20);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 20);
 }
-[class*="-order"] > *:nth-of-type(22),
+[class*="-order"] > *:nth-child(22),
 [class*="wipe-in-order"] > *:nth-child(22) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 21);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 21);
 }
-[class*="-order"] > *:nth-of-type(23),
+[class*="-order"] > *:nth-child(23),
 [class*="wipe-in-order"] > *:nth-child(23) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 22);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 22);
 }
-[class*="-order"] > *:nth-of-type(24),
+[class*="-order"] > *:nth-child(24),
 [class*="wipe-in-order"] > *:nth-child(24) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 23);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 23);
 }
-[class*="-order"] > *:nth-of-type(25),
+[class*="-order"] > *:nth-child(25),
 [class*="wipe-in-order"] > *:nth-child(25) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 24);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 24);
 }
-[class*="-order"] > *:nth-of-type(26),
+[class*="-order"] > *:nth-child(26),
 [class*="wipe-in-order"] > *:nth-child(26) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 25);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 25);
 }
-[class*="-order"] > *:nth-of-type(27),
+[class*="-order"] > *:nth-child(27),
 [class*="wipe-in-order"] > *:nth-child(27) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 26);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 26);
 }
-[class*="-order"] > *:nth-of-type(28),
+[class*="-order"] > *:nth-child(28),
 [class*="wipe-in-order"] > *:nth-child(28) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 27);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 27);
 }
-[class*="-order"] > *:nth-of-type(29),
+[class*="-order"] > *:nth-child(29),
 [class*="wipe-in-order"] > *:nth-child(29) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 28);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 28);
 }
-[class*="-order"] > *:nth-of-type(30),
+[class*="-order"] > *:nth-child(30),
 [class*="wipe-in-order"] > *:nth-child(30) .wrap {
-  animation-delay: calc(var(--animate-delay) + 0.1s * 29);
+  animation-delay: calc(var(--animate-delay) + var(--animate-order-delay) * 29);
 }
 [class*="anim-showed"][class*="infinite"],
 [class*="anim-showed"][class*="infinite"] .wap {
@@ -992,6 +993,12 @@
 [class*="anim-fade-in-down"] {
   animation-name: fade-in-down;
 }
+[class*="anim-fade-in-down-order"] {
+  animation-name: none;
+}
+[class*="anim-fade-in-down-order"] > * {
+  animation-name: fade-in-down;
+}
 @keyframes fade-in-down-big {
   from {
     opacity: 0;
@@ -1018,6 +1025,12 @@
   }
 }
 [class*="anim-fade-in-left"] {
+  animation-name: fade-in-left;
+}
+[class*="anim-fade-in-left-order"] {
+  animation-name: none;
+}
+[class*="anim-fade-in-left-order"] > * {
   animation-name: fade-in-left;
 }
 @keyframes fade-in-left-big {
@@ -1100,10 +1113,7 @@
   animation-name: none !important;
 }
 [class*="anim-fade-in-up-order"] > * {
-  display: none !important;
-  opacity: 0;
   animation-name: fade-in-up;
-  height: 100%;
 }
 [class*="anim-fade-in-up-order"].anim-showed > * {
   display: inline-block !important;
