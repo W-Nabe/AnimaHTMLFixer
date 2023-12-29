@@ -104,6 +104,9 @@ removeAltToImg($dom->find("img")); // <img>のalt属性を空にする
 
 /* 命名規則処理 */
 /* ---------------- */
+// figma命名規則：inc-***
+replaceIncContent($dom->find("[class*='inc-']")); // /anima/include/***.incファイルを読み込みinc-クラスがついている要素の配下のコンテンツと置き換える
+
 // figma命名規則：-id_***_
 assignId($dom->find("[class*='id_']")); // 要素にIDを付ける。
 assignId($dom->find("[class*='id-']")); // 要素にIDを付ける。
@@ -146,9 +149,6 @@ replaceSvg($dom); // SVGを埋め込みに置き換える（埋め込み用SVG�
 
 // figma命名規則：anim-text-enter
 wrapEachTextWithSpan($dom->find('[class*="anim-text-enter"]')); // anim-text-enterクラスの要素内のテキストを1文字ずつbで囲む
-
-// figma命名規則：inc-***
-replaceIncContent($dom->find("[class*='inc-']")); // /anima/include/***.incファイルを読み込みinc-クラスがついている要素の配下のコンテンツと置き換える
 
 // figma命名規則：stroketxt, stroketxt4px, stroketxt1px
 copyStrokeTxt($dom->find("[class*='stroketxt']:not(img)")); // Web上で線付き文字が正常に表現されない問題を解消
