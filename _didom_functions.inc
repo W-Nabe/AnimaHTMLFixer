@@ -543,6 +543,7 @@ function wrapA($elms) {
       $a = new Didom\Element("a", null, ["href" => $l["link"]]);
       $a->appendChild($elm);
       if ($l["target"]) $a->attr("target", $l["target"]);
+      if (isset($l["class"]) && $l["class"] !== 'undefined')  $a->attr("class", $l["class"]);
       $elm->replace($a);
     } else {
       $target = $a[2];
