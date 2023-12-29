@@ -103,7 +103,12 @@ function loadLinkCsv() {
   if (!$handle) exit;
 
   fgetcsv($handle); // タイトル行をスキップ
-  while ($data = fgetcsv($handle)) $csv[$data[0]] = array("link" => $data[1], "target" => $data[2]);
+  while ($data = fgetcsv($handle)) {
+    $csv[$data[0]] = array();
+    $csv[$data[0]]["link"] = $data[1];
+    $csv[$data[0]]["target"] = $data[2];
+    if (isset($data[3]) && $data[3] !== 'undefined') $csv[$data[0]]["class"] = $data[3];
+  }
 
   fclose($handle);
   return $csv;
