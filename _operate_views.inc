@@ -45,7 +45,7 @@ checkMetaExist($meta); // meta情報があるかチェック
 <?php endif; ?>
 
 <?php // VIEWに応じたJSの読み込み ?>
-<?php if (file_exists("./anima/js/page/{$view}.js")): ?>
+<?php if (file_exists("./anima/js/page/{$view}.js") && $config["barba"]["isuse"] === FALSE): ?>
   <script src="./anima/js/page/<?= $view ?>.js" defer></script>
 <?php endif; ?>
 
@@ -58,7 +58,7 @@ checkMetaExist($meta); // meta情報があるかチェック
 <?php endif; ?>
 
 <?php // VIEWに応じたCSSの読み込み ?>
-<?php if (file_exists("./anima/css/page/{$view}.css")): ?>
+<?php if (file_exists("./anima/css/page/{$view}.css") && $config["barba"]["isuse"] === FALSE): ?>
   <link rel="stylesheet" type="text/css" href="./anima/css/page/<?= $view ?>.css">
 <?php endif; ?>
 
@@ -158,3 +158,5 @@ replaceImgsSrc($dom); // replace-viewimg/imgに同じファイル名の画像が
 replaceCssHref($dom); // replace-viewcss/globals.css、replace-viewcss/styleguide.cssがあったら置き換える（フォントの修正などに使用）
 changeImgSrcToDataOriginal($dom->find("div[class^='pc-wrap'] img")); // .pc-wrap配下の<img>のsrcを遅延読み込みのためdata-originalにする
 changeImgSrcToDataOriginal($dom->find("div[class^='sp-wrap'] img")); // .sp-wrap配下の<img>のsrcを遅延読み込みのためdata-originalにする
+$dom = addContainerCenterHorizontal($dom); // container-center-horizontalが無い場合、挿入
+if ($config["barba"]["isuse"] === TRUE) addBarba($dom);

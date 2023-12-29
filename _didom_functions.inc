@@ -852,7 +852,7 @@ function addBarba($dom) {
   $dom->first("body")->attr("data-barba", "wrapper");
 
   // .screenの子要素にdata-barba="container"とdata-barba-namespaceを追加
-  global $view; 
+  global $view;
   $containers = $dom->find(".container-center-horizontal");
   foreach ($containers as $container) {
     $container->attr("data-barba", "container");
@@ -870,74 +870,126 @@ function addBarba($dom) {
  * @param $dom ドキュメントのDOM
  */  
 function appendBarbaInitScript($dom) {
+  global $theme_uri;
+  global $config;
 
-  $script = $dom->createElement("script");
-  $script->attr("src", "https://unpkg.com/@barba/core");
+  $barbaLoading = $config['barba_loading']["isuse"];
 
-  $script2 = $dom->createElement("script");
+  $scriptBarbaCore = $dom->createElement("script");
+  $scriptBarbaCore->attr("src", "https://unpkg.com/@barba/core");
 
-  $innerScript = <<<EOD
-barba.init({
-  transitions: [{
-    name: 'default-transition',
-    leave() {
-      document.getElementById('loading').style.opacity = '1';
-      document.getElementById('loading').style.transition = 'all 0s ease';
-      window.scrollTo(0, 0);
-    },
-    enter() {
-      setTimeout(function () {
-        var appendScript = document.getElementById('appendScript');
-        if (appendScript) {
-          var scriptSrc = appendScript.getAttribute('src');
+  $scriptBarbaProcess = $dom->createElement("script");
+
+  $processScript = <<<EOD
+    // 初回ページ別javascript追加
+    var view = document.querySelector('[data-barba="container"]').getAttribute('data-barba-namespace');
+    var script = document.createElement('script');
+    var barbaLoading = "$barbaLoading";
+    script.src = "{$theme_uri}/anima/js/page/"+view+".js";
+    script.defer = true;
+    document.querySelector('[data-barba="container"]').appendChild(script);
+    barba.init({
+      prevent: ({ el }) => el.classList && el.classList.contains('no-barba'),
+      transitions: [{
+        name: 'default-transition',
+        leave() {
+          /* ---ページ遷移直前の処理--- */
+
+          // ローディング画面表示
+          if(barbaLoading == "1") {
+            document.getElementById('loading').style.opacity = '1';
+            document.getElementById('loading').style.transitionProperty = 'opacity';
+            document.getElementById('loading').style.transitionDuration = '0ms'
+            document.getElementById('loading').style.transitionDelay = '0ms'
+          }
           
-          var scriptElement = document.createElement('script');
-          scriptElement.src = scriptSrc;
+          // スクロール初期化
+          window.scrollTo(0, 0);
+        },
+        beforeEnter(data) {
+          /* ---ページ遷移直前の処理--- */
+          const nextEl = data.next.container;
+          if (nextEl) { //Just a little check to make sure we don't run this on an error
+            console.log(nextEl);
+            var linkCode = $(nextEl).find('link[type="text/css"]').clone();
+            console.log(linkCode);
+            var existingLinks = $('head').find('link[type="text/css"]').filter(function() {
+              return $(this).attr('href') === linkCode.attr('href');
+            });
+            
+            if (existingLinks.length === 0) {
+              $('head').append(linkCode);
           
-          var container = document.querySelector('.container-center-horizontal');
-          container.appendChild(scriptElement);
+              // ローディング画面表示
+              document.getElementById('loading').style.opacity = '1';
+              document.getElementById('loading').style.transitionProperty = 'opacity';
+              document.getElementById('loading').style.transitionDuration = '0ms'
+              document.getElementById('loading').style.transitionDelay = '0ms'
+            }
+          }
+        },
+        enter() {
+          /* ---ページ遷移後の処理--- */
+          
+          // ファーストビューのアニメーション要素非表示
+          $('[class*="firstview"] [class*="anim-"]').css('display', 'none');
+          
+          setTimeout(function () {
+            
+            // ページ別javascript追加・中のfunction実行
+            view = document.querySelector('[data-barba="container"]').getAttribute('data-barba-namespace');
+            script = document.createElement('script');
+            script.src = "{$theme_uri}/anima/js/page/"+view+".js";
+            script.defer = true;
+            document.querySelector('[data-barba="container"]').appendChild(script);
+            
+            // ローディング画面非表示
+            document.getElementById('loading').style.opacity = '0';
+            document.getElementById('loading').style.transitionProperty = 'opacity';
+            document.getElementById('loading').style.transitionDuration = '200ms'
+            
+            // 各デバイスの幅を判別・高さ調整
+            is_pc = false; // -------PC表示識別
+            is_tablet = false; // ---タブレット表示識別
+            is_sp = false; // -------スマホ表示識別
+            is_smallsp = false; // --375px未満のスマホ表示識別
+            checkBreakPoint();
+            
+            // アニメーションリセット
+            var instShowOnScroll = new ShowOnScroll();
+            instShowOnScroll.init();
+            $('[class*="firstview"] [class*="anim-"]').css('display', '').addClass("anim-showed");
+            
+            // 画像遅延読み込み初期化
+            let checkExistDummyImgInterval = null; 
+            function checkExistDummyImg() {
+              const dummyImgs = document.querySelectorAll('img[src*="dummy.png"]');
+              if (dummyImgs.length > 0) {
+                clearInterval(checkExistDummyImgInterval); 
+                imgDelayLoad();
+                checkExistDummyImgInterval = setInterval(checkExistDummyImg, 100);
+              } // else {
+                //console.log('No dummy image found. Continuing search...'); 
+              //}
+            }
+            function startCheckExistDummyImg() {
+              checkExistDummyImgInterval = setInterval(checkExistDummyImg, 100);
+              setTimeout(() => {
+                clearInterval(checkExistDummyImgInterval);
+              }, 10000); 
+            }
+            startCheckExistDummyImg();
+          }, 250);
         }
-      }, 10);
+      }]
+    });  
+  EOD;
 
-      $('[class*="firstview"] [class*="anim-"]').css('display', 'none');
-
-      setTimeout(function () {
-        var instShowOnScroll = new ShowOnScroll();
-        instShowOnScroll.init();
-        $('[class*="firstview"] [class*="anim-"]').css('display', '').addClass("anim-showed");
-        document.getElementById('loading').style.removeProperty('opacity');
-        document.getElementById('loading').style.transition = 'all .2s ease';
-
-        let checkExistDummyImgInterval = null; 
-        function checkExistDummyImg() {
-          const dummyImgs = document.querySelectorAll('img[src*="dummy.png"]');
-          if (dummyImgs.length > 0) {
-            clearInterval(checkExistDummyImgInterval); 
-            imgDelayLoad();
-            checkExistDummyImgInterval = setInterval(checkExistDummyImg, 100);
-          } // else {
-            //console.log('No dummy image found. Continuing search...'); 
-          //}
-        }
-        function startCheckExistDummyImg() {
-          checkExistDummyImgInterval = setInterval(checkExistDummyImg, 100);
-          setTimeout(() => {
-            clearInterval(checkExistDummyImgInterval);
-          }, 10000); 
-        }
-        startCheckExistDummyImg();
-
-      }, 250);
-    }
-  }]
-});  
-EOD;
-
-  $script2->setInnerHtml($innerScript);
+  $scriptBarbaProcess->setInnerHtml($processScript);
 
   $body = $dom->find("body")[0];
-  $body->appendChild($script);
-  $body->appendChild($script2);
+  $body->appendChild($scriptBarbaCore);
+  $body->appendChild($scriptBarbaProcess);
 
 }
 
@@ -945,30 +997,23 @@ EOD;
  * link要素を.container-center-horizontalの先頭に移動する
  */  
 function moveLinkToTopOfContainer($dom) {
-  $container = $dom->find('.container-center-horizontal')[0];
-  $link = $dom->find('link[rel="stylesheet"]')[0];
+  global $view, $theme_uri;
+
+  $container = $dom->first('.container-center-horizontal');
+  $link = $dom->first('link[rel="stylesheet"]');
+  $link->setAttribute("data-anima-css", $view);
   
   $container->prependChild($link);
   $link->remove(); 
 
-  global $view, $theme_uri;
-
   // viewのCSSがあれば追加
-  if (file_exists(__DIR__ ."/anima/css/{$view}.css")) {
+  if (file_exists(__DIR__ ."/anima/css/page/{$view}.css")) {
     $css = $dom->createElement("link");
     $css->attr("rel", "stylesheet");
     $css->attr("type", "text/css");
-    $css->attr("href", $theme_uri."/anima/css/{$view}.css");
+    $css->attr("data-page-css", $view);
+    $css->attr("href", $theme_uri."/anima/css/page/{$view}.css");
     $container->prependChild($css);
-  }
-
-  // viewのJSがあれば追加
-  if (file_exists(__DIR__ ."/anima/js/{$view}.js")) {  
-    $js = $dom->createElement("script");
-    $js->attr("src", $theme_uri."/anima/js/{$view}.js");
-    $js->attr("id", "appendScript");
-    $js->attr("defer", "defer");
-    $container->appendChild($js);
   }
 }
 

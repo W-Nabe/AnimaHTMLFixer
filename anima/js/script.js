@@ -7,7 +7,6 @@
  * 
  */
 
-
 // func.Js読み込み用関数
 var loadScript = function(src, callback = "") {
   var head = document.getElementsByTagName('head')[0];
@@ -19,7 +18,6 @@ var loadScript = function(src, callback = "") {
     callback();
   }
 }
-
 
 
 // ************************************** //
@@ -89,6 +87,7 @@ const setSrc = (imgTags, index) => {
 
   nextIdx++;
 };
+
 
 // ************************************** //
 // **delayload
@@ -300,9 +299,19 @@ var applySmallSpAnimaShowOnScroll = function() {
   };
 }
 
-$(window).on('load resize', function(){
+$(window).on('load resize', function(e){
   window_width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  if(e.type == "load") {
+    setTimeout(() => {
+      checkBreakPoint();
+    }, 500);
+  } else {
+    checkBreakPoint();
+  }
+});
 
+// ブレイクポイント判別関数
+function checkBreakPoint() {
   if($('[class*="pc-wrap"]').length !== 0) { // pc-wrap要素がある場合
     if( is_pc == false && TABLET_BREAKPOINT <= window_width) {
       console.log("*********パソコン表示開始*********");
@@ -342,8 +351,7 @@ $(window).on('load resize', function(){
       applySmallSpAnimaShowOnScroll();
     }
   }
-
-});
+};
 
 
 

@@ -20,7 +20,7 @@
 
   /* PC追尾ヘッダー */
   --fixed-header-background: rgba(255,255,255,0) !important; /* 背景色 */
-  --fixed-header-scroll-background: rgba(84,130,246,0.9) !important; /* 追尾時背景色 */
+  --fixed-header-scroll-background: rgba(255,255,255,0.6) !important; /* 追尾時背景色 */
 
   /* SP追尾ヘッダー */
   --fixed-spheader-background: rgba(255,255,255,0) !important; /* 背景色 */
@@ -339,7 +339,7 @@ span[class*="span"] {
   z-index:1000;
 }
 #loading.hide {
-  opacity: 0 !important;
+  opacity: 0;
   pointer-events:none;
   transition:all var(--loading-speed) ease;
   transition-delay: var(--loading-speed);

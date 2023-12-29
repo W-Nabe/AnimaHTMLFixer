@@ -14,3 +14,5 @@ loading_background,TRUE,#fff,ローディング時の背景画像
 favicon,TRUE,favicon.svg,ファビコンの使用
 touchicon,TRUE,touchicon.png,iPhoneやAndroidのタッチアイコン画像
 ogp_image_common,TRUE,ogp.png,サイト全体の共通ogp画像
+barba,TRUE,,Animaページを素早くページ遷移させる非同期遷移JSライブラリ（https://barba.js.org/）
+barba_loading,FALSE,,ページ遷移時にローディング画面を表示するかどうか
