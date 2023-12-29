@@ -1040,6 +1040,7 @@ function replaceIncContent($incs) {
         include($file);
         $append_dom = ob_get_clean();
         $inc->setInnerHtml($append_dom);
+        $inc->setAttribute("id", $key);
       }
     }
   }
