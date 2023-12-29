@@ -66,11 +66,6 @@
 .index-all-breakpoints .lean-stroketxt5px-0XYT35 {
   -webkit-text-stroke: 5px var(--white);
   background-color: transparent;
-  color: transparent;
-  font-family: var(--font-family-train_one);
-  font-size: 105px;
-  font-style: normal;
-  font-weight: 400;
   height: auto;
   left: calc(50.00% - 474px);
   letter-spacing: 0.00px;
@@ -84,28 +79,17 @@
 }
 
 .index-all-breakpoints .span0-M5ydYt {
-  color: var(--blue-ribbon);
-  font-style: normal;
 }
 
 .index-all-breakpoints .span1-M5ydYt {
-  color: var(--sizzling-sunrise);
-  font-style: normal;
 }
 
 .index-all-breakpoints .span2-M5ydYt {
-  color: var(--blue-ribbon);
-  font-style: normal;
 }
 
 .index-all-breakpoints .text-stroketxt4px-0XYT35 {
   -webkit-text-stroke: 4px var(--white);
   background-color: transparent;
-  color: var(--blue-ribbon);
-  font-family: var(--font-family-kiwi_maru);
-  font-size: var(--font-size-xxxl);
-  font-style: normal;
-  font-weight: 500;
   height: auto;
   left: calc(50.00% - 527px);
   letter-spacing: 0.00px;
@@ -483,22 +467,33 @@
 
 .index-all-breakpoints .anim-flip-in-y-02-4EmeTO {
   top: 389px;
-  width: 417px;
-}
-
-.index-all-breakpoints .rectangle-5-BHqrka {
-  left: calc(50.00% - 208px);
 }
 
 .index-all-breakpoints .figma-x-dinc-BHqrka {
   background-color: transparent;
   height: auto;
-  left: calc(50.00% - 162px);
+  left: calc(50.00% - 164px);
   letter-spacing: 0.00px;
   line-height: 20px;
   position: absolute;
   text-align: center;
-  top: 71px;
+  top: 62px;
+  width: auto;
+}
+
+.index-all-breakpoints .link-include-BHqrka {
+  color: var(--azure-radiance);
+  font-family: var(--font-family-noto_sans_jp);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: calc(50.00% - 64px);
+  letter-spacing: 0.00px;
+  line-height: 20px;
+  text-align: center;
+  top: 132px;
+  white-space: nowrap;
   width: auto;
 }
 
@@ -506,26 +501,26 @@
   -webkit-text-stroke: 0.10000000149011612px var(--black);
   background-color: transparent;
   height: auto;
-  left: calc(50.00% - 162px);
+  left: calc(50.00% - 163px);
   letter-spacing: 0.00px;
   line-height: 40px;
   position: absolute;
   text-align: center;
-  top: 21px;
+  top: 12px;
   white-space: nowrap;
   width: auto;
 }
 
 .index-all-breakpoints .anim-flip-in-y-02-dI0OQE {
   top: 198px;
-  width: 419px;
-}
-
-.index-all-breakpoints .rectangle-5-3S4ljk {
-  left: calc(50.00% - 210px);
 }
 
 .index-all-breakpoints .link-animation-3S4ljk {
+  color: var(--azure-radiance);
+  font-family: var(--font-family-noto_sans_jp);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 400;
   height: auto;
   left: calc(50.00% - 100px);
   letter-spacing: 0.00px;
@@ -919,10 +914,10 @@
 .index-all-breakpoints .align-right-UdMFql {
   background-color: transparent;
   height: 32px;
-  left: 974px;
+  left: 783px;
   position: absolute;
   top: 44px;
-  width: 427px;
+  width: 618px;
 }
 
 .index-all-breakpoints .links-HUpbUw {
@@ -931,13 +926,13 @@
   left: 0px;
   position: relative;
   top: 0px;
-  width: 427px;
+  width: 618px;
 }
 
 .index-all-breakpoints .link-home-0Fdbe2 {
   background-color: transparent;
   height: 16px;
-  left: calc(50.00% - 214px);
+  left: calc(50.00% - 309px);
   position: absolute;
   top: 8px;
   width: 50px;
@@ -952,7 +947,7 @@
 
 .index-all-breakpoints .link-animation-0Fdbe2 {
   height: 16px;
-  left: calc(50.00% - 133px);
+  left: calc(50.00% - 207px);
   top: 8px;
   width: 146px;
 }
@@ -964,10 +959,24 @@
   white-space: nowrap;
 }
 
+.index-all-breakpoints .link-include-0Fdbe2 {
+  height: 16px;
+  left: calc(50.00% - 9px);
+  top: 8px;
+  width: 98px;
+}
+
+.index-all-breakpoints .text_label-jcHGvS {
+  left: calc(50.00% - 49px);
+  line-height: 16px;
+  top: 0px;
+  white-space: nowrap;
+}
+
 .index-all-breakpoints .link-contact-0Fdbe2 {
   background-color: transparent;
   height: 16px;
-  left: calc(50.00% + 44px);
+  left: calc(50.00% + 141px);
   position: absolute;
   top: 8px;
   width: 98px;
@@ -983,7 +992,7 @@
 .index-all-breakpoints .link-git-0Fdbe2 {
   background-color: transparent;
   height: 32px;
-  left: 395px;
+  left: 586px;
   position: absolute;
   top: 0px;
   width: 32px;
@@ -1010,11 +1019,6 @@
 
 .index-all-breakpoints .page-top-ohrS7C {
   background-color: transparent;
-  color: var(--black);
-  font-family: var(--font-family-kiwi_maru);
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
   height: 15.00%;
   left: 17.50%;
   letter-spacing: 0.00px;
@@ -1048,11 +1052,7 @@
   height: 165px;
   left: calc(50.00% + 11px);
   position: absolute;
-}
-
-.index-all-breakpoints .anim-text-enter-jack {
-  background-color: transparent;
-  position: absolute;
+  width: 419px;
 }
 
 .index-all-breakpoints .anima-html-fixer {
@@ -1069,6 +1069,11 @@
 }
 
 .index-all-breakpoints .link-animation {
+  background-color: transparent;
+  position: absolute;
+}
+
+.index-all-breakpoints .link-include {
   background-color: transparent;
   position: absolute;
 }
@@ -1093,6 +1098,7 @@
   background-color: var(--white);
   box-shadow: 0px 4px 4px #00000040;
   height: 165px;
+  left: calc(50.00% - 210px);
   position: absolute;
   top: 0px;
   width: 413px;
@@ -1480,12 +1486,10 @@
 }
 
 .index-sp .text_label-prylCM {
-  height: auto;
   left: calc(50.00% - 73px);
   line-height: 73px;
   top: 0px;
   white-space: nowrap;
-  width: auto;
 }
 
 .index-sp .relative-id_frow_-e92lAv {
@@ -1667,12 +1671,10 @@
 
 .index-sp .text_label-PgWB8s {
   -webkit-text-stroke: 0.10000000149011612px var(--black);
-  height: auto;
   left: calc(50.00% - 113px);
   line-height: 40px;
   top: 18px;
   white-space: nowrap;
-  width: auto;
 }
 
 .index-sp .pc-pc-PgWB8s {
@@ -1689,6 +1691,11 @@
 
 .index-sp .x320px-PgWB8s {
   background-color: transparent;
+  color: var(--black);
+  font-family: var(--font-family-noto_sans_jp);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 400;
   height: auto;
   left: calc(50.00% - 122px);
   letter-spacing: 0.00px;
@@ -1730,6 +1737,11 @@
 
 .index-sp .link-animlist-rIxofl {
   background-color: transparent;
+  color: var(--black);
+  font-family: var(--font-family-noto_sans_jp);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 400;
   height: auto;
   left: calc(50.00% - 100px);
   letter-spacing: 0.00px;
@@ -1742,21 +1754,17 @@
 }
 
 .index-sp .text_label-rIxofl {
-  height: auto;
   left: calc(50.00% - 168px);
   line-height: 20px;
   top: 69px;
-  width: auto;
 }
 
 .index-sp .text_label-fE3OOH {
   -webkit-text-stroke: 0.10000000149011612px var(--black);
-  height: auto;
   left: calc(50.00% - 114px);
   line-height: 40px;
   top: 23px;
   white-space: nowrap;
-  width: auto;
 }
 
 .index-sp .anim-flip-in-y-03-IAtsJ8 {
@@ -1788,21 +1796,17 @@
 }
 
 .index-sp .text_label-qLb60Z {
-  height: auto;
   left: calc(50.00% - 130px);
   line-height: 20px;
   top: 76px;
-  width: auto;
 }
 
 .index-sp .text_label-HOZxny {
   -webkit-text-stroke: 0.10000000149011612px var(--black);
-  height: auto;
   left: calc(50.00% - 137px);
   line-height: 40px;
   top: 30px;
   white-space: nowrap;
-  width: auto;
 }
 
 .index-sp .anim-flip-in-y-04-IAtsJ8 {
@@ -1847,12 +1851,10 @@
 
 .index-sp .text_label-q8cJCI {
   -webkit-text-stroke: 0.10000000149011612px var(--black);
-  height: auto;
   left: calc(50.00% - 114px);
   line-height: 40px;
   top: 33px;
   white-space: nowrap;
-  width: auto;
 }
 
 .index-sp .relative-id_form_-e92lAv {
@@ -1904,7 +1906,6 @@
   background-color: var(--white);
   height: 120px;
   left: calc(50.00% - 374px);
-  width: 744px;
 }
 
 .index-sp .anima-html-fixer-xXZCnG {
@@ -1943,26 +1944,25 @@
 .index-sp .wrap-mknEkq {
   background-color: transparent;
   height: 780px;
-  left: 0px;
-  position: relative;
+  position: absolute;
+  right: 0px;
   top: 0px;
   width: 744px;
 }
 
 .index-sp .menu-QznxxT {
   background-color: transparent;
-  height: 100%;
+  height: 780px;
   left: 0px;
   position: absolute;
   top: 0px;
-  width: 100%;
+  width: 744px;
 }
 
 .index-sp .bg-Jinx0o {
   background-color: transparent;
-  height: 100%;
+  height: 780px;
   left: 0px;
-  width: 100%;
 }
 
 .index-sp .content-center-Jinx0o {
@@ -1984,73 +1984,63 @@
 }
 
 .index-sp .link-home-VIK3xJ {
-  height: 9.14%;
-  left: 28.57%;
+  height: 16px;
+  left: 32px;
   position: absolute;
-  width: 44.64%;
+  width: 50px;
 }
 
 .index-sp .text_label-l8LjUc {
-  height: 100%;
   left: 0px;
   line-height: 16px;
   top: 0px;
   white-space: nowrap;
-  width: 96.00%;
 }
 
-.index-sp .link-page-VIK3xJ {
+.index-sp .link-animation-VIK3xJ {
   background-color: transparent;
-  height: 9.14%;
+  height: 16px;
   left: 0px;
   position: absolute;
-  top: 22.29%;
-  width: 101.79%;
+  top: 39px;
+  width: 114px;
 }
 
-.index-sp .text_label-xQQbAs {
-  height: 100%;
+.index-sp .text_label-oMqHCk {
   left: 0px;
   line-height: 16px;
   top: 0px;
   white-space: nowrap;
-  width: 98.25%;
 }
 
 .index-sp .link-contact-VIK3xJ {
   background-color: transparent;
-  height: 9.14%;
-  left: 7.14%;
+  height: 16px;
+  left: 8px;
   position: absolute;
-  top: 44.57%;
-  width: 87.50%;
+  top: 78px;
+  width: 98px;
 }
 
 .index-sp .text_label-xx58YX {
-  height: 100%;
   left: 0px;
   line-height: 16px;
   top: 0px;
   white-space: nowrap;
-  width: 97.96%;
 }
 
 .index-sp .link-git-VIK3xJ {
   background-color: transparent;
-  height: 18.29%;
-  left: 35.71%;
+  height: 32px;
+  left: 40px;
   position: absolute;
-  top: 81.71%;
-  width: 28.57%;
+  top: 143px;
+  width: 32px;
 }
 
 .index-sp .spmenu-close-btn-QznxxT {
-  background-color: transparent;
-  height: 2.56%;
-  left: 93.15%;
-  position: absolute;
-  top: 3.85%;
-  width: 2.69%;
+  right: 31px;
+  top: 30px;
 }
 
 .index-sp .fixed-header-xls0kk {
@@ -2099,10 +2089,10 @@
 
 .index-sp .align-right-W8MzAH {
   background-color: transparent;
-  height: 13px;
+  height: 20px;
   left: calc(50.00% + 328px);
   position: absolute;
-  top: 24px;
+  top: 20px;
   width: 20px;
 }
 
@@ -2111,18 +2101,26 @@
   height: 13px;
   left: calc(50.00% - 10px);
   position: absolute;
-  top: 0px;
+  top: 4px;
   width: 20px;
+}
+
+.index-sp .spmenu-close-btn-KJfq5f {
+  right: 0px;
+  top: 0px;
 }
 
 .index-sp .bg {
   position: absolute;
   top: 0px;
+  width: 744px;
 }
 
-.index-sp .link-home {
+.index-sp .spmenu-close-btn {
   background-color: transparent;
-  top: 0px;
+  height: 20px;
+  position: absolute;
+  width: 20px;
 }
 
 .index-sp .stroketxt2px {
@@ -2137,9 +2135,11 @@
 
 .index-sp .text_label {
   background-color: transparent;
+  height: auto;
   letter-spacing: 0.00px;
   position: absolute;
   text-align: center;
+  width: auto;
 }
 @media screen and (max-width: 1919px) {
   .screen.index-all-breakpoints { 

@@ -34,17 +34,22 @@
   box-sizing: border-box;
 }
 
-.anim-fade-in {
-  background-color: transparent;
-  position: absolute;
-}
-
 .anim-fade-in-up {
   background-color: transparent;
   position: absolute;
 }
 
+.link-home {
+  background-color: transparent;
+  top: 0px;
+}
+
 .anim-bounce-in-up {
+  background-color: transparent;
+  position: absolute;
+}
+
+.anim-fade-in {
   background-color: transparent;
   position: absolute;
 }
@@ -60,10 +65,7 @@
   position: absolute;
 }
 
-.txt {
+.anim-text-enter-jack {
   background-color: transparent;
-  height: auto;
-  letter-spacing: 0.00px;
   position: absolute;
-  white-space: nowrap;
 }

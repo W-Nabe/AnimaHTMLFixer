@@ -1,14 +1,19 @@
 :root { 
+  --alto: #d9d9d903;
+  --anakiwa: #8cd8ff;
+  --azure-radiance: #00aaff;
+  --bittersweet: #ff7a7a;
   --black: #000000;
   --blue-ribbon: #006aea;
   --humming-bird: #ccedf5;
+  --rose: #ff5454;
   --sizzling-sunrise: #ffda00;
   --white: #ffffff;
   --white-2: #ffffff03;
  
   --font-size-l: 16px;
   --font-size-m: 14px;
-  --font-size-s: 10px;
+  --font-size-s: 12px;
   --font-size-xl: 20.3px;
   --font-size-xs: 4.6px;
   --font-size-xxl: 24px;
@@ -18,18 +23,18 @@
   --font-family-noto_sans_jp: "Noto Sans JP", Helvetica;
   --font-family-train_one: "Train One", Helvetica;
 }
-.kiwimaru-normal-black-44px {
-  color: var(--black);
-  font-family: var(--font-family-kiwi_maru);
-  font-size: var(--font-size-xxxl);
-  font-style: normal;
-  font-weight: 400;
-}
-
 .kiwimaru-normal-black-20-3px {
   color: var(--black);
   font-family: var(--font-family-kiwi_maru);
   font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.kiwimaru-normal-black-44px {
+  color: var(--black);
+  font-family: var(--font-family-kiwi_maru);
+  font-size: var(--font-size-xxxl);
   font-style: normal;
   font-weight: 400;
 }
@@ -42,6 +47,14 @@
   font-weight: 400;
 }
 
+.kiwimaru-normal-black-4-6px {
+  color: var(--black);
+  font-family: var(--font-family-kiwi_maru);
+  font-size: var(--font-size-xs);
+  font-style: normal;
+  font-weight: 400;
+}
+
 .notosansjp-normal-black-14px {
   color: var(--black);
   font-family: var(--font-family-noto_sans_jp);
@@ -50,7 +63,7 @@
   font-weight: 400;
 }
 
-.kiwimaru-normal-black-10px {
+.kiwimaru-normal-black-12px {
   color: var(--black);
   font-family: var(--font-family-kiwi_maru);
   font-size: var(--font-size-s);
@@ -58,10 +71,18 @@
   font-weight: 400;
 }
 
-.kiwimaru-normal-black-4-6px {
+.kiwimaru-normal-black-16px {
   color: var(--black);
   font-family: var(--font-family-kiwi_maru);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.kiwimaru-normal-black-10px {
+  color: var(--black);
+  font-family: var(--font-family-kiwi_maru);
+  font-size: 10px;
   font-style: normal;
   font-weight: 400;
 }
@@ -74,26 +95,10 @@
   font-weight: 500;
 }
 
-.kiwimaru-normal-black-16px {
-  color: var(--black);
-  font-family: var(--font-family-kiwi_maru);
-  font-size: var(--font-size-l);
-  font-style: normal;
-  font-weight: 400;
-}
-
 .kiwimaru-normal-white-16px {
   color: var(--white);
   font-family: var(--font-family-kiwi_maru);
   font-size: var(--font-size-l);
-  font-style: normal;
-  font-weight: 400;
-}
-
-.kiwimaru-normal-blue-ribbon-34px {
-  color: var(--blue-ribbon);
-  font-family: var(--font-family-kiwi_maru);
-  font-size: 34px;
   font-style: normal;
   font-weight: 400;
 }
@@ -114,6 +119,14 @@
   font-weight: 400;
 }
 
+.trainone-normal-blue-ribbon-105px {
+  color: var(--blue-ribbon);
+  font-family: var(--font-family-train_one);
+  font-size: 105px;
+  font-style: normal;
+  font-weight: 400;
+}
+
 .kiwimaru-normal-blue-ribbon-32px {
   color: var(--blue-ribbon);
   font-family: var(--font-family-kiwi_maru);
@@ -122,12 +135,43 @@
   font-weight: 400;
 }
 
-.notosansjp-normal-black-12px {
+.kiwimaru-normal-black-11-1px {
   color: var(--black);
-  font-family: var(--font-family-noto_sans_jp);
-  font-size: 12px;
+  font-family: var(--font-family-kiwi_maru);
+  font-size: 11.1px;
   font-style: normal;
   font-weight: 400;
+}
+
+.kiwimaru-normal-blue-ribbon-34px {
+  color: var(--blue-ribbon);
+  font-family: var(--font-family-kiwi_maru);
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.trainone-normal-white-105px {
+  font-family: var(--font-family-train_one);
+  font-size: 105px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.trainone-normal-sizzling-sunrise-105px {
+  color: var(--sizzling-sunrise);
+  font-family: var(--font-family-train_one);
+  font-size: 105px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.kiwimaru-medium-blue-ribbon-44px {
+  color: var(--blue-ribbon);
+  font-family: var(--font-family-kiwi_maru);
+  font-size: var(--font-size-xxxl);
+  font-style: normal;
+  font-weight: 500;
 }
 
 :root {

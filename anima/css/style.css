@@ -168,23 +168,22 @@ div[class^='pc-wrap'] img.show, div[class^='sp-wrap'] img.show {
 }
 
 /* relative, sectionと付いているクラス名をposition:relativeにする */
-[class*="relative"] {
-  position: relative !important;
-  top: auto !important;
-  bottom: auto !important;
-}
-[class*="section"] {
+[class*="relative"],
+[class*="section"],
+[class*="height-auto"],
+[class*="auto-height"],
+[class*="hauto"] {
   position: relative !important;
   top: auto !important;
   bottom: auto !important;
 }
 /* コンテンツ：高さ可変コンテンツ */
-[class*="height-auto"],
-[class*="auto-height"],
-[class*="hauto"],
 .screen,
 [class^="pc-wrap"],
-[class^="sp-wrap"] {
+[class^="sp-wrap"],
+[class*="height-auto"],
+[class*="auto-height"],
+[class*="hauto"] {
   height: auto !important;
   position: relative !important;
 }

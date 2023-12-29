@@ -1,0 +1,1 @@
+<iframe width="100%" height="100%" src="https://www.youtube.com/embed/msK_Up-S_wo?&rel=0&loop=1&color=white&modestbranding=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

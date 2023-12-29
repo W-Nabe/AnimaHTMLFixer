@@ -3,7 +3,7 @@
 .animation-all-breakpoints {
   background-color: var(--humming-bird);
   margin: 0px;
-  min-height: 7723px;
+  min-height: 9083px;
   min-width: 1920px;
   overflow: hidden;
   overflow-x: hidden;
@@ -23,7 +23,7 @@
 
 .animation-all-breakpoints .pc-wrap-bSm4Jh {
   background-color: transparent;
-  height: 7723px;
+  height: 9083px;
   left: 0px;
   position: absolute;
   top: 0px;
@@ -32,33 +32,33 @@
 
 .animation-all-breakpoints .section-id_mv_firstview-Ux8ctj {
   background-color: transparent;
-  height: 428px;
+  height: 601px;
   left: calc(50.00% - 962px);
   position: absolute;
   top: 0px;
-  width: 1920px;
+  width: 1922px;
 }
 
 .animation-all-breakpoints .area-2uCxP1 {
-  height: 428px;
-  left: calc(50.00% - 960px);
+  height: 601px;
+  left: calc(50.00% - 961px);
   top: 0px;
   width: 1920px;
 }
 
 .animation-all-breakpoints .anim-fade-in-2uCxP1 {
   height: 73px;
-  left: calc(50.00% - 619px);
+  left: calc(50.00% - 641px);
   top: 355px;
-  width: 1242px;
+  width: 1284px;
 }
 
 .animation-all-breakpoints .rectangle-24-3DGZcc {
   border-radius: 70px;
   height: 70px;
-  left: calc(50.00% - 621px);
+  left: calc(50.00% - 642px);
   top: 3px;
-  width: 1240px;
+  width: 1282px;
 }
 
 .animation-all-breakpoints .figma-x-danim-3DGZcc {
@@ -73,39 +73,59 @@
   width: 1213px;
 }
 
-.animation-all-breakpoints .anim-bounce-in-up-2uCxP1 {
+.animation-all-breakpoints .anim-text-enter-jack-2uCxP1 {
   height: 191px;
   left: 631px;
   top: 145px;
   width: 658px;
 }
 
-.animation-all-breakpoints .h1-seo-animation-pc-F8A8Lg {
+.animation-all-breakpoints .h1-QFET9x {
   background-color: transparent;
   height: 191px;
-  left: calc(50.00% - 333px);
-  position: absolute;
+  left: calc(50.00% - 329px);
+  position: relative;
   top: 0px;
   width: 662px;
 }
 
-.animation-all-breakpoints .id-animation-section-Ux8ctj {
+.animation-all-breakpoints .lean-stroketxt5px-sje0XL {
+  -webkit-text-stroke: 5px var(--white);
   background-color: transparent;
-  height: 7175px;
-  left: calc(50.00% - 962px);
+  height: auto;
+  left: calc(50.00% - 336px);
+  letter-spacing: 0.00px;
+  line-height: 110px;
   position: absolute;
-  top: 428px;
-  width: 1922px;
+  text-align: center;
+  text-shadow: 0px 4px 4px #00000040;
+  top: -5px;
+  white-space: nowrap;
+  width: auto;
 }
 
-.animation-all-breakpoints .area-MoBqud {
-  height: 7175px;
-  left: calc(50.00% - 961px);
-  top: 0px;
-  width: 1920px;
+.animation-all-breakpoints .span0-9FNVFg {
 }
 
-.animation-all-breakpoints .anim-text-enter-down-stroketxt4px-MoBqud {
+.animation-all-breakpoints .span1-9FNVFg {
+}
+
+.animation-all-breakpoints .text-stroketxt4px-sje0XL {
+  -webkit-text-stroke: 4px var(--white);
+  background-color: transparent;
+  height: auto;
+  left: calc(50.00% - 270px);
+  letter-spacing: 0.00px;
+  line-height: 73px;
+  position: absolute;
+  text-align: center;
+  text-shadow: 0px 4px 4px #00000040;
+  top: 114px;
+  white-space: nowrap;
+  width: auto;
+}
+
+.animation-all-breakpoints .anim-text-enter-down-stroketxt4px-2uCxP1 {
   -webkit-text-stroke: 4px var(--white);
   background-color: transparent;
   color: var(--humming-bird);
@@ -120,15 +140,31 @@
   position: absolute;
   text-align: center;
   text-shadow: 0px 4px 4px #00000040;
-  top: 77px;
+  top: 524px;
   white-space: nowrap;
   width: auto;
 }
 
+.animation-all-breakpoints .id-animation-section-Ux8ctj {
+  background-color: transparent;
+  height: 8362px;
+  left: calc(50.00% - 962px);
+  position: absolute;
+  top: 601px;
+  width: 1920px;
+}
+
+.animation-all-breakpoints .area-MoBqud {
+  height: 8362px;
+  left: calc(50.00% - 960px);
+  top: 0px;
+  width: 1920px;
+}
+
 .animation-all-breakpoints .anim-fade-in-MoBqud {
   height: 88px;
-  left: calc(50.00% - 350px);
-  top: 663px;
+  left: calc(50.00% - 349px);
+  top: 490px;
   width: 702px;
 }
 
@@ -152,9 +188,9 @@
 .animation-all-breakpoints .anim-fade-in-down-MoBqud {
   background-color: transparent;
   height: 88px;
-  left: calc(50.00% - 350px);
+  left: calc(50.00% - 349px);
   position: absolute;
-  top: 885px;
+  top: 708px;
   width: 702px;
 }
 
@@ -178,9 +214,9 @@
 .animation-all-breakpoints .anim-fade-in-left-MoBqud {
   background-color: transparent;
   height: 88px;
-  left: calc(50.00% - 350px);
+  left: calc(50.00% - 349px);
   position: absolute;
-  top: 1107px;
+  top: 926px;
   width: 702px;
 }
 
@@ -204,9 +240,9 @@
 .animation-all-breakpoints .anim-fade-in-right-MoBqud {
   background-color: transparent;
   height: 88px;
-  left: calc(50.00% - 350px);
+  left: calc(50.00% - 349px);
   position: absolute;
-  top: 1329px;
+  top: 1144px;
   width: 702px;
 }
 
@@ -230,9 +266,9 @@
 .animation-all-breakpoints .anim-fade-in-up-MoBqud {
   background-color: transparent;
   height: 88px;
-  left: calc(50.00% - 350px);
+  left: calc(50.00% - 349px);
   position: absolute;
-  top: 1551px;
+  top: 1362px;
   width: 702px;
 }
 
@@ -256,9 +292,9 @@
 .animation-all-breakpoints .anim-fade-in-top-left-MoBqud {
   background-color: transparent;
   height: 88px;
-  left: calc(50.00% - 350px);
+  left: calc(50.00% - 349px);
   position: absolute;
-  top: 1773px;
+  top: 1580px;
   width: 702px;
 }
 
@@ -282,9 +318,9 @@
 .animation-all-breakpoints .anim-fade-in-top-right-MoBqud {
   background-color: transparent;
   height: 88px;
-  left: calc(50.00% - 350px);
+  left: calc(50.00% - 349px);
   position: absolute;
-  top: 1995px;
+  top: 1798px;
   width: 702px;
 }
 
@@ -308,9 +344,9 @@
 .animation-all-breakpoints .anim-fade-in-bottom-left-MoBqud {
   background-color: transparent;
   height: 88px;
-  left: calc(50.00% - 350px);
+  left: calc(50.00% - 349px);
   position: absolute;
-  top: 2217px;
+  top: 2016px;
   width: 702px;
 }
 
@@ -334,9 +370,9 @@
 .animation-all-breakpoints .anim-fade-in-bottom-right-MoBqud {
   background-color: transparent;
   height: 88px;
-  left: calc(50.00% - 350px);
+  left: calc(50.00% - 349px);
   position: absolute;
-  top: 2439px;
+  top: 2234px;
   width: 702px;
 }
 
@@ -360,9 +396,9 @@
 .animation-all-breakpoints .anim-bounce-in-MoBqud {
   background-color: transparent;
   height: 88px;
-  left: calc(50.00% - 350px);
+  left: calc(50.00% - 349px);
   position: absolute;
-  top: 2661px;
+  top: 2452px;
   width: 702px;
 }
 
@@ -386,9 +422,9 @@
 .animation-all-breakpoints .anim-bounce-in-down-MoBqud {
   background-color: transparent;
   height: 88px;
-  left: calc(50.00% - 350px);
+  left: calc(50.00% - 349px);
   position: absolute;
-  top: 2883px;
+  top: 2670px;
   width: 702px;
 }
 
@@ -412,9 +448,9 @@
 .animation-all-breakpoints .anim-bounce-in-left-MoBqud {
   background-color: transparent;
   height: 88px;
-  left: calc(50.00% - 350px);
+  left: calc(50.00% - 349px);
   position: absolute;
-  top: 3105px;
+  top: 2888px;
   width: 702px;
 }
 
@@ -438,9 +474,9 @@
 .animation-all-breakpoints .anim-bounce-in-right-MoBqud {
   background-color: transparent;
   height: 88px;
-  left: calc(50.00% - 350px);
+  left: calc(50.00% - 349px);
   position: absolute;
-  top: 3327px;
+  top: 3106px;
   width: 702px;
 }
 
@@ -462,9 +498,11 @@
 }
 
 .animation-all-breakpoints .anim-bounce-in-up-MoBqud {
+  background-color: transparent;
   height: 88px;
-  left: calc(50.00% - 350px);
-  top: 3549px;
+  left: calc(50.00% - 349px);
+  position: absolute;
+  top: 3324px;
   width: 702px;
 }
 
@@ -488,9 +526,9 @@
 .animation-all-breakpoints .anim-zoom-in-MoBqud {
   background-color: transparent;
   height: 88px;
-  left: calc(50.00% - 350px);
+  left: calc(50.00% - 349px);
   position: absolute;
-  top: 3771px;
+  top: 3542px;
   width: 702px;
 }
 
@@ -514,9 +552,9 @@
 .animation-all-breakpoints .anim-jack-in-the-box-MoBqud {
   background-color: transparent;
   height: 88px;
-  left: calc(50.00% - 350px);
+  left: calc(50.00% - 349px);
   position: absolute;
-  top: 3993px;
+  top: 3760px;
   width: 702px;
 }
 
@@ -540,9 +578,9 @@
 .animation-all-breakpoints .anim-blur-in-MoBqud {
   background-color: transparent;
   height: 88px;
-  left: calc(50.00% - 350px);
+  left: calc(50.00% - 349px);
   position: absolute;
-  top: 4215px;
+  top: 3978px;
   width: 702px;
 }
 
@@ -568,7 +606,7 @@
   height: 112px;
   left: 600px;
   position: absolute;
-  top: 4437px;
+  top: 4196px;
   width: 728px;
 }
 
@@ -617,7 +655,7 @@
   height: 112px;
   left: 600px;
   position: absolute;
-  top: 4683px;
+  top: 4438px;
   width: 726px;
 }
 
@@ -657,8 +695,8 @@
   background-color: transparent;
   height: 112px;
   position: absolute;
-  right: 594px;
-  top: 5175px;
+  right: 592px;
+  top: 4680px;
   width: 728px;
 }
 
@@ -704,9 +742,9 @@
 
 .animation-all-breakpoints .anim-wipe-in-up-MoBqud {
   background-color: transparent;
-  bottom: 2134px;
+  bottom: 3328px;
   height: 112px;
-  left: calc(50.00% - 361px);
+  left: calc(50.00% - 360px);
   position: absolute;
   width: 728px;
 }
@@ -754,9 +792,9 @@
 .animation-all-breakpoints .anim-wipe-in-down-MoBqud {
   background-color: transparent;
   height: 112px;
-  left: calc(50.00% - 361px);
+  left: calc(50.00% - 360px);
   position: absolute;
-  top: 5421px;
+  top: 5164px;
   width: 728px;
 }
 
@@ -803,9 +841,9 @@
 .animation-all-breakpoints .anim-wipe-in-center-MoBqud {
   background-color: transparent;
   height: 112px;
-  left: calc(50.00% - 361px);
+  left: calc(50.00% - 360px);
   position: absolute;
-  top: calc(50.00% + 2080px);
+  top: calc(50.00% + 1225px);
   width: 728px;
 }
 
@@ -854,7 +892,7 @@
   height: 88px;
   left: 611px;
   position: absolute;
-  top: 5913px;
+  top: 5648px;
   width: 702px;
 }
 
@@ -880,7 +918,7 @@
   height: 88px;
   left: 611px;
   position: absolute;
-  top: 6135px;
+  top: 5866px;
   width: 702px;
 }
 
@@ -906,7 +944,7 @@
   height: 88px;
   left: 611px;
   position: absolute;
-  top: 6357px;
+  top: 6084px;
   width: 702px;
 }
 
@@ -928,9 +966,11 @@
 }
 
 .animation-all-breakpoints .anim-text-enter-down-MoBqud {
+  background-color: transparent;
   height: 88px;
   left: 611px;
-  top: 6579px;
+  position: absolute;
+  top: 6302px;
   width: 702px;
 }
 
@@ -951,14 +991,452 @@
   width: 658px;
 }
 
-.animation-all-breakpoints .anim-text-enter-down-2SBtXX {
+.animation-all-breakpoints .anim-text-enter-jack-MoBqud {
+  height: 88px;
+  left: 611px;
+  top: 6520px;
+  width: 702px;
+}
+
+.animation-all-breakpoints .bg-2q7ViL {
+  border-radius: 73px;
+  box-shadow: 0px 4px 4px #00000040;
+  height: 88px;
+  left: 0px;
+  top: 0px;
+  width: 700px;
+}
+
+.animation-all-breakpoints .txt-2q7ViL {
+  left: 20px;
+  line-height: 44px;
+  text-align: center;
+  top: 19px;
+  width: 658px;
+}
+
+.animation-all-breakpoints .box-MoBqud {
+  top: 6738px;
+}
+
+.animation-all-breakpoints .bg-rFV8vD {
+  border-radius: 73px;
+  box-shadow: 0px 4px 4px #00000040;
+  height: 304px;
+  left: 0px;
+  top: 0px;
+  width: 700px;
+}
+
+.animation-all-breakpoints .txt-rFV8vD {
+  left: 144px;
+  line-height: 44px;
+  text-align: center;
+  top: 22px;
+  width: auto;
+}
+
+.animation-all-breakpoints .txt-AWdaMh {
+  left: 175px;
+  line-height: 12px;
+  text-align: center;
+  top: 78px;
+  width: auto;
+}
+
+.animation-all-breakpoints .anim-fade-in-order-rFV8vD {
+  background-color: transparent;
   height: 172px;
-  left: calc(50.00% - 475px);
-  top: 6801px;
+  left: 57px;
+  position: absolute;
+  top: 109px;
+  width: 581px;
+}
+
+.animation-all-breakpoints .object-XF4qwb {
+  height: 70px;
+  left: 4px;
+  top: 0px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .object-WqZt3G {
+  height: 70px;
+  left: 104px;
+  top: 0px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .object-Cnxxix {
+  height: 70px;
+  left: 204px;
+  top: 0px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .ellipse-3-xIWgmc {
+  background-color: var(--bittersweet);
+}
+
+.animation-all-breakpoints .object-BKxHip {
+  height: 77px;
+  left: 304px;
+  top: 5px;
+  width: 77px;
+}
+
+.animation-all-breakpoints .object-xd1cxH {
+  height: 70px;
+  left: 411px;
+  top: 0px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .ellipse-4-7lKrz3 {
+  background-color: var(--anakiwa);
+}
+
+.animation-all-breakpoints .object-56iPBp {
+  height: 70px;
+  left: 511px;
+  top: 0px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .object-PMyuse {
+  height: 77px;
+  left: 0px;
+  top: 95px;
+  width: 77px;
+}
+
+.animation-all-breakpoints .object-bx3V0B {
+  height: 70px;
+  left: 104px;
+  top: 90px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .object-g8WSlg {
+  height: 70px;
+  left: 204px;
+  top: 90px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .object-CMGHz7 {
+  height: 70px;
+  left: 304px;
+  top: 90px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .ellipse-6-VUNuRA {
+  background-color: var(--rose);
+}
+
+.animation-all-breakpoints .object-m1DthA {
+  height: 77px;
+  left: 404px;
+  top: 95px;
+  width: 77px;
+}
+
+.animation-all-breakpoints .object-yatlaY {
+  height: 70px;
+  left: 511px;
+  top: 90px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .ellipse-7-xYCQuC {
+  background-color: var(--anakiwa);
+}
+
+.animation-all-breakpoints .box-2SBtXX {
+  top: 7116px;
+}
+
+.animation-all-breakpoints .bg-qut4xG {
+  border-radius: 73px;
+  box-shadow: 0px 4px 4px #00000040;
+  height: 304px;
+  left: 0px;
+  top: 0px;
+  width: 700px;
+}
+
+.animation-all-breakpoints .txt-qut4xG {
+  left: 146px;
+  line-height: 44px;
+  text-align: center;
+  top: 22px;
+  width: auto;
+}
+
+.animation-all-breakpoints .txt-SN4gT2 {
+  left: 175px;
+  line-height: 12px;
+  text-align: center;
+  top: 78px;
+  width: auto;
+}
+
+.animation-all-breakpoints .anim-blur-in-order-qut4xG {
+  background-color: transparent;
+  height: 172px;
+  left: 57px;
+  position: absolute;
+  top: 113px;
+  width: 581px;
+}
+
+.animation-all-breakpoints .object-eJ2Pya {
+  height: 70px;
+  left: 4px;
+  top: 0px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .object-fz369Y {
+  height: 70px;
+  left: 104px;
+  top: 0px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .object-aoHXo5 {
+  height: 70px;
+  left: 204px;
+  top: 0px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .ellipse-3-Fbqw8L {
+  background-color: var(--rose);
+}
+
+.animation-all-breakpoints .object-AbHakI {
+  height: 77px;
+  left: 304px;
+  top: 5px;
+  width: 77px;
+}
+
+.animation-all-breakpoints .object-fJgEgY {
+  height: 70px;
+  left: 411px;
+  top: 0px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .ellipse-4-0y80ge {
+  background-color: var(--anakiwa);
+}
+
+.animation-all-breakpoints .object-9HbIlx {
+  height: 70px;
+  left: 511px;
+  top: 0px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .object-iW0s4P {
+  height: 77px;
+  left: 0px;
+  top: 95px;
+  width: 77px;
+}
+
+.animation-all-breakpoints .object-0sVX6T {
+  height: 70px;
+  left: 104px;
+  top: 90px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .object-PcjHoN {
+  height: 70px;
+  left: 204px;
+  top: 90px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .object-LZiKfG {
+  height: 70px;
+  left: 304px;
+  top: 90px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .ellipse-6-k68ook {
+  background-color: var(--bittersweet);
+}
+
+.animation-all-breakpoints .object-q3dU9F {
+  height: 77px;
+  left: 404px;
+  top: 95px;
+  width: 77px;
+}
+
+.animation-all-breakpoints .object-fhb28U {
+  height: 70px;
+  left: 511px;
+  top: 90px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .ellipse-7-bpfdat {
+  background-color: var(--azure-radiance);
+}
+
+.animation-all-breakpoints .box-oydE2o {
+  top: 7494px;
+}
+
+.animation-all-breakpoints .bg-9S1BgQ {
+  border-radius: 73px;
+  box-shadow: 0px 4px 4px #00000040;
+  height: 304px;
+  left: 0px;
+  top: 0px;
+  width: 700px;
+}
+
+.animation-all-breakpoints .txt-9S1BgQ {
+  left: 147px;
+  line-height: 44px;
+  text-align: center;
+  top: 22px;
+  width: auto;
+}
+
+.animation-all-breakpoints .txt-3sZwE9 {
+  left: 175px;
+  line-height: 12px;
+  text-align: center;
+  top: 78px;
+  width: auto;
+}
+
+.animation-all-breakpoints .anim-jack-in-order-9S1BgQ {
+  background-color: transparent;
+  height: 172px;
+  left: 57px;
+  position: absolute;
+  top: 113px;
+  width: 581px;
+}
+
+.animation-all-breakpoints .object-hHjOEk {
+  height: 70px;
+  left: 4px;
+  top: 0px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .object-Y0LyTS {
+  height: 70px;
+  left: 104px;
+  top: 0px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .object-bDn91t {
+  height: 70px;
+  left: 204px;
+  top: 0px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .ellipse-3-goSWoH {
+  background-color: var(--bittersweet);
+}
+
+.animation-all-breakpoints .object-Iukjof {
+  height: 77px;
+  left: 304px;
+  top: 5px;
+  width: 77px;
+}
+
+.animation-all-breakpoints .object-qM8p7Y {
+  height: 70px;
+  left: 411px;
+  top: 0px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .ellipse-4-gj66ZM {
+  background-color: var(--azure-radiance);
+}
+
+.animation-all-breakpoints .object-s0zo0K {
+  height: 70px;
+  left: 511px;
+  top: 0px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .object-UM4xMM {
+  height: 77px;
+  left: 0px;
+  top: 95px;
+  width: 77px;
+}
+
+.animation-all-breakpoints .object-50Z9AA {
+  height: 70px;
+  left: 104px;
+  top: 90px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .object-csArPs {
+  height: 70px;
+  left: 204px;
+  top: 90px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .object-PY2TNd {
+  height: 70px;
+  left: 304px;
+  top: 90px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .ellipse-6-a3srq7 {
+  background-color: var(--rose);
+}
+
+.animation-all-breakpoints .object-cHKEuZ {
+  height: 77px;
+  left: 404px;
+  top: 95px;
+  width: 77px;
+}
+
+.animation-all-breakpoints .object-xLxPE4 {
+  height: 70px;
+  left: 511px;
+  top: 90px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .ellipse-7-KSmoEo {
+  background-color: var(--anakiwa);
+}
+
+.animation-all-breakpoints .anim-text-enter-jack-2SBtXX {
+  height: 172px;
+  left: calc(50.00% - 474px);
+  top: 7986px;
   width: 952px;
 }
 
-.animation-all-breakpoints .rectangle-24-KAjvd9 {
+.animation-all-breakpoints .rectangle-24-3WH5IX {
   border-radius: 100px;
   height: 172px;
   left: calc(50.00% - 476px);
@@ -966,7 +1444,7 @@
   width: 950px;
 }
 
-.animation-all-breakpoints .animatecss-css-KAjvd9 {
+.animation-all-breakpoints .animatecss-css-3WH5IX {
   background-color: transparent;
   color: transparent;
   font-family: var(--font-family-kiwi_maru);
@@ -983,20 +1461,20 @@
   width: auto;
 }
 
-.animation-all-breakpoints .span0-gOxYYI {
+.animation-all-breakpoints .span0-wV95Es {
   font-style: normal;
 }
 
-.animation-all-breakpoints .span1-gOxYYI {
-  color: #00aaff;
+.animation-all-breakpoints .span1-wV95Es {
+  color: var(--azure-radiance);
   font-style: normal;
 }
 
-.animation-all-breakpoints .span2-gOxYYI {
+.animation-all-breakpoints .span2-wV95Es {
   font-style: normal;
 }
 
-.animation-all-breakpoints .link-animatecss-KAjvd9 {
+.animation-all-breakpoints .link-animatecss-3WH5IX {
   background-color: transparent;
   height: 48px;
   left: calc(50.00% - 277px);
@@ -1005,9 +1483,9 @@
   width: 154px;
 }
 
-.animation-all-breakpoints .animatecss-RfUj8c {
+.animation-all-breakpoints .animatecss-yT2hSO {
   background-color: transparent;
-  color: #8cd8ff;
+  color: var(--anakiwa);
   font-family: var(--font-family-kiwi_maru);
   font-size: var(--font-size-xxl);
   font-style: normal;
@@ -1028,7 +1506,7 @@
   height: 120px;
   left: calc(50.00% - 958px);
   position: absolute;
-  top: 7603px;
+  top: 8963px;
   width: 1924px;
 }
 
@@ -1110,10 +1588,10 @@
 .animation-all-breakpoints .align-right-9pPD5Q {
   background-color: transparent;
   height: 32px;
-  left: 974px;
+  left: 783px;
   position: absolute;
   top: 44px;
-  width: 427px;
+  width: 618px;
 }
 
 .animation-all-breakpoints .links-GUh2jX {
@@ -1122,13 +1600,13 @@
   left: 0px;
   position: relative;
   top: 0px;
-  width: 427px;
+  width: 618px;
 }
 
 .animation-all-breakpoints .link-home-49yLmI {
   background-color: transparent;
   height: 16px;
-  left: calc(50.00% - 214px);
+  left: calc(50.00% - 309px);
   position: absolute;
   top: 8px;
   width: 50px;
@@ -1141,7 +1619,7 @@
 .animation-all-breakpoints .link-animation-49yLmI {
   background-color: transparent;
   height: 16px;
-  left: calc(50.00% - 133px);
+  left: calc(50.00% - 207px);
   position: absolute;
   top: 8px;
   width: 146px;
@@ -1151,10 +1629,23 @@
   left: calc(50.00% - 73px);
 }
 
+.animation-all-breakpoints .link-include-49yLmI {
+  background-color: transparent;
+  height: 16px;
+  left: calc(50.00% - 9px);
+  position: absolute;
+  top: 8px;
+  width: 98px;
+}
+
+.animation-all-breakpoints .text_label-OcNQF7 {
+  left: calc(50.00% - 49px);
+}
+
 .animation-all-breakpoints .link-contact-49yLmI {
   background-color: transparent;
   height: 16px;
-  left: calc(50.00% + 44px);
+  left: calc(50.00% + 141px);
   position: absolute;
   top: 8px;
   width: 98px;
@@ -1167,7 +1658,7 @@
 .animation-all-breakpoints .link-git-49yLmI {
   background-color: transparent;
   height: 32px;
-  left: 395px;
+  left: 586px;
   position: absolute;
   top: 0px;
   width: 32px;
@@ -1194,11 +1685,6 @@
 
 .animation-all-breakpoints .page-top-VkZzUS {
   background-color: transparent;
-  color: var(--black);
-  font-family: var(--font-family-kiwi_maru);
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
   height: 15.00%;
   left: 17.50%;
   letter-spacing: 0.00px;
@@ -1224,9 +1710,114 @@
   position: absolute;
 }
 
+.animation-all-breakpoints .box {
+  background-color: transparent;
+  height: 304px;
+  left: 611px;
+  position: absolute;
+  width: 704px;
+}
+
+.animation-all-breakpoints .ellipse-2 {
+  background-color: var(--sizzling-sunrise);
+  border-radius: 35px;
+  height: 70px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .ellipse-3 {
+  border-radius: 35px;
+  height: 70px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .ellipse-4 {
+  border-radius: 35px;
+  height: 70px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .ellipse-5 {
+  background-color: var(--sizzling-sunrise);
+  border-radius: 35px;
+  height: 70px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .ellipse-6 {
+  border-radius: 35px;
+  height: 70px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .ellipse-7 {
+  border-radius: 35px;
+  height: 70px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 70px;
+}
+
+.animation-all-breakpoints .object {
+  background-color: transparent;
+  position: absolute;
+}
+
+.animation-all-breakpoints .polygon {
+  background-color: transparent;
+  height: 58px;
+  left: 5px;
+  position: absolute;
+  top: 0px;
+  width: 67px;
+}
+
 .animation-all-breakpoints .rectangle-24 {
   background-color: var(--white);
   position: absolute;
+}
+
+.animation-all-breakpoints .star-1 {
+  background-color: transparent;
+  height: 63px;
+  left: 2px;
+  position: absolute;
+  top: 0px;
+  width: 67px;
+}
+
+.animation-all-breakpoints .star-2 {
+  background-color: transparent;
+  height: 63px;
+  left: 2px;
+  position: absolute;
+  top: 0px;
+  width: 67px;
+}
+
+.animation-all-breakpoints .star-3 {
+  background-color: transparent;
+  height: 63px;
+  left: 2px;
+  position: absolute;
+  top: 0px;
+  width: 67px;
 }
 
 .animation-all-breakpoints .text_label {
@@ -1239,6 +1830,14 @@
   top: 0px;
   white-space: nowrap;
   width: auto;
+}
+
+.animation-all-breakpoints .txt {
+  background-color: transparent;
+  height: auto;
+  letter-spacing: 0.00px;
+  position: absolute;
+  white-space: nowrap;
 }
 /* screen - animation-sp */
 
@@ -1253,44 +1852,34 @@
   width: 100%;
 }
 
-.animation-sp .fixed-coverbg-8vHV0N {
-  background-color: transparent;
-  height: 1129px;
-  left: calc(50.00% - 1002px);
-  object-fit: cover;
-  position: absolute;
-  top: 0px;
-  width: 1920px;
-}
-
 .animation-sp .sp-wrap-8vHV0N {
   background-color: transparent;
   height: 4090px;
-  left: -588px;
+  left: 0px;
   position: absolute;
   top: 0px;
-  width: 1920px;
+  width: 744px;
 }
 
 .animation-sp .section-id_mv_firstview-xcRfWK {
   background-color: transparent;
-  height: 500px;
-  left: calc(50.00% - 960px);
+  height: 662px;
+  left: calc(50.00% - 372px);
   position: absolute;
   top: 0px;
-  width: 1920px;
+  width: 746px;
 }
 
 .animation-sp .area-vXyncx {
-  height: 428px;
-  left: calc(50.00% - 960px);
+  height: 662px;
+  left: calc(50.00% - 373px);
   top: 0px;
-  width: 1920px;
+  width: 744px;
 }
 
 .animation-sp .anim-fade-in-vXyncx {
   height: 132px;
-  left: calc(50.00% - 292px);
+  left: calc(50.00% - 293px);
   top: 368px;
   width: 588px;
 }
@@ -1321,7 +1910,7 @@
 
 .animation-sp .anim-bounce-in-up-vXyncx {
   height: 101px;
-  left: 788px;
+  left: 200px;
   top: 144px;
   width: 344px;
 }
@@ -1335,23 +1924,7 @@
   width: 346px;
 }
 
-.animation-sp .section-id-animation-xcRfWK {
-  background-color: transparent;
-  height: 3431px;
-  left: calc(50.00% - 960px);
-  position: absolute;
-  top: 428px;
-  width: 1922px;
-}
-
-.animation-sp .area-JFpKgx {
-  height: 2385px;
-  left: calc(50.00% - 961px);
-  top: 0px;
-  width: 1920px;
-}
-
-.animation-sp .anim-text-enter-left-stroketxt4px-JFpKgx {
+.animation-sp .anim-text-enter-left-stroketxt4px-vXyncx {
   -webkit-text-stroke: 2.84297513961792px var(--white);
   background-color: transparent;
   color: var(--humming-bird);
@@ -1366,15 +1939,31 @@
   position: absolute;
   text-align: center;
   text-shadow: 0px 2.84297513961792px 2.84297513961792px #00000040;
-  top: 180px;
+  top: 607px;
   white-space: nowrap;
   width: auto;
 }
 
+.animation-sp .section-id-animation-xcRfWK {
+  background-color: transparent;
+  height: 3197px;
+  left: calc(50.00% - 372px);
+  position: absolute;
+  top: 662px;
+  width: 744px;
+}
+
+.animation-sp .area-JFpKgx {
+  height: 2151px;
+  left: calc(50.00% - 372px);
+  top: 0px;
+  width: 744px;
+}
+
 .animation-sp .anim-fade-in-JFpKgx {
   height: 41px;
-  left: calc(50.00% - 161px);
-  top: 532px;
+  left: calc(50.00% - 160px);
+  top: 298px;
   width: 325px;
 }
 
@@ -1400,9 +1989,9 @@
 .animation-sp .anim-fade-in-down-JFpKgx {
   background-color: transparent;
   height: 41px;
-  left: calc(50.00% - 161px);
+  left: calc(50.00% - 160px);
   position: absolute;
-  top: 634px;
+  top: 400px;
   width: 325px;
 }
 
@@ -1428,9 +2017,9 @@
 .animation-sp .anim-fade-in-left-JFpKgx {
   background-color: transparent;
   height: 41px;
-  left: calc(50.00% - 161px);
+  left: calc(50.00% - 160px);
   position: absolute;
-  top: 736px;
+  top: 502px;
   width: 325px;
 }
 
@@ -1456,9 +2045,9 @@
 .animation-sp .anim-fade-in-right-JFpKgx {
   background-color: transparent;
   height: 41px;
-  left: calc(50.00% - 161px);
+  left: calc(50.00% - 160px);
   position: absolute;
-  top: 838px;
+  top: 604px;
   width: 325px;
 }
 
@@ -1484,9 +2073,9 @@
 .animation-sp .anim-fade-in-up-JFpKgx {
   background-color: transparent;
   height: 41px;
-  left: calc(50.00% - 161px);
+  left: calc(50.00% - 160px);
   position: absolute;
-  top: 940px;
+  top: 706px;
   width: 325px;
 }
 
@@ -1512,9 +2101,9 @@
 .animation-sp .anim-fade-in-top-left-JFpKgx {
   background-color: transparent;
   height: 41px;
-  left: calc(50.00% - 161px);
+  left: calc(50.00% - 160px);
   position: absolute;
-  top: 1042px;
+  top: 808px;
   width: 325px;
 }
 
@@ -1540,9 +2129,9 @@
 .animation-sp .anim-fade-in-top-right-JFpKgx {
   background-color: transparent;
   height: 41px;
-  left: calc(50.00% - 161px);
+  left: calc(50.00% - 160px);
   position: absolute;
-  top: 1144px;
+  top: 910px;
   width: 325px;
 }
 
@@ -1568,9 +2157,9 @@
 .animation-sp .anim-fade-in-bottom-left-JFpKgx {
   background-color: transparent;
   height: 41px;
-  left: calc(50.00% - 161px);
+  left: calc(50.00% - 160px);
   position: absolute;
-  top: 1246px;
+  top: 1012px;
   width: 325px;
 }
 
@@ -1596,9 +2185,9 @@
 .animation-sp .anim-fade-in-bottom-right-JFpKgx {
   background-color: transparent;
   height: 41px;
-  left: calc(50.00% - 161px);
+  left: calc(50.00% - 160px);
   position: absolute;
-  top: 1348px;
+  top: 1114px;
   width: 325px;
 }
 
@@ -1624,9 +2213,9 @@
 .animation-sp .anim-bounce-in-JFpKgx {
   background-color: transparent;
   height: 41px;
-  left: calc(50.00% - 161px);
+  left: calc(50.00% - 160px);
   position: absolute;
-  top: 1450px;
+  top: 1216px;
   width: 325px;
 }
 
@@ -1652,9 +2241,9 @@
 .animation-sp .anim-bounce-in-down-JFpKgx {
   background-color: transparent;
   height: 41px;
-  left: calc(50.00% - 161px);
+  left: calc(50.00% - 160px);
   position: absolute;
-  top: 1552px;
+  top: 1318px;
   width: 325px;
 }
 
@@ -1680,9 +2269,9 @@
 .animation-sp .anim-bounce-in-left-JFpKgx {
   background-color: transparent;
   height: 41px;
-  left: calc(50.00% - 161px);
+  left: calc(50.00% - 160px);
   position: absolute;
-  top: 1654px;
+  top: 1420px;
   width: 325px;
 }
 
@@ -1708,9 +2297,9 @@
 .animation-sp .anim-bounce-in-right-JFpKgx {
   background-color: transparent;
   height: 41px;
-  left: calc(50.00% - 161px);
+  left: calc(50.00% - 160px);
   position: absolute;
-  top: 1756px;
+  top: 1522px;
   width: 325px;
 }
 
@@ -1735,8 +2324,8 @@
 
 .animation-sp .anim-bounce-in-up-JFpKgx {
   height: 41px;
-  left: calc(50.00% - 161px);
-  top: 1858px;
+  left: calc(50.00% - 160px);
+  top: 1624px;
   width: 325px;
 }
 
@@ -1762,9 +2351,9 @@
 .animation-sp .anim-zoom-in-JFpKgx {
   background-color: transparent;
   height: 41px;
-  left: calc(50.00% - 161px);
+  left: calc(50.00% - 160px);
   position: absolute;
-  top: 1960px;
+  top: 1726px;
   width: 325px;
 }
 
@@ -1790,9 +2379,9 @@
 .animation-sp .anim-jack-in-the-box-JFpKgx {
   background-color: transparent;
   height: 41px;
-  left: calc(50.00% - 161px);
+  left: calc(50.00% - 160px);
   position: absolute;
-  top: 2062px;
+  top: 1828px;
   width: 325px;
 }
 
@@ -1818,9 +2407,9 @@
 .animation-sp .anim-blur-in-JFpKgx {
   background-color: transparent;
   height: 41px;
-  left: calc(50.00% - 161px);
+  left: calc(50.00% - 160px);
   position: absolute;
-  top: 2164px;
+  top: 1930px;
   width: 325px;
 }
 
@@ -1846,9 +2435,9 @@
 .animation-sp .anim-wipe-in-JFpKgx {
   background-color: transparent;
   height: 52px;
-  left: 795px;
+  left: 207px;
   position: absolute;
-  top: 2379px;
+  top: 2145px;
   width: 339px;
 }
 
@@ -1897,9 +2486,9 @@
 .animation-sp .anim-wipe-in-right-JFpKgx {
   background-color: transparent;
   height: 52px;
-  left: 795px;
+  left: 207px;
   position: absolute;
-  top: 2492px;
+  top: 2258px;
   width: 337px;
 }
 
@@ -1941,8 +2530,8 @@
   background-color: transparent;
   height: 52px;
   position: absolute;
-  right: 788px;
-  top: 2605px;
+  right: 198px;
+  top: 2371px;
   width: 339px;
 }
 
@@ -1992,7 +2581,7 @@
   background-color: transparent;
   bottom: 1114px;
   height: 52px;
-  left: calc(50.00% - 166px);
+  left: calc(50.00% - 165px);
   position: absolute;
   width: 339px;
 }
@@ -2042,9 +2631,9 @@
 .animation-sp .anim-wipe-in-down-JFpKgx {
   background-color: transparent;
   height: 52px;
-  left: calc(50.00% - 166px);
+  left: calc(50.00% - 165px);
   position: absolute;
-  top: 2831px;
+  top: 2597px;
   width: 339px;
 }
 
@@ -2093,9 +2682,9 @@
 .animation-sp .anim-wipe-in-center-JFpKgx {
   background-color: transparent;
   height: 52px;
-  left: calc(50.00% - 166px);
+  left: calc(50.00% - 165px);
   position: absolute;
-  top: calc(50.00% + 1002px);
+  top: calc(50.00% + 885px);
   width: 339px;
 }
 
@@ -2144,9 +2733,9 @@
 .animation-sp .anim-text-enter-left-JFpKgx {
   background-color: transparent;
   height: 41px;
-  left: 800px;
+  left: 212px;
   position: absolute;
-  top: 2944px;
+  top: 2710px;
   width: 325px;
 }
 
@@ -2172,9 +2761,9 @@
 .animation-sp .anim-text-enter-right-JFpKgx {
   background-color: transparent;
   height: 41px;
-  left: 800px;
+  left: 212px;
   position: absolute;
-  top: 3046px;
+  top: 2812px;
   width: 325px;
 }
 
@@ -2200,9 +2789,9 @@
 .animation-sp .anim-text-enter-up-JFpKgx {
   background-color: transparent;
   height: 41px;
-  left: 800px;
+  left: 212px;
   position: absolute;
-  top: 3148px;
+  top: 2914px;
   width: 325px;
 }
 
@@ -2227,8 +2816,8 @@
 
 .animation-sp .anim-text-enter-down-JFpKgx {
   height: 41px;
-  left: 800px;
-  top: 3250px;
+  left: 212px;
+  top: 3016px;
   width: 325px;
 }
 
@@ -2253,8 +2842,8 @@
 
 .animation-sp .anim-text-enter-down-xymenx {
   height: 79px;
-  left: calc(50.00% - 219px);
-  top: 3352px;
+  left: calc(50.00% - 218px);
+  top: 3118px;
   width: 440px;
 }
 
@@ -2283,17 +2872,15 @@
 }
 
 .animation-sp .span0-lPEcJr {
-  color: var(--black);
   font-style: normal;
 }
 
 .animation-sp .span1-lPEcJr {
-  color: #00aaff;
+  color: var(--azure-radiance);
   font-style: normal;
 }
 
 .animation-sp .span2-lPEcJr {
-  color: var(--black);
   font-style: normal;
 }
 
@@ -2308,7 +2895,7 @@
 
 .animation-sp .animatecss-orL9zB {
   background-color: transparent;
-  color: #8cd8ff;
+  color: var(--anakiwa);
   font-family: var(--font-family-kiwi_maru);
   font-size: 11.1px;
   font-style: normal;
@@ -2375,10 +2962,51 @@
   width: 744px;
 }
 
+.animation-sp .area-pTWSOY {
+  height: 60px;
+  left: calc(50.00% - 372px);
+  top: 0px;
+  width: 744px;
+}
+
+.animation-sp .align-center-pTWSOY {
+  background-color: transparent;
+  height: 45px;
+  left: 330px;
+  position: absolute;
+  top: 10px;
+  width: 83px;
+}
+
+.animation-sp .link-home-U7V8lP {
+  height: 45px;
+  left: calc(50.00% - 42px);
+  position: relative;
+  width: 83px;
+}
+
+.animation-sp .logo-3o3LiA {
+  background-color: transparent;
+  height: 45px;
+  left: calc(50.00% - 42px);
+  position: absolute;
+  top: 0px;
+  width: 83px;
+}
+
+.animation-sp .align-right-pTWSOY {
+  background-color: transparent;
+  height: 13px;
+  left: calc(50.00% + 328px);
+  position: absolute;
+  top: 24px;
+  width: 20px;
+}
+
 .animation-sp .fixed-spmenu-8vHV0N {
   background-color: transparent;
   height: 780px;
-  left: calc(50.00% - 372px);
+  left: 0px;
   position: absolute;
   top: 0px;
   width: 744px;
@@ -2430,51 +3058,49 @@
 }
 
 .animation-sp .link-home-2RMTxl {
-  background-color: transparent;
-  height: 9.14%;
-  left: 28.57%;
+  height: 16px;
+  left: calc(50.00% - 24px);
   position: absolute;
-  top: 0px;
-  width: 44.64%;
+  width: 50px;
 }
 
 .animation-sp .text_label-iztxPQ {
-  width: 96.00%;
+  left: calc(50.00% - 25px);
 }
 
 .animation-sp .link-page-2RMTxl {
   background-color: transparent;
-  height: 9.14%;
-  left: 0px;
+  height: 16px;
+  left: calc(50.00% - 56px);
   position: absolute;
-  top: 22.29%;
-  width: 101.79%;
+  top: 39px;
+  width: 114px;
 }
 
 .animation-sp .text_label-9XLKEm {
-  width: 98.25%;
+  left: calc(50.00% - 57px);
 }
 
 .animation-sp .link-contact-2RMTxl {
   background-color: transparent;
-  height: 9.14%;
-  left: 7.14%;
+  height: 16px;
+  left: calc(50.00% - 48px);
   position: absolute;
-  top: 44.57%;
-  width: 87.50%;
+  top: 78px;
+  width: 98px;
 }
 
 .animation-sp .text_label-HON5Rf {
-  width: 97.96%;
+  left: calc(50.00% - 49px);
 }
 
 .animation-sp .link-git-2RMTxl {
   background-color: transparent;
-  height: 18.29%;
-  left: 35.71%;
+  height: 32px;
+  left: calc(50.00% - 16px);
   position: absolute;
-  top: 81.71%;
-  width: 28.57%;
+  top: 143px;
+  width: 32px;
 }
 
 .animation-sp .spmenu-close-btn-0y9qgX {
@@ -2494,13 +3120,21 @@
 
 .animation-sp .text_label {
   background-color: transparent;
-  height: 100%;
-  left: 0px;
+  height: auto;
   letter-spacing: 0.00px;
   line-height: 16px;
   position: absolute;
   text-align: center;
   top: 0px;
+  white-space: nowrap;
+  width: auto;
+}
+
+.animation-sp .txt {
+  background-color: transparent;
+  height: auto;
+  letter-spacing: 0.00px;
+  position: absolute;
   white-space: nowrap;
 }
 @media screen and (max-width: 1919px) {
