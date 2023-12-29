@@ -265,23 +265,37 @@ function removeUnusedScreen($dom)
 }
 
 /*
- * view内の無用なタグを削除する。
+ * container-center-horizontalが無い場合、挿入
  *
  * @param $dom ドキュメントのDOM
- * @return string 無用なタグを削除したHTML
+ * @return $dom ドキュメントのDOM
+ */
+function addContainerCenterHorizontal($dom) {
+  global $config;
+  $domHTML = $dom->format()->html();
+
+  // container-center-horizontalが無い場合、挿入
+  if(strpos($domHTML, 'container-center-horizontal') === false) {
+    $pattern = '/<input type="hidden" id="anPageName" name="page" value="([^"]+)">/';
+    preg_match($pattern, $domHTML, $matches);
+    $inputHidden = $matches[0];
+    $domHTML = str_replace($inputHidden, $inputHidden.'<div class="container-center-horizontal">', $domHTML);
+    $domHTML = str_replace("</body>","</div></body>", $domHTML);
+
+    $dom = new Document($domHTML);
+  }
+  return $dom;
+}
+
+/*
+ * view内の不要なタグを削除する。
+ *
+ * @param $dom ドキュメントのDOM
+ * @return string 不要なタグを削除したHTML
  */
 function output($dom) {
   global $config;
   $output = $dom->format()->html();
-
-  // container-center-horizontalが無い場合、挿入
-  if(strpos($output, 'container-center-horizontal') === false) {
-    $pattern = '/<input type="hidden" id="anPageName" name="page" value="([^"]+)">/';
-    preg_match($pattern, $output, $matches);
-    $inputHidden = $matches[0];
-    $output = str_replace($inputHidden, $inputHidden.'<div class="container-center-horizontal">', $output);
-    $output = str_replace("</body>","</div></body>", $output);
-  }
 
   // bodyタグの直後、body終了タグの直前に挿入
   $bodyTop = file_get_contents("./anima/config/insert_body_top.txt", true);
