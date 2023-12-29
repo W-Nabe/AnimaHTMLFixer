@@ -115,6 +115,7 @@ appendSeotxtToTagFromClass($dom->find("[class*='seo-']:not(img)"), $dom); // SEO
 // figma命名規則：anim-wipe, anim-wipe-in-order
 wrapChildSpanForAnimate($dom->find("[class*='anim-wipe-in']:not([class*='anim-wipe-in-order'])")); // 子要素を<span class="wrap">で囲む。
 wrapChildSpanForAnimate($dom->find("[class*='anim-wipe-in-order'] > *")); // 子要素の子要素を<span class="wrap">で囲む。
+wrapChildSpanForAnimate($dom->find("[class*='anim-wipe-out']")); // 子要素を<span class="wrap">で囲む。
 
 // figma命名規則：h1-（<div>のクラスに「(h[1-6]|p)」があったら、「<h[1-6]|p>」に変換する）
 changeDivToHOrPSpecifiedByClass($dom->find("div[class^='h1-'], span[class^='h1-']"));

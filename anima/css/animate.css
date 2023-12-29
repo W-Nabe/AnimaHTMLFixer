@@ -2063,15 +2063,6 @@
     width: 100%;
   }
 }
-[class*="anim-wipe"]:not([class*='anim-wipe-in-order']) .wrap {
-  animation-name: wipe-in-width;
-  width: 0%;
-  height: 100%;
-  overflow: hidden;
-  display: block;
-  position: relative;
-  left: 0;
-}
 [class*="anim-wipe-in"]:not([class*='anim-wipe-in-order']) .wrap {
   animation-name: wipe-in-width;
   width: 0%;
@@ -2096,7 +2087,7 @@
   right: auto;
   bottom: auto;
 }
-[class*="anim-wipe-in-right"] .wrap {
+[class*="anim-wipe-in-right"]:not([class*='anim-wipe-in-order']) .wrap {
   animation-name: wipe-in-width;
   width: 0%;
   height: 100%;
@@ -2105,7 +2096,7 @@
   position: absolute;
   left: 0;
 }
-[class*="anim-wipe-in-left"] .wrap {
+[class*="anim-wipe-in-left"]:not([class*='anim-wipe-in-order']) .wrap {
   animation-name: wipe-in-width;
   width: 0%;
   height: 100%;
@@ -2124,7 +2115,7 @@
     height: 100%;
   }
 }
-[class*="anim-wipe-in-up"] .wrap {
+[class*="anim-wipe-in-up"]:not([class*='anim-wipe-in-order']) .wrap {
   animation-name: wipe-in-height;
   width: 100%;
   height: 0%;
@@ -2133,7 +2124,7 @@
   position: absolute;
   bottom: 0;
 }
-[class*="anim-wipe-in-down"] .wrap {
+[class*="anim-wipe-in-down"]:not([class*='anim-wipe-in-order']) .wrap {
   animation-name: wipe-in-height;
   width: 100%;
   height: 0%;
@@ -2157,7 +2148,7 @@
     width: 100%;
   }
 }
-[class*="anim-wipe-in-center"] .wrap {
+[class*="anim-wipe-in-center"]:not([class*='anim-wipe-in-order']) .wrap {
   animation-name: wipe-in-height-width;
   width: 100%;
   height: 0%;
