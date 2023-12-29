@@ -894,7 +894,7 @@ function appendBarbaInitScript($dom) {
         name: 'default-transition',
         leave() {
           /* ---ページ遷移直前の処理--- */
-
+          
           // ローディング画面表示
           if(barbaLoading == "1") {
             document.getElementById('loading').style.opacity = '1';
