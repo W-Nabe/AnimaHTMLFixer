@@ -52,16 +52,16 @@ try {
 
 if( $igPosts ): ?>
 <div class="container">
-  <div class="flex flex-wrap -m-4">
+  <div class="flex flex-wrap flex-nowrap justify-between md:gap-4">
   <?php foreach ( $igPosts as $post ): ?>
-    <div class="p-4 md:w-1/3">
+    <div class="md:w-1/3">
       <div class="h-full border-2 rounded-lg overflow-hidden bg-color">
         <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="<?php echo $post['thumbnail_url'] ?? $post['media_url']; ?>" alt="">
-        <div class="p-6">
+        <div class="text">
           <p class="mb-3"><?php echo $post['caption'] ?></p>
           <p class="mb-3"><?php echo date('Y年m月d日', strtotime($post['timestamp']) + 9 * 3600); // Y-m-d H:i ?></p>
           <div class="flex items-center flex-wrap ">
-            <a class="text-indigo-500 items-center md:mb-2 lg:mb-0" href="<?php echo $post['permalink']; ?>">View More
+            <a class="text-indigo-500 items-center md:mb-2 lg:mb-0" href="<?php echo $post['permalink']; ?>">Instagramへ
             </a>
           </div>
         </div>
@@ -79,6 +79,12 @@ if( $igPosts ): ?>
   }
   #instagram {
     font-size: 12px;
+  }
+  #instagram .flex.anim-showed {
+    display: flex !important;
+  }
+  #instagram .text {
+    padding: 10px;
   }
   #instagram .bg-color {
     background: #eafaff;
